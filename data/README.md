@@ -30,5 +30,5 @@ Full Path, Filename, Exact Name, Feature Vector, Method Used, HOMO (eV), LUMO (e
 The Exact Name and Feature Vector name columns currently have no significance for these structures.
 
 
-All of the structures in this data set are made up of conjugated systems of only Carbon, Hydrogen, and Oxygen. All of these structures are composed of 4 or fewer ring/aryl backbone parts. Many of the structures are the same structure with a 180 degree dihedral flip between two rings (denoted as a `-` in the name AFTER the ring it affects).
+All of the structures in this data set are made up of conjugated systems of only Carbon, Hydrogen, and Oxygen. All of these structures are composed of 4 or fewer ring/aryl backbone parts. Many of the structures are the same structure with a 180 degree dihedral flip between two rings (denoted as a `-` in the name AFTER the ring it affects). These systems also have the restriction that all of the ring units are all the same through the chain.
 
