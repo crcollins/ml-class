@@ -1,0 +1,680 @@
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-4fa-4fa-.log,4fa4fa-4fa-4fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.05233764101,-1.82397906003,97,4.5587,-1225.5497674,2.9998,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-12ee-12ee-.log,12ee12ee-12ee-12ee-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6721946085,-2.51786934843,117,0.5967,-1525.4751738,2.0141,1.35
+/home/ccollins/mols/noopt/b3lyp/4ei4ei4ei4ei.log,4ei4ei4ei4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.93424023506,-1.69581344206,121,4.7133,-1386.2946551,2.9652,1.61666666667
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-12ii12ii-.log,12ii12ii-12ii12ii-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.70183666011,-1.15893283853,101,0.3001,-1230.7329797,2.4853,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-4fl4fl.log,4fl4fl-4fl4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4if4if-4if-4if-.log,4if4if-4if-4if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.32766177526,-1.37961716163,113,4.3082,-1381.9569833,0.4762,1.63333333333
+/home/ccollins/mols/noopt/b3lyp/12ii12ii12ii-12ii.log,12ii12ii12ii-12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66646186109,-1.16192609076,101,2.1304,-1230.6983016,2.4708,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-4ea4ea.log,4ea4ea-4ea4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.04226942898,-2.04330281393,105,3.8330,-1229.5373579,2.7640,1.21666666667
+/home/ccollins/mols/noopt/b3lyp/1111-11-.log,1111-11-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.67959675254,-5.05179341333,22,1.9198,-341.0200004,1.1879,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/4if4if4if4if.log,4if4if4if4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28116702246,-1.04328445713,113,7.7138,-1382.8325572,3.0034,1.88333333333
+/home/ccollins/mols/noopt/b3lyp/12ef12ef.log,12ef12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.91111055878,-1.40029781336,55,1.8633,-761.4909826,3.3808,0.3
+/home/ccollins/mols/noopt/b3lyp/12il.log,12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.38404441024,0.537969058882,30,2.6626,-383.7058154,5.5302,0.05
+/home/ccollins/mols/noopt/b3lyp/11111111-.log,11111111-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.56202521748,-5.44554213776,29,3.8819,-454.2229746,0.3518,0.1
+/home/ccollins/mols/noopt/b3lyp/1111.log,1111,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-8.02354864451,-4.22102986413,15,3.0820,-227.7434116,2.1140,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la.log,4la4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ee4ee4ee4ee.log,4ee4ee4ee4ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.17179561614,-2.28167453653,129,0.5215,-1533.9580729,2.6104,2.3
+/home/ccollins/mols/noopt/b3lyp/12al12al-12al-12al-.log,12al12al-12al-12al-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.7927226822,-1.32818764613,101,3.0498,-1374.206897,2.3225,0.75
+/home/ccollins/mols/noopt/b3lyp/4el4el.log,4el4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12il12il12il.log,12il12il12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.70238088779,-0.764367772585,88,5.8746,-1148.7978664,2.9321,0.716666666667
+/home/ccollins/mols/noopt/b3lyp/11111111.log,11111111,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.81674212719,-5.87085606747,29,2.7948,-454.2492625,0.7352,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ll4ll.log,4ll4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12if12if12if-12if-.log,12if12if12if-12if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.68959153737,-1.21036235403,101,3.4183,-1374.4204011,2.4654,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/12la12la-12la12la.log,12la12la-12la12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.88769041186,-1.50342895818,101,2.2185,-1374.1489706,2.2899,0.866666666667
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-12ee.log,12ee12ee-12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.8583204741,-2.43160926159,88,0.0387,-1144.3648903,2.0725,0.55
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-12ff12ff-.log,12ff12ff-12ff12ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.73312975155,-1.14859251267,101,0.0056,-1518.1575528,2.6264,0.516666666667
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-4fe-4fe-.log,4fe4fe-4fe-4fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.38645672119,-2.15759062614,121,6.7441,-1528.8567865,0.1628,1.5
+/home/ccollins/mols/noopt/b3lyp/4li4li-4li4li.log,4li4li-4li4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ff12ff12ff.log,12ff12ff12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.79680438978,-0.729265087408,76,5.3725,-1138.8866687,3.1336,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-4ee.log,4ee4ee-4ee,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12le12le.log,12le12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.35572621423,-1.68955482377,63,1.9311,-839.6897081,1.4828,0.266666666667
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-4ee-4ee.log,4ee4ee-4ee-4ee,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12af12af12af-12af.log,12af12af12af-12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05694521946,-1.48710212787,85,1.9079,-1217.2087438,2.5214,0.4
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-4lf4lf-.log,4lf4lf-4lf4lf-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12if12if-12if-12if-.log,12if12if-12if-12if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57394315597,-1.10287738778,101,5.0387,-1374.4310393,2.4344,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-4ef4ef-.log,4ef4ef-4ef4ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.22589119962,-1.52710286214,121,6.9526,-1528.5909674,0.1566,2.85
+/home/ccollins/mols/noopt/b3lyp/12af12af12af12af-.log,12af12af12af12af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.13068806972,-1.52955188669,85,2.3148,-1217.2059131,2.5249,0.4
+/home/ccollins/mols/noopt/b3lyp/4le4le4le4le.log,4le4le4le4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-12ia12ia-.log,12ia12ia-12ia12ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.11980351618,-1.41145448074,85,0.2062,-1073.5102474,2.6591,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-12fi12fi-.log,12fi12fi-12fi12fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.70836739224,-1.18587210855,101,4.2427,-1374.4465602,2.4944,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-4ai4ai-.log,4ai4ai-4ai4ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.73124331148,-1.43975431995,97,0.5924,-1081.8291334,3.0569,1.4
+/home/ccollins/mols/noopt/b3lyp/4il4il-4il-4il-.log,4il4il-4il-4il-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/22-2-.log,22-2-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.32036977201,-1.81935312478,22,0.1481,-233.3206635,4.0482,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12af.log,12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.63085166184,0.431300434157,22,1.1046,-305.1660534,5.6789,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/12il12il-12il12il.log,12il12il-12il12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.53611933241,-1.09036015121,117,7.3510,-1531.2747554,2.3725,1.73333333333
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-.log,4fl4fl-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ff4ff.log,4ff4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.70239924459,-0.528445074532,57,0.1747,-764.0509819,3.8236,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/4fa4fa4fa.log,4fa4fa4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.81804762598,-1.21117869554,73,5.8526,-919.7996823,3.4013,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/12ei12ei12ei-12ei.log,12ei12ei12ei-12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.27599685952,-1.90125939019,109,1.0971,-1378.1217123,2.2394,1.35
+/home/ccollins/mols/noopt/b3lyp/4fi4fi.log,4fi4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.94784592699,-0.610079226107,57,3.0936,-692.0475641,3.8948,0.333333333333
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-4ie4ie-.log,4ie4ie-4ie4ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.93529197682,-1.66261555375,121,3.5986,-1384.5439432,0.8985,1.98333333333
+/home/ccollins/mols/noopt/b3lyp/4ie4ie4ie4ie-.log,4ie4ie4ie4ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.52088095745,-1.66424823679,121,2.2699,-1385.7496244,1.0472,1.7
+/home/ccollins/mols/noopt/b3lyp/4fi4fi4fi-4fi-.log,4fi4fi4fi-4fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.33586190401,-1.53064034204,113,2.8542,-1381.2526768,2.0710,1.7
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-12lf.log,12lf12lf-12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.87871065519,-0.898792008846,88,4.5694,-1256.5343868,2.9125,0.766666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la4la-4la.log,4la4la4la-4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12aa12aa12aa12aa-.log,12aa12aa12aa12aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.47463996169,-1.70288840186,69,0.7909,-916.2707115,2.7310,0.366666666667
+/home/ccollins/mols/noopt/b3lyp/12li12li12li.log,12li12li12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.93585456129,-0.849267290224,88,2.6707,-1147.5148396,2.5765,0.816666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li4li-4li-.log,4li4li4li-4li-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4al4al4al-4al-.log,4al4al4al-4al-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-.log,12ae12ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.22050399325,-1.5507767661,47,0.3239,-611.0231973,3.6510,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/12la12la12la12la.log,12la12la12la12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.81367544777,-1.41281504993,101,1.1367,-1374.1111499,2.2588,0.866666666667
+/home/ccollins/mols/noopt/b3lyp/12ef12ef12ef12ef-.log,12ef12ef12ef12ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.37967223202,-2.06833728708,109,1.7041,-1521.8456748,2.1065,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-12aa-12aa.log,12aa12aa-12aa-12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.5064772808,-1.73173246875,69,0.2847,-916.275153,2.7258,0.266666666667
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-12ii.log,12ii12ii-12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.94374586261,-0.929540872606,76,1.3701,-923.3380566,2.9647,0.75
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-.log,12ea12ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.22050399325,-1.5507767661,47,0.3256,-611.0231202,3.6512,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li-.log,4li4li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.11486875348,-0.741510210144,65,3.1013,-770.1891474,0.7243,0.383333333333
+/home/ccollins/mols/noopt/b3lyp/12la12la12la.log,12la12la12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.09041522161,-1.19920568664,76,0.4660,-1030.8957029,2.7623,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/4fl4fl.log,4fl4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ie4ie4ie.log,4ie4ie4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.13070642652,-1.52900765901,91,3.7177,-1040.1110365,3.1565,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af4af-4af.log,4af4af4af-4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.61069688098,-1.42097846509,97,6.2145,-1225.8062197,2.9930,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4ai4ai.log,4ai4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.49397840103,-0.909676562389,49,1.2780,-541.5921111,4.2287,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4ae4ae4ae-4ae-.log,4ae4ae4ae-4ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.05587512091,-2.01282606401,105,3.8133,-1229.467791,2.5819,1.53333333333
+/home/ccollins/mols/noopt/b3lyp/4el4el-.log,4el4el-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4il.log,4il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.42132400613,0.106124397048,33,1.4419,-385.9998281,4.8826,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4le4le-4le-4le.log,4le4le-4le-4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12li12li12li-12li.log,12li12li12li-12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.6270053545,-1.14451080509,117,2.4040,-1530.5902759,2.3346,1.51666666667
+/home/ccollins/mols/noopt/b3lyp/12af12af-12af-12af.log,12af12af-12af-12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.92714691846,-1.38805269062,85,3.6570,-1217.2115952,2.4646,0.45
+/home/ccollins/mols/noopt/b3lyp/4fa.log,4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.92908842893,-0.00108845535434,25,1.3937,-307.412416,5.1912,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/22.log,22,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.053716567,-1.04791039239,15,0.0070,-155.9377154,5.6832,0.05
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-12ae12ae-.log,12ae12ae-12ae12ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71437225348,-2.17555013949,93,0.3202,-1220.896528,2.4334,0.75
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-4ii4ii-.log,4ii4ii-4ii4ii-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-.log,4ee4ee-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fe.log,12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.78758923286,-0.597017761855,28,1.6397,-381.3238044,4.6508,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-.log,4ii4ii-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-4ae-4ae-.log,4ae4ae-4ae-4ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.02567048482,-1.97146476055,105,3.8807,-1229.4673927,2.6907,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/4ai.log,4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.25181544149,0.0492526047839,25,0.6815,-271.4783096,5.3049,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4il4il-4il.log,4il4il-4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-.log,12lf12lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28062279478,-0.334700021459,59,3.5868,-838.2021315,3.9877,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/12el12el-12el-12el.log,12el12el-12el-12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.18211758521,-2.03922110636,125,4.3614,-1678.381294,1.3756,1.5
+/home/ccollins/mols/noopt/b3lyp/4il4il4il-4il-.log,4il4il4il-4il-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ff4ff4ff4ff-.log,4ff4ff4ff4ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.7116327583,-1.18804901926,113,2.9110,-1525.867907,2.2466,1.35
+/home/ccollins/mols/noopt/b3lyp/4el4el4el-4el-.log,4el4el4el-4el-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12al12al.log,12al12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.43899304884,-0.65388955412,51,4.2653,-687.7682726,3.7899,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-4ie4ie.log,4ie4ie-4ie4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.22590955642,-1.82180214933,121,2.2567,-1385.1473386,0.9258,1.58333333333
+/home/ccollins/mols/noopt/b3lyp/222.log,222,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.41805864006,-1.70343262954,22,0.0117,-233.3302532,4.4625,0.05
+/home/ccollins/mols/noopt/b3lyp/12el.log,12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.71085313038,-0.56735735345,32,1.6236,-420.5927759,4.5466,0.05
+/home/ccollins/mols/noopt/b3lyp/4ef4ef4ef.log,4ef4ef4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.94485267477,-1.40682854548,91,5.5451,-1148.1558895,3.2938,0.95
+/home/ccollins/mols/noopt/b3lyp/4aa4aa4aa4aa-.log,4aa4aa4aa4aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99764275945,-1.83513572742,81,0.0563,-925.0880643,2.9988,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-.log,12ie12ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88580397179,-1.29852723773,55,0.6329,-689.6435803,3.5562,0.2
+/home/ccollins/mols/noopt/b3lyp/222-2.log,222-2,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.87274250754,-2.24112957459,29,0.0780,-310.7064454,3.1923,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12fa.log,12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.57806157715,0.390211244531,22,2.1847,-305.1654276,5.6331,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-12ai.log,12ai12ai-12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.33967149775,-1.17444332733,64,1.0237,-805.4199754,3.1382,0.3
+/home/ccollins/mols/noopt/b3lyp/12ia12ia12ia-12ia.log,12ia12ia12ia-12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10075554747,-1.38560366607,85,1.4105,-1073.5065532,2.6709,0.65
+/home/ccollins/mols/noopt/b3lyp/12fa12fa12fa12fa-.log,12fa12fa12fa12fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.90945951895,-1.36220187596,85,4.9692,-1217.2105079,2.4741,0.45
+/home/ccollins/mols/noopt/b3lyp/4el4el4el4el-.log,4el4el4el4el-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fe12fe.log,12fe12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.74539323108,-1.3145819542,55,3.6146,-761.4889864,3.2899,0.2
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-.log,12fe12fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.92498836455,-1.40818911468,55,1.1047,-761.4974283,3.4409,0.2
+/home/ccollins/mols/noopt/b3lyp/12il12il-12il12il-.log,12il12il-12il12il-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57503161133,-1.09253706192,117,5.0670,-1531.2733883,2.4020,1.63333333333
+/home/ccollins/mols/noopt/b3lyp/4ia.log,4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.24664527856,0.0405449619492,25,0.7091,-271.4801713,5.3054,0.05
+/home/ccollins/mols/noopt/b3lyp/4fl4fl4fl.log,4fl4fl4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ee12ee.log,12ee12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.15927837957,-2.02126159301,59,0.4177,-763.3124824,2.9580,0.2
+/home/ccollins/mols/noopt/b3lyp/12ff12ff12ff-12ff.log,12ff12ff12ff-12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.61421600408,-1.03131144824,101,4.8005,-1518.1453746,2.6269,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-12lf-12lf.log,12lf12lf-12lf-12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.48904363834,-1.00600486125,117,6.8092,-1675.05211,2.4023,1.33333333333
+/home/ccollins/mols/noopt/b3lyp/4le4le4le-4le.log,4le4le4le-4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-4fe-4fe.log,4fe4fe-4fe-4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.68195399309,-1.89500077191,121,5.1957,-1528.576154,0.1684,2.28333333333
+/home/ccollins/mols/noopt/b3lyp/4if4if4if-4if-.log,4if4if4if-4if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.27732071512,-1.2348525995,113,4.2942,-1382.1595739,0.6067,1.66666666667
+/home/ccollins/mols/noopt/b3lyp/4ee4ee4ee-4ee-.log,4ee4ee4ee-4ee-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ea4ea4ea4ea.log,4ea4ea4ea4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.10131813195,-2.05582005051,105,2.0664,-1229.5618267,2.8300,1.85
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-4fe4fe-.log,4fe4fe-4fe4fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.77637749508,-2.08194297901,121,3.8819,-1527.429693,0.1702,3.4
+/home/ccollins/mols/noopt/b3lyp/4ei.log,4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.78922191589,-0.778245578353,31,1.2823,-347.6297019,4.7609,0.05
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-4fl.log,4fl4fl-4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12le.log,12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.8308553332,-0.395381407464,32,1.5876,-420.6232689,4.9076,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12fe12fe12fe.log,12fe12fe12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28905832378,-1.66043864305,82,5.2701,-1141.6572615,2.5262,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/4ei4ei4ei-4ei-.log,4ei4ei4ei-4ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.65421673836,-1.61880522574,121,3.2681,-1385.8081704,1.2954,1.55
+/home/ccollins/mols/noopt/b3lyp/4ae4ae4ae-4ae.log,4ae4ae4ae-4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.03138487544,-2.02343850372,105,4.5941,-1229.4543612,2.6189,1.25
+/home/ccollins/mols/noopt/b3lyp/12lf12lf12lf12lf-.log,12lf12lf12lf12lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.68632617131,-0.912125586937,117,4.4489,-1673.4876252,2.6011,1.06666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-12ea-12ea.log,12ea12ea-12ea-12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72199144096,-2.18344144081,93,0.3102,-1220.8925717,2.3868,0.633333333333
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-.log,12ia12ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.75219607705,-0.736340047211,43,0.3240,-537.3298674,4.0127,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-4fa4fa-.log,4fa4fa-4fa4fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88525974411,-1.71731043531,97,3.6379,-1225.6057771,2.9502,1.0
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-4fl-4fl-.log,4fl4fl-4fl-4fl-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-12ef-12ef.log,12ef12ef-12ef-12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.15599465671,-1.96139654852,109,3.2670,-1521.831935,1.9580,0.983333333333
+/home/ccollins/mols/noopt/b3lyp/12if12if12if.log,12if12if12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.93939204119,-0.979609818906,76,1.2728,-1031.0773918,2.9380,0.5
+/home/ccollins/mols/noopt/b3lyp/12ae.log,12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.0226955894,-0.505315398252,24,0.3728,-306.0894787,5.4103,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4ii4ii.log,4ii4ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.19329260939,-0.638106951482,57,0.1285,-620.0815776,4.0779,0.4
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-12fi.log,12fi12fi-12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85530886507,-0.846546151838,76,4.9953,-1031.1179251,2.9992,0.466666666667
+/home/ccollins/mols/noopt/b3lyp/4ea4ea.log,4ea4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.74323467717,-1.56683148257,53,0.8263,-615.404847,3.7487,0.25
+/home/ccollins/mols/noopt/b3lyp/12ll12ll12ll-12ll.log,12ll12ll12ll-12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51380599765,-0.984779981839,133,6.9542,-1831.9067579,2.4768,1.35
+/home/ccollins/mols/noopt/b3lyp/4fa4fa.log,4fa4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.27710367168,-0.868043145086,49,3.5466,-613.605393,4.0504,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-4fi4fi-.log,4fi4fi-4fi4fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.63188504679,-1.59213806956,113,3.2897,-1379.6066491,0.5583,1.85
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-4fl4fl-.log,4fl4fl-4fl4fl-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-.log,4ff4ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.02782903873,-0.974439655973,57,2.2928,-763.0495558,2.6225,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/4la4la-4la-4la.log,4la4la-4la-4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ie12ie12ie12ie-.log,12ie12ie12ie12ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28742564074,-1.92520540799,109,0.4664,-1378.1103944,2.2571,1.25
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-12ai12ai.log,12ai12ai-12ai12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10048343364,-1.38560366607,85,1.4130,-1073.50675,2.6709,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-12ii12ii.log,12ii12ii-12ii12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66646186109,-1.16192609076,101,2.1342,-1230.6983011,2.4707,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/12al12al-12al12al.log,12al12al-12al12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.79544382058,-1.38995748749,101,7.2237,-1374.2423813,2.3334,0.9
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-4ea-4ea.log,4ea4ea-4ea-4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.02240511876,-2.01772411311,105,4.0288,-1229.5369464,2.7580,1.3
+/home/ccollins/mols/noopt/b3lyp/12fa12fa12fa-12fa.log,12fa12fa12fa-12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.91789504795,-1.34533081796,85,6.9087,-1217.2116604,2.5269,0.433333333333
+/home/ccollins/mols/noopt/b3lyp/12ii12ii12ii12ii.log,12ii12ii12ii12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.56605185466,-1.16355877379,101,1.9978,-1230.6221599,2.3616,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/4ff4ff4ff4ff.log,4ff4ff4ff4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05640099179,-0.901513147232,113,0.4588,-1526.8661924,2.9615,1.55
+/home/ccollins/mols/noopt/b3lyp/4ef4ef.log,4ef4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.28064115158,-1.14287812206,61,3.6424,-765.8598443,3.7806,0.3
+/home/ccollins/mols/noopt/b3lyp/4lf4lf4lf-4lf-.log,4lf4lf4lf-4lf-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-12ef12ef-.log,12ef12ef-12ef12ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.31654182147,-2.0000367136,109,4.0056,-1521.8499532,2.1552,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/12ee12ee12ee-12ee.log,12ee12ee12ee-12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.67137826699,-2.56766618089,117,0.3077,-1525.4364453,1.8652,1.45
+/home/ccollins/mols/noopt/b3lyp/4if4if-4if-4if.log,4if4if-4if-4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.39786714561,-1.476761802,113,4.0725,-1380.9503271,0.4534,1.76666666667
+/home/ccollins/mols/noopt/b3lyp/4al4al4al-4al.log,4al4al4al-4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-12ae.log,12ae12ae-12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88852511018,-1.95486581639,70,0.4241,-915.9596737,2.8513,0.333333333333
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-4ii4ii.log,4ii4ii-4ii4ii,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ii4ii4ii.log,4ii4ii4ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.82104087821,-0.95375900424,85,0.1426,-929.3819226,3.5567,1.11666666667
+/home/ccollins/mols/noopt/b3lyp/4le4le-4le4le.log,4le4le-4le4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ae12ae12ae.log,12ae12ae12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.89070202089,-1.96928784984,70,0.3678,-915.9570243,2.9022,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/12lf.log,12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.4909851488,0.788585904219,30,0.1352,-419.696336,5.5827,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12af12af12af-12af-.log,12af12af12af-12af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.04252318602,-1.47730602968,85,3.6966,-1217.2090782,2.5216,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-12ll12ll.log,12ll12ll-12ll12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57040567607,-1.05607380755,133,6.0387,-1831.9104908,2.4234,1.5
+/home/ccollins/mols/noopt/b3lyp/12le12le-12le12le.log,12le12le-12le12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.24443165425,-2.05636427819,125,2.0222,-1678.3234658,1.4633,1.68333333333
+/home/ccollins/mols/noopt/b3lyp/12li12li.log,12li12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.33450133482,-0.621780121167,59,2.3969,-765.644576,2.7620,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/12ff12ff.log,12ff12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.29776596661,-0.340686525908,51,4.6842,-759.6397182,3.9789,0.15
+/home/ccollins/mols/noopt/b3lyp/12ef12ef12ef.log,12ef12ef12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.55491354407,-1.79567922082,82,1.4648,-1141.6652025,2.6377,0.45
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-12ea-12ea-.log,12ea12ea-12ea-12ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6996781062,-2.19024428677,93,0.3648,-1220.8935733,2.4419,0.7
+/home/ccollins/mols/noopt/b3lyp/12ii12ii12ii12ii-.log,12ii12ii12ii12ii-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.61394389025,-1.16491934298,101,1.9603,-1230.6629682,2.3930,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12al12al12al12al-.log,12al12al12al12al-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.67081568251,-1.22832186737,101,5.5109,-1374.3948364,2.4043,0.783333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il12il-12il-.log,12il12il12il-12il-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.47053989731,-0.953486890402,117,4.0013,-1530.7449086,2.3834,1.4
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-12fl-12fl-.log,12fl12fl-12fl-12fl-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.68605405747,-0.911581359259,117,4.4507,-1673.4890828,2.6013,1.08333333333
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-12fa-12fa.log,12fa12fa-12fa-12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.02293098964,-1.40628431781,85,4.4455,-1217.2086618,2.5331,0.533333333333
+/home/ccollins/mols/noopt/b3lyp/4fe4fe4fe.log,4fe4fe4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.98049958762,-1.3766239094,91,4.9544,-1148.118648,3.3477,0.916666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia4ia.log,4ia4ia4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.04226942898,-1.26696203245,73,1.9482,-811.7976589,3.5527,0.7
+/home/ccollins/mols/noopt/b3lyp/12el12el-12el12el.log,12el12el-12el12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.13640246033,-1.93772264456,125,6.6916,-1678.784397,2.0455,1.7
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-12fi12fi.log,12fi12fi-12fi12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.53285396635,-1.04682193704,101,7.5154,-1374.4335691,2.4708,0.9
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-.log,12ll12ll-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.03082229096,-0.108845535434,67,0.0012,-916.8137164,3.9436,0.4
+/home/ccollins/mols/noopt/b3lyp/4il4il4il.log,4il4il4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-4ii.log,4ii4ii-4ii,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ef.log,12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.81235159217,-0.418511083744,28,1.4564,-381.3199593,4.8843,0.05
+/home/ccollins/mols/noopt/b3lyp/4aa4aa4aa4aa.log,4aa4aa4aa4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99845910097,-1.83595206893,81,0.1036,-925.0884619,2.9995,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12af12af-12af12af-.log,12af12af-12af12af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05150294269,-1.48329253413,85,4.5087,-1217.2197961,2.5187,0.45
+/home/ccollins/mols/noopt/b3lyp/4ef4ef4ef4ef-.log,4ef4ef4ef4ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.59270065404,-1.66560880598,121,8.9992,-1530.0665082,0.2473,1.86666666667
+/home/ccollins/mols/noopt/b3lyp/4ae4ae4ae4ae.log,4ae4ae4ae4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.09778065205,-2.0226221622,105,2.5235,-1229.4826586,2.8502,1.46666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia4ia4ia.log,4ia4ia4ia4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.79546217738,-1.45880228865,97,2.5417,-1081.9572593,3.1237,1.36666666667
+/home/ccollins/mols/noopt/b3lyp/2.log,2,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.26353469335,0.311842459018,8,0.0047,-78.5508867,7.4696,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/4if4if.log,4if4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.91709706323,-0.594296623469,57,3.2055,-692.0863499,3.8984,0.3
+/home/ccollins/mols/noopt/b3lyp/4al.log,4al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.8915367192,0.0617698413588,29,1.6869,-346.6986209,5.2089,0.05
+/home/ccollins/mols/noopt/b3lyp/4ia4ia.log,4ia4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.48336596132,-0.905866968649,49,1.3430,-541.6384145,4.2655,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/22-2-2.log,22-2-2,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88634819947,-2.21691144295,29,0.0163,-310.7064502,3.2927,0.1
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-4lf-4lf.log,4lf4lf-4lf-4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ll4ll4ll-4ll.log,4ll4ll4ll-4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ll4ll4ll4ll-.log,4ll4ll4ll4ll-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-4ea.log,4ea4ea-4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.2300279776,-1.8498298747,79,3.2832,-922.4582381,3.0650,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/2222.log,2222,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.02675894018,-2.09010639417,29,0.0177,-310.7248251,3.7099,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4le4le-4le.log,4le4le-4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-.log,4fi4fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10347668586,-1.02777396834,57,1.2854,-690.709659,2.2274,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-.log,4fe4fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.92495165095,-1.66234343992,61,0.8823,-764.5546533,0.0087,0.366666666667
+/home/ccollins/mols/noopt/b3lyp/12ef12ef12ef-12ef-.log,12ef12ef12ef-12ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30674572328,-2.02425484523,109,3.2753,-1521.8422801,2.1488,0.95
+/home/ccollins/mols/noopt/b3lyp/1111-11.log,1111-11,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.91767800451,-4.94022673951,22,1.5491,-341.0072575,0.5030,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12ea12ea12ea.log,12ea12ea12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.89070202089,-1.96928784984,70,0.3713,-915.9569121,2.9024,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/4if4if-4if4if-.log,4if4if-4if4if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.3575942975,-1.39458342275,113,3.9051,-1380.6773345,0.5310,1.88333333333
+/home/ccollins/mols/noopt/b3lyp/4fi.log,4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.44771904847,0.0446266695279,29,1.3084,-346.7117985,4.8530,0.05
+/home/ccollins/mols/noopt/b3lyp/4lf4lf4lf.log,4lf4lf4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12li12li12li-12li-.log,12li12li12li-12li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.47108412499,-0.95375900424,117,4.0104,-1530.7455227,2.3843,1.4
+/home/ccollins/mols/noopt/b3lyp/12fl12fl12fl-12fl.log,12fl12fl12fl-12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.43298818759,-0.900152578039,117,9.7257,-1675.0459651,2.5473,1.25
+/home/ccollins/mols/noopt/b3lyp/12li12li-12li-12li.log,12li12li-12li-12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.56088169172,-1.12138112881,117,3.5154,-1531.2978508,2.3166,1.58333333333
+/home/ccollins/mols/noopt/b3lyp/12af12af-12af12af.log,12af12af-12af12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.03191074631,-1.43349570167,85,2.9353,-1217.2082764,2.5472,0.55
+/home/ccollins/mols/noopt/b3lyp/4af4af4af.log,4af4af4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.79192469748,-1.19131438532,73,6.0802,-919.7842922,3.3988,0.433333333333
+/home/ccollins/mols/noopt/b3lyp/12fa12fa12fa.log,12fa12fa12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.03708090925,-1.02342014692,64,5.4152,-913.1846385,3.0068,0.25
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-.log,12fl12fl-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28062279478,-0.334700021459,59,3.5860,-838.2021974,3.9877,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4fl4fl-4fl-4fl.log,4fl4fl-4fl-4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12li12li-12li12li.log,12li12li-12li12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66564551958,-1.10587064001,117,0.8370,-1530.5911966,2.3913,1.58333333333
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-4ii-4ii.log,4ii4ii-4ii-4ii,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ii.log,4ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.73262223747,0.102859030985,29,0.1260,-310.7803389,5.0174,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-4ae-4ae.log,4ae4ae-4ae-4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.00961576835,-1.98915216006,105,4.7967,-1229.4538082,2.6047,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/4le4le-4le-4le-.log,4le4le-4le-4le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.60848325667,-1.6354041699,137,11.3767,-1687.0301419,0.0391,2.41666666667
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-12ff12ff.log,12ff12ff-12ff12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.53856835696,-0.94613981676,101,4.9423,-1518.1428645,2.6399,0.6
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-4fa-4fa.log,4fa4fa-4fa-4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.79328526667,-1.58479099592,97,4.0158,-1225.6696593,2.9878,1.0
+/home/ccollins/mols/noopt/b3lyp/4if4if-.log,4if4if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.34290015022,-0.902601602586,57,1.9929,-691.6060329,0.8468,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/12ii12ii.log,12ii12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.36144060484,-0.635930040773,51,2.2481,-615.9049317,3.6305,0.183333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il12il12il-.log,12il12il12il12il-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.39625281938,-0.92110534361,117,5.5044,-1531.4229487,2.4089,1.46666666667
+/home/ccollins/mols/noopt/b3lyp/12le12le12le12le-.log,12le12le12le12le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.08742196938,-1.94887931195,125,4.1238,-1678.2028173,1.3824,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-12ff-12ff-.log,12ff12ff-12ff-12ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.6996597494,-1.12954454397,101,4.3063,-1518.1490138,2.5886,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/111111-11.log,111111-11,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.14815842579,-5.45969205737,29,2.9498,-454.2716287,0.1437,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-.log,4ai4ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.48799189658,-0.892533390559,49,0.5535,-541.5958229,3.9506,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-.log,4ie4ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66537340574,-1.68166352245,61,3.0225,-693.266178,1.0450,0.333333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-4ae4ae.log,4ae4ae-4ae4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.97805056307,-1.95459370256,105,4.9150,-1229.452795,2.6573,1.25
+/home/ccollins/mols/noopt/b3lyp/4li4li-4li-4li-.log,4li4li-4li-4li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.03677208181,-1.01416827641,129,5.9189,-1539.4402931,0.6837,1.5
+/home/ccollins/mols/noopt/b3lyp/4fl4fl4fl4fl-.log,4fl4fl4fl4fl-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4le4le.log,4le4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12lf12lf12lf-12lf-.log,12lf12lf12lf-12lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51462233916,-0.872669080342,117,6.3348,-1674.3456949,2.6011,1.01666666667
+/home/ccollins/mols/noopt/b3lyp/12fi12fi12fi.log,12fi12fi12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.72170097033,-0.804640620696,76,5.9329,-1031.0966772,2.9202,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/12la12la12la-12la.log,12la12la12la-12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.90945951895,-1.51649042243,101,2.8512,-1374.1480142,2.3118,1.08333333333
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-12ff-12ff.log,12ff12ff-12ff-12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.5769364082,-0.996480876898,101,0.7173,-1518.1441752,2.5796,0.516666666667
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-12ff.log,12ff12ff-12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.84007049011,-0.767633138648,76,2.9523,-1138.8956161,3.1222,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/12ai.log,12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.80582086005,0.381503601696,22,1.1128,-269.2423876,5.9644,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/4ll4ll4ll4ll.log,4ll4ll4ll4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ea.log,12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.02323981708,-0.504771170575,24,0.3726,-306.0894403,5.4111,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12le12le-12le-12le-.log,12le12le-12le-12le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.97231781566,-1.80112149759,125,4.8203,-1678.9354171,1.9846,1.71666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-4aa-4aa.log,4aa4aa-4aa-4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99764275945,-1.83513572742,81,0.0646,-925.0876731,2.9982,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-4ll.log,4ll4ll-4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fe4fe4fe-4fe.log,4fe4fe4fe-4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.66780407349,-2.24983721742,121,6.9940,-1528.7015376,-0.4936,2.43333333333
+/home/ccollins/mols/noopt/b3lyp/12lf12lf12lf12lf.log,12lf12lf12lf12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.74020471135,-0.862872982153,117,1.3401,-1672.6217316,2.6090,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/12lf12lf.log,12lf12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.45368719612,-0.34422400581,59,0.7800,-837.336902,3.0979,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/12fa12fa.log,12fa12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.54185207982,-0.643821342092,43,4.1646,-609.1736692,3.8869,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12ei12ei12ei-12ei-.log,12ei12ei12ei-12ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.27871799791,-1.90642955313,109,0.8892,-1378.109765,2.2841,1.33333333333
+/home/ccollins/mols/noopt/b3lyp/12ei.log,12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.85452923715,-0.410347668586,28,0.8170,-345.3989934,5.1223,0.05
+/home/ccollins/mols/noopt/b3lyp/4af4af-4af4af-.log,4af4af-4af4af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.69015412185,-1.52927977285,97,4.5604,-1225.8011972,2.9477,0.983333333333
+/home/ccollins/mols/noopt/b3lyp/12ei12ei12ei12ei-.log,12ei12ei12ei12ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.26075848456,-1.92139581425,109,1.1969,-1378.1085027,2.1753,1.28333333333
+/home/ccollins/mols/noopt/b3lyp/12li12li12li12li-.log,12li12li12li12li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.59163055548,-0.95375900424,117,3.4382,-1530.067333,2.4059,1.55
+/home/ccollins/mols/noopt/b3lyp/4il4il4il-4il.log,4il4il4il-4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12if12if-.log,12if12if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.40960475427,-0.535792148174,51,1.6410,-687.7986352,3.8778,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea12ea12ea.log,12ea12ea12ea12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6912425772,-2.17418957029,93,0.1531,-1220.8918401,2.4514,0.683333333333
+/home/ccollins/mols/noopt/b3lyp/12aa12aa12aa12aa.log,12aa12aa12aa12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.44797280551,-1.6770375872,69,0.6286,-916.2655917,2.7365,0.383333333333
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-12ee-12ee.log,12ee12ee-12ee-12ee,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4al4al4al4al.log,4al4al4al4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ei4ei.log,4ei4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.45479400827,-1.31267715733,61,2.3407,-693.8513528,3.6303,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-12ai-12ai.log,12ai12ai-12ai-12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.1037487997,-1.39757667497,85,0.3069,-1073.5070079,2.6276,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li4li.log,4li4li4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ie.log,12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.85452923715,-0.410891896263,28,0.8171,-345.398983,5.1220,0.05
+/home/ccollins/mols/noopt/b3lyp/4ff4ff4ff-4ff.log,4ff4ff4ff-4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.22618167026,-1.26777837397,113,0.2746,-1525.018258,1.6526,1.21666666667
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-.log,4fa4fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.58159905705,-1.15702804166,49,1.5997,-613.4151285,3.9967,0.2
+/home/ccollins/mols/noopt/b3lyp/4al4al4al4al-.log,4al4al4al4al-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4lf4lf.log,4lf4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-4ea4ea-.log,4ea4ea-4ea4ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.97342462782,-1.98724736319,105,5.1384,-1229.5243407,2.7306,1.51666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af.log,4af4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.24798749095,-0.855253794672,49,3.6628,-613.597844,4.0349,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-4lf-4lf-.log,4lf4lf-4lf-4lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.17720117932,-1.28546577348,129,8.6756,-1683.3893724,1.2604,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-.log,4ll4ll-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/1111-11-11-.log,1111-11-11-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.52991578452,-5.45044018686,29,4.1220,-454.2225473,0.3965,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4le4le-4le4le-.log,4le4le-4le4le-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-4ie.log,4ie4ie-4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.13692833121,-1.63159457616,91,1.8030,-1038.9047268,1.0032,1.13333333333
+/home/ccollins/mols/noopt/b3lyp/4el4el-4el4el.log,4el4el-4el4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-12fi-12fi.log,12fi12fi-12fi-12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.64578120936,-1.13199356851,101,4.0681,-1374.422772,2.4435,1.01666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia4ia-4ia-.log,4ia4ia4ia-4ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.74865859715,-1.44628505208,97,0.6242,-1081.9336404,3.0810,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/12ei12ei.log,12ei12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88362706108,-1.39676033346,55,1.0717,-689.6288601,3.3760,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4ii4ii4ii4ii.log,4ii4ii4ii4ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.59273736764,-1.11974844578,113,0.1603,-1238.6823754,3.2001,1.53333333333
+/home/ccollins/mols/noopt/b3lyp/12la12la.log,12la12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.56389330075,-0.781783058254,51,1.1884,-687.6808639,3.5665,0.2
+/home/ccollins/mols/noopt/b3lyp/1111-1111.log,1111-1111,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.14353249053,-5.45996417121,29,2.9205,-454.27171,0.1387,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-12fa.log,12fa12fa-12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.18864831734,-1.12301381184,64,4.7344,-913.1977023,3.0454,0.25
+/home/ccollins/mols/noopt/b3lyp/12ia12ia12ia12ia-.log,12ia12ia12ia12ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07653741584,-1.35730382686,85,1.1924,-1073.5021676,2.6456,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-12fl12fl-.log,12fl12fl-12fl12fl-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.59924974296,-1.07376120706,117,7.9006,-1675.0430872,2.4929,1.33333333333
+/home/ccollins/mols/noopt/b3lyp/12af12af.log,12af12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.73913461279,-0.760830292683,43,1.1880,-609.1735292,3.9526,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-12ae12ae.log,12ae12ae-12ae12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.69287526024,-2.15405314624,93,0.3744,-1220.8947565,2.4399,0.75
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-4ll4ll.log,4ll4ll-4ll4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fi4fi4fi.log,4fi4fi4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.576954765,-0.902329488748,85,5.1103,-1037.3831457,3.3792,0.916666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li4li-4li.log,4li4li4li-4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-12ll.log,12ll12ll-12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.81802926918,-0.912941928452,100,3.6568,-1374.3212714,2.8197,0.95
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-.log,4lf4lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51026851775,-0.807905986759,65,2.6203,-842.3990789,1.8267,0.3
+/home/ccollins/mols/noopt/b3lyp/4il4il-4il4il-.log,4il4il-4il4il-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4if4if-4if.log,4if4if-4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.5029030873,-1.28383309044,85,4.4769,-1035.7773222,0.6592,1.0
+/home/ccollins/mols/noopt/b3lyp/4ii4ii4ii-4ii.log,4ii4ii4ii-4ii,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12el12el-.log,12el12el-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.70131078923,-1.20437584958,63,2.2651,-840.0613938,3.3456,0.25
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-12fl-12fl.log,12fl12fl-12fl-12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.62183519157,-0.965459899299,117,6.4368,-1674.1881913,2.5584,1.13333333333
+/home/ccollins/mols/noopt/b3lyp/4la4la4la4la-.log,4la4la4la4la-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4il4il4il4il-.log,4il4il4il4il-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12le12le-12le-12le.log,12le12le-12le-12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.16143693348,-2.05745273354,125,3.9968,-1678.717463,1.8254,1.6
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-4fa.log,4fa4fa-4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.95981893589,-1.33988854119,73,3.7239,-919.6024372,3.3678,0.5
+/home/ccollins/mols/noopt/b3lyp/4fl4fl4fl-4fl.log,4fl4fl4fl-4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12el12el.log,12el12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71110688742,-1.31050024662,63,3.5527,-840.0266614,3.2583,0.25
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-4aa-4aa-.log,4aa4aa-4aa-4aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99845910097,-1.83595206893,81,0.1283,-925.088071,2.9988,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12al12al-12al-12al.log,12al12al-12al-12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85122715749,-1.43540049854,101,4.6709,-1374.1464392,2.2798,1.03333333333
+/home/ccollins/mols/noopt/b3lyp/12af12af-12af.log,12af12af-12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.24987393102,-1.19240284068,64,1.8195,-913.1974641,3.0302,0.2
+/home/ccollins/mols/noopt/b3lyp/12ea12ea.log,12ea12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.25125285701,-1.58152562986,47,0.5118,-611.0221134,3.6445,0.2
+/home/ccollins/mols/noopt/b3lyp/12il12il-12il.log,12il12il-12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.82809748121,-0.892805504397,88,5.3655,-1148.7240951,2.8575,0.75
+/home/ccollins/mols/noopt/b3lyp/12le12le-12le12le-.log,12le12le-12le12le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.1728657147,-1.94098801063,125,5.7126,-1678.6938724,2.0365,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-4ef-4ef.log,4ef4ef-4ef-4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.50480788417,-1.77799182131,121,5.1199,-1528.7745611,0.2085,2.58333333333
+/home/ccollins/mols/noopt/b3lyp/12fl12fl12fl12fl.log,12fl12fl12fl12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.17203101638,-0.612256136816,117,6.2113,-1675.1454045,2.5700,1.16666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa4aa.log,4aa4aa4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.2504365155,-1.61417929049,61,0.0774,-694.1174529,3.4616,0.283333333333
+/home/ccollins/mols/noopt/b3lyp/4al4al-4al.log,4al4al-4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ae12ae.log,12ae12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.25098074317,-1.58179774369,47,0.5097,-611.0221884,3.6443,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-.log,4ia4ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.44907961766,-0.875390218728,49,0.6441,-541.6158822,4.1224,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-12ll-12ll-.log,12ll12ll-12ll-12ll-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.34727232843,-0.612528250655,133,6.3006,-1831.9837932,2.6234,1.25
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-.log,4ea4ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.64200832922,-1.63241091767,53,2.1328,-615.3923916,3.1782,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/111111-.log,111111-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.66925642668,-5.05043284414,22,1.9601,-341.0198453,1.1807,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4al4al-.log,4al4al-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-12ae-12ae-.log,12ae12ae-12ae-12ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.68960989417,-2.16330501675,93,0.3489,-1220.8929019,2.3807,0.716666666667
+/home/ccollins/mols/noopt/b3lyp/4le4le-.log,4le4le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.50888959175,-1.54397392013,69,8.0294,-843.8912814,-0.0992,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/4fe4fe4fe4fe-.log,4fe4fe4fe4fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.87025676939,-1.82044158013,121,2.8049,-1529.1106582,0.0608,1.78333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-4ee-4ee-.log,4ee4ee-4ee-4ee-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4li4li.log,4li4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12al12al12al.log,12al12al12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.9274190323,-1.02233169156,76,5.4985,-1031.0769541,2.9244,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/12el12el-12el.log,12el12el-12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.36552231242,-1.71350084157,94,4.4729,-1259.3441988,2.4815,0.8
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-12fl12fl.log,12fl12fl-12fl12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.39135477028,-0.909404448551,117,9.9055,-1675.0459453,2.4586,1.2
+/home/ccollins/mols/noopt/b3lyp/12ff12ff12ff12ff.log,12ff12ff12ff12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.50156087491,-0.913758269968,101,4.7578,-1518.1339437,2.6099,0.5
+/home/ccollins/mols/noopt/b3lyp/12fi.log,12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.40472506197,0.503682715221,26,2.6302,-344.4713532,5.4855,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-12ef12ef.log,12ef12ef-12ef12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30157556035,-1.96819939448,109,3.6767,-1521.8446083,2.1915,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/4if4if4if.log,4if4if4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.53559346153,-0.886002658432,85,5.3649,-1037.4592319,3.3748,0.816666666667
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-4ff-4ff.log,4ff4ff-4ff-4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.78020544562,-1.49907513676,113,0.0985,-1524.6966675,2.0465,1.3
+/home/ccollins/mols/noopt/b3lyp/4li4li-4li.log,4li4li-4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4il4il.log,4il4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ai4ai4ai-4ai.log,4ai4ai4ai-4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.77260461494,-1.44356391369,97,1.1063,-1081.8266953,3.0947,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12ae12ae12ae-12ae.log,12ae12ae12ae-12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71192322894,-2.18806737606,93,0.3886,-1220.8952061,2.4536,0.733333333333
+/home/ccollins/mols/noopt/b3lyp/12ll12ll.log,12ll12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.31490913844,-0.217691070868,67,6.1012,-916.56759,4.0184,0.333333333333
+/home/ccollins/mols/noopt/b3lyp/1111-.log,1111-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.98245945489,-4.07490473281,15,0.0694,-227.7539481,2.2132,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4ia4ia4ia-4ia.log,4ia4ia4ia-4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.69205891872,-1.42043423741,97,1.3064,-1081.910107,3.0469,1.4
+/home/ccollins/mols/noopt/b3lyp/12if12if-12if.log,12if12if-12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.90619415289,-0.900152578039,76,1.2415,-1031.116908,2.9841,0.5
+/home/ccollins/mols/noopt/b3lyp/12lf12lf12lf-12lf.log,12lf12lf12lf-12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66020324281,-1.06777470261,117,5.1643,-1674.178038,2.5444,1.08333333333
+/home/ccollins/mols/noopt/b3lyp/4ee.log,4ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.91439428164,-1.55213733529,33,0.0215,-384.4776402,4.3921,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4el4el-4el.log,4el4el-4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fi12fi12fi12fi-.log,12fi12fi12fi12fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57394315597,-1.10287738778,101,5.0403,-1374.4312251,2.4342,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/12if12if-12if-12if.log,12if12if-12if-12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57584795284,-1.10178893243,101,3.3124,-1374.4358962,2.4104,1.0
+/home/ccollins/mols/noopt/b3lyp/4al4al-4al4al.log,4al4al-4al4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-4aa4aa.log,4aa4aa-4aa4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99818698713,-1.83540784126,81,0.0771,-925.0876775,2.9970,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12fl12fl12fl.log,12fl12fl12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.52605112038,-0.492526047839,88,6.7386,-1256.6477452,3.0928,0.7
+/home/ccollins/mols/noopt/b3lyp/12aa12aa12aa-12aa.log,12aa12aa12aa-12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.50402825626,-1.72139214289,69,0.9001,-916.2749395,2.7640,0.35
+/home/ccollins/mols/noopt/b3lyp/12ia12ia12ia.log,12ia12ia12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.31871873218,-1.14859251267,64,1.7036,-805.4104041,3.1656,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-12lf12lf-.log,12lf12lf-12lf12lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.59924974296,-1.07403332089,117,7.9005,-1675.0427864,2.4930,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-4ie-4ie-.log,4ie4ie-4ie-4ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.81231487857,-1.94779085659,121,5.1784,-1385.7494693,0.9643,1.41666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea12ea-12ea-.log,12ea12ea12ea-12ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.68960989417,-2.16493769978,93,0.2175,-1220.8933226,2.4611,0.7
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-4ff-4ff-.log,4ff4ff-4ff-4ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.18021278834,-1.70533742641,113,3.2900,-1525.212922,2.2056,1.28333333333
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-12fe12fe.log,12fe12fe-12fe12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.13204863891,-1.86125865592,109,6.9298,-1521.8375282,2.1289,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/4if.log,4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.43846717796,0.0606813860044,29,1.2709,-346.7140333,4.8546,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4el4el-4el-4el.log,4el4el-4el-4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12la12la-12la.log,12la12la-12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.16851189328,-1.28927536722,76,2.2392,-1030.9326865,2.7685,0.466666666667
+/home/ccollins/mols/noopt/b3lyp/4il4il-.log,4il4il-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ee12ee12ee-12ee-.log,12ee12ee12ee-12ee-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.66811290092,-2.48793682618,117,0.0052,-1525.4751999,2.0959,1.25
+/home/ccollins/mols/noopt/b3lyp/12ea12ea12ea12ea-.log,12ea12ea12ea12ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.68960989417,-2.16330501675,93,0.3423,-1220.8927519,2.3810,0.716666666667
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-12ia-12ia-.log,12ia12ia-12ia-12ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07299993594,-1.3766239094,85,1.5944,-1073.5012208,2.6367,0.65
+/home/ccollins/mols/noopt/b3lyp/12fl12fl.log,12fl12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10565359657,-0.193745053072,59,5.6725,-838.1501476,3.9680,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-12ef-12ef-.log,12ef12ef-12ef-12ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.18919254501,-1.96384557307,109,4.7665,-1521.837828,2.0869,0.9
+/home/ccollins/mols/noopt/b3lyp/4la4la-4la-4la-.log,4la4la-4la-4la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.39599906234,-1.32982032916,113,6.7337,-1383.1446311,2.8933,1.68333333333
+/home/ccollins/mols/noopt/b3lyp/12if12if-12if12if.log,12if12if-12if12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.65367251068,-1.13199356851,101,1.9948,-1374.4208637,2.5017,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/4if4if4if-4if.log,4if4if4if-4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.42507852947,-1.30777910824,113,6.1349,-1381.1560462,0.6634,1.8
+/home/ccollins/mols/noopt/b3lyp/4el4el4el.log,4el4el4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-.log,12ei12ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88580397179,-1.29852723773,55,0.6333,-689.6436012,3.5563,0.2
+/home/ccollins/mols/noopt/b3lyp/4ea4ea4ea.log,4ea4ea4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.34050619607,-1.88139507998,79,1.4315,-922.483178,3.2268,0.683333333333
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-12ai12ai-.log,12ai12ai-12ai12ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.11953140234,-1.41145448074,85,0.2021,-1073.5104456,2.6591,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-12aa.log,12aa12aa-12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.73831827128,-1.48302042029,52,0.6485,-687.4967328,3.2546,0.166666666667
+/home/ccollins/mols/noopt/b3lyp/4aa.log,4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.84665629263,-0.10966187695,21,0.0230,-232.1771001,5.5505,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12af12af12af.log,12af12af12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.33613401785,-1.21662097231,64,0.7079,-913.1836103,3.0958,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-12ie-12ie.log,12ie12ie-12ie-12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.2539556386,-1.9809887449,109,0.3305,-1378.1016829,1.9965,1.3
+/home/ccollins/mols/noopt/b3lyp/4fa4fa-4fa4fa.log,4fa4fa-4fa4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.62158143453,-1.43839375076,97,6.0909,-1225.7970783,2.9831,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-4ee4ee.log,4ee4ee-4ee4ee,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fa12fa12fa-12fa-.log,12fa12fa12fa-12fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.04279529986,-1.47730602968,85,3.7012,-1217.2090625,2.5213,0.416666666667
+/home/ccollins/mols/noopt/b3lyp/4ff.log,4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.16689756705,-0.000816341515755,29,0.0704,-382.6440557,4.6498,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4af4af4af4af-.log,4af4af4af4af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.47246305098,-1.34070488271,97,6.8604,-1225.9670643,2.9522,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4al4al4al.log,4al4al4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-12ii-12ii-.log,12ii12ii-12ii-12ii-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.61394389025,-1.16519145682,101,1.9683,-1230.6629675,2.3929,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/4ee4ee-4ee4ee-.log,4ee4ee-4ee4ee-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12le12le12le.log,12le12le12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.24252685738,-1.90289207322,94,0.7632,-1258.7607835,1.4485,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/4el4el4el4el.log,4el4el4el4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ei4ei4ei-4ei.log,4ei4ei4ei-4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.20414044934,-1.56819205176,121,1.9614,-1385.3204047,1.1913,1.61666666667
+/home/ccollins/mols/noopt/b3lyp/12ie12ie.log,12ie12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88389917492,-1.39648821962,55,1.0700,-689.6288492,3.3762,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af4af-4af-.log,4af4af4af-4af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.57668265116,-1.38941325981,97,4.6106,-1225.7673881,2.9908,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4ll.log,4ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.12499203591,0.102042689469,37,0.0629,-461.2248036,4.7095,0.1
+/home/ccollins/mols/noopt/b3lyp/12if12if12if12if.log,12if12if12if12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.67897909767,-1.18777690542,101,0.4897,-1374.3810698,2.4376,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-.log,4ei4ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.64877446159,-1.28546577348,61,3.2557,-693.3640999,1.3691,0.366666666667
+/home/ccollins/mols/noopt/b3lyp/12ae12ae12ae-12ae-.log,12ae12ae12ae-12ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.68960989417,-2.16520981362,93,0.2154,-1220.8934726,2.4610,0.683333333333
+/home/ccollins/mols/noopt/b3lyp/4fl.log,4fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.16172740412,0.0487083771067,33,2.6760,-421.930314,4.6877,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-12ll12ll-.log,12ll12ll-12ll12ll-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.44169583042,-0.981242501937,133,0.0055,-1832.138473,2.3902,1.33333333333
+/home/ccollins/mols/noopt/b3lyp/12el12el12el12el.log,12el12el12el12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.98673984911,-1.83159824752,125,6.0158,-1678.9015115,2.0244,1.61666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la-4la4la-.log,4la4la-4la4la-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/22-.log,22-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.89752322365,-1.27811869983,15,0.0804,-155.9267689,4.9312,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4fa4fa4fa4fa.log,4fa4fa4fa4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.54049151063,-1.3956718781,97,8.3437,-1225.9942641,2.9604,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il.log,12il12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.23953360515,-0.432116775673,59,4.7805,-766.2505218,3.7781,0.25
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-.log,12fi12fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.40987686811,-0.535520034335,51,1.6408,-687.7987252,3.8778,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af-4af-4af.log,4af4af-4af-4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.80362559254,-1.58860058966,97,4.1518,-1225.6081446,2.9953,1.0
+/home/ccollins/mols/noopt/b3lyp/4al4al-4al4al-.log,4al4al-4al4al-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-12ie-12ie-.log,12ie12ie-12ie-12ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.2610305984,-1.92139581425,109,1.2031,-1378.1084809,2.1751,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/4le.log,4le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.55003385178,-0.491981820162,35,2.1950,-422.8566585,4.6874,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12if12if.log,12if12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.39001255789,-0.563819873548,51,1.5801,-687.774024,3.7642,0.2
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-12ei-12ei.log,12ei12ei-12ei-12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.25368352476,-1.9809887449,109,0.3284,-1378.1017077,1.9965,1.3
+/home/ccollins/mols/noopt/b3lyp/4ea4ea4ea4ea-.log,4ea4ea4ea4ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.03573869685,-2.00602321805,105,3.2809,-1229.5487426,2.7896,1.38333333333
+/home/ccollins/mols/noopt/b3lyp/12aa12aa.log,12aa12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.13778138632,-1.01797787015,35,0.9719,-458.7106521,4.1487,0.05
+/home/ccollins/mols/noopt/b3lyp/1111-1111-.log,1111-1111-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.81998913645,-5.31792074746,29,0.0782,-454.2604889,0.1703,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12la12la-.log,12la12la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.52171565577,-0.616337844395,51,2.2366,-687.7763472,3.8775,0.166666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af-4af.log,4af4af-4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.9619958466,-1.338527972,73,3.7379,-919.619525,3.3772,0.466666666667
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-12fa12fa-.log,12fa12fa-12fa12fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05177505653,-1.48329253413,85,4.5140,-1217.2197799,2.5184,0.45
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-4ei.log,4ei4ei-4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.13747255888,-1.33961642735,91,2.4372,-1039.098516,1.2864,1.1
+/home/ccollins/mols/noopt/b3lyp/12al12al12al12al.log,12al12al12al12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.61530445944,-1.19648454826,101,5.6545,-1374.3860889,2.3878,0.8
+/home/ccollins/mols/noopt/b3lyp/12le12le-12le.log,12le12le-12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.46538809118,-1.85064621622,94,2.4618,-1259.2528603,2.3295,0.783333333333
+/home/ccollins/mols/noopt/b3lyp/12ie12ie12ie-12ie.log,12ie12ie12ie-12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30320824338,-1.92330061112,109,0.5792,-1378.122897,2.2645,1.41666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af4af4af.log,4af4af4af4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.51191955758,-1.37335854334,97,8.6882,-1225.971041,2.9586,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-12ie.log,12ie12ie-12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.50049077636,-1.70479319873,82,0.7853,-1033.8889324,2.6438,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-.log,4ae4ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.55547612855,-1.6269686409,53,2.3782,-615.3628912,2.8048,0.216666666667
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-.log,12ai12ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.75192396321,-0.736340047211,43,0.3253,-537.3299669,4.0127,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la4la.log,4la4la4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12el12el12el12el-.log,12el12el12el12el-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.97204570182,-1.80084938375,125,4.8142,-1678.9353864,1.9851,1.73333333333
+/home/ccollins/mols/noopt/b3lyp/12ia.log,12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.80609297389,0.381503601696,22,1.1129,-269.2423379,5.9644,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/12al12al12al-12al-.log,12al12al12al-12al-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.73557877609,-1.28546577348,101,5.2736,-1374.3010476,2.3995,0.8
+/home/ccollins/mols/noopt/b3lyp/12el12el12el.log,12el12el12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.25477198011,-1.65200311405,94,5.1660,-1259.4637164,2.5036,0.833333333333
+/home/ccollins/mols/noopt/b3lyp/12ai12ai12ai-12ai.log,12ai12ai12ai-12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.09939497828,-1.40029781336,85,1.6432,-1073.5061049,2.6607,0.65
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-4ll-4ll-.log,4ll4ll-4ll-4ll-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ll12ll12ll12ll.log,12ll12ll12ll12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.48931575217,-0.66912792908,133,7.1150,-1831.7396976,2.7074,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il-12il-12il.log,12il12il-12il-12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.64169950178,-1.08192462221,117,3.6210,-1530.5944108,2.3426,1.6
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-12fe.log,12fe12fe-12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.42375467387,-1.6721395381,82,4.2036,-1141.6686307,2.6205,0.433333333333
+/home/ccollins/mols/noopt/b3lyp/12ia12ia12ia12ia.log,12ia12ia12ia12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05558465027,-1.34179333806,85,1.3716,-1073.4955946,2.6581,0.65
+/home/ccollins/mols/noopt/b3lyp/12fe12fe12fe-12fe.log,12fe12fe12fe-12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.1968117325,-1.90642955313,109,6.6817,-1521.8398757,2.1657,0.95
+/home/ccollins/mols/noopt/b3lyp/4ea4ea4ea-4ea-.log,4ea4ea4ea-4ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.06186162536,-2.04112590323,105,3.2064,-1229.5490538,2.7913,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/22-22-.log,22-22-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.79219681132,-2.30181096059,29,0.1107,-310.6966206,3.0201,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4el4el-4el-4el-.log,4el4el-4el-4el-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ai12ai12ai12ai-.log,12ai12ai12ai12ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.0727278221,-1.3766239094,85,1.5869,-1073.5014174,2.6367,0.65
+/home/ccollins/mols/noopt/b3lyp/12ae12ae12ae12ae-.log,12ae12ae12ae12ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.69995022004,-2.19024428677,93,0.3581,-1220.8937243,2.4419,0.65
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-12ee12ee.log,12ee12ee-12ee12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.67137826699,-2.56766618089,117,0.3147,-1525.436445,1.8653,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/12if12if12if12if-.log,12if12if12if12if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.73884414216,-1.25907073113,101,2.2739,-1374.407591,2.4175,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/12ai12ai12ai12ai.log,12ai12ai12ai12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.05531253643,-1.34179333806,85,1.3689,-1073.4957906,2.6580,0.65
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-12ia-12ia.log,12ia12ia-12ia-12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10402091354,-1.39757667497,85,0.3078,-1073.5068112,2.6276,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-4ff4ff.log,4ff4ff-4ff4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.24169215906,-1.27839081367,113,0.1263,-1525.0175422,1.6519,1.16666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-12ea12ea-.log,12ea12ea-12ea12ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71437225348,-2.17555013949,93,0.3292,-1220.8963742,2.4334,0.75
+/home/ccollins/mols/noopt/b3lyp/12ia12ia12ia-12ia-.log,12ia12ia12ia-12ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07953066806,-1.37390277102,85,0.3845,-1073.5022811,2.6727,0.65
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-4fi4fi.log,4fi4fi-4fi4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.41909202502,-1.35267789161,113,5.7124,-1380.9451686,0.5669,1.93333333333
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-.log,12fa12fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71763761955,-0.785048424317,43,1.5757,-609.1844386,3.9186,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/12el12el-12el-12el-.log,12el12el-12el-12el-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.08714985555,-1.94887931195,125,4.1183,-1678.2023935,1.3813,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-12aa12aa.log,12aa12aa-12aa12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.50402825626,-1.72139214289,69,0.9040,-916.2749398,2.7639,0.35
+/home/ccollins/mols/noopt/b3lyp/12ii12ii12ii.log,12ii12ii12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85966268649,-0.996480876898,76,2.4249,-923.2634059,2.8349,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la4la4la.log,4la4la4la4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/222-2-.log,222-2-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.95818625286,-2.16520981362,29,0.2134,-310.7164013,3.4082,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-4lf.log,4lf4lf-4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12fl.log,12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.40744620036,0.717564192348,30,3.2427,-419.6548669,5.8711,0.05
+/home/ccollins/mols/noopt/b3lyp/4ff4ff4ff.log,4ff4ff4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.3181745045,-0.777157122999,85,0.3115,-1145.4585834,3.3185,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/4fe4fe.log,4fe4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.29941700644,-1.11757153507,61,3.3343,-765.840214,3.6734,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li4li4li-.log,4li4li4li4li-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-4ai4ai.log,4ai4ai-4ai4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.74376054805,-1.44519659672,97,1.1279,-1081.8252715,3.0649,1.18333333333
+/home/ccollins/mols/noopt/b3lyp/1111-11-11.log,1111-11-11,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.0988874642,-3.60278722286,29,6.3441,-454.1814372,1.7521,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12li12li-12li12li-.log,12li12li-12li12li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57503161133,-1.09280917576,117,5.0725,-1531.2732156,2.4018,1.65
+/home/ccollins/mols/noopt/b3lyp/4ef4ef4ef4ef.log,4ef4ef4ef4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.70593672449,-1.54642294468,121,7.5387,-1530.4520194,2.9267,2.08333333333
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-12fe-12fe-.log,12fe12fe-12fe-12fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.37994434586,-2.06833728708,109,1.7110,-1521.8458076,2.1065,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/12la.log,12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.6686754854,0.477559786717,26,1.2188,-344.4691386,5.7131,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4li4li4li4li.log,4li4li4li4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ie.log,4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.78622866367,-0.760286065006,31,1.3048,-347.6299684,4.7634,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12fi12fi12fi12fi.log,12fi12fi12fi12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.40006241312,-0.964371443945,101,5.8516,-1374.4111083,2.4004,0.9
+/home/ccollins/mols/noopt/b3lyp/12ei12ei12ei.log,12ei12ei12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.48117069382,-1.75105255129,82,0.9263,-1033.8612943,2.6600,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12el12el12el-12el.log,12el12el12el-12el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.08442871716,-1.87622491704,125,7.0023,-1678.7819138,2.0615,1.68333333333
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-4ll-4ll.log,4ll4ll-4ll-4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ie4ie-4ie-4ie.log,4ie4ie-4ie-4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.48931575217,-1.8032984083,121,1.1900,-1385.1470186,0.9695,1.51666666667
+/home/ccollins/mols/noopt/b3lyp/4af4af-.log,4af4af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.23601448205,-0.864233551346,49,2.1951,-613.5939699,4.0055,0.183333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae4ae.log,4ae4ae4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.33968985455,-1.85227889925,79,1.7201,-922.429792,3.1680,0.716666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-12ea12ea.log,12ea12ea-12ea12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71192322894,-2.18806737606,93,0.3976,-1220.8950541,2.4536,0.733333333333
+/home/ccollins/mols/noopt/b3lyp/12ll12ll12ll.log,12ll12ll12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.7962601621,-0.531710440595,100,7.5365,-1374.1535278,3.1950,0.916666666667
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-12ie12ie.log,12ie12ie-12ie12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.27626897336,-1.90125939019,109,1.1004,-1378.1216837,2.2393,1.33333333333
+/home/ccollins/mols/noopt/b3lyp/22-22.log,22-22,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.87274250754,-2.24140168842,29,0.1079,-310.7064412,3.1919,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-4ei-4ei-.log,4ei4ei-4ei-4ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51788770523,-1.5649266857,121,1.8125,-1385.80729,1.3587,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-.log,4ef4ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.53936634167,-1.52628652062,61,5.0429,-765.468818,0.2736,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la4la-4la-.log,4la4la4la-4la-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ia12ia.log,12ia12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.77342095646,-0.75185053601,43,1.6406,-537.3253136,4.0154,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/12ff12ff12ff12ff-.log,12ff12ff12ff12ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.6996597494,-1.12954454397,101,4.3057,-1518.1490225,2.5885,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il12il12il.log,12il12il12il12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.37802119219,-0.910765017744,117,5.7057,-1531.3453858,2.4217,1.48333333333
+/home/ccollins/mols/noopt/b3lyp/4el.log,4el,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.5543876732,-0.503410601382,35,2.1734,-422.8502653,4.6893,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12ll12ll-12ll-12ll.log,12ll12ll-12ll-12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.58156234345,-1.01280770721,133,0.8259,-1831.9164942,2.4249,1.65
+/home/ccollins/mols/noopt/b3lyp/12ea12ea12ea-12ea.log,12ea12ea12ea-12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.69287526024,-2.15405314624,93,0.3763,-1220.8946046,2.4400,0.75
+/home/ccollins/mols/noopt/b3lyp/12ef12ef12ef12ef.log,12ef12ef12ef12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.35899158029,-2.01881256846,109,1.6651,-1521.8398509,2.1766,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4af.log,4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.92228558296,0.0114287812206,25,1.3953,-307.4127918,5.1889,0.05
+/home/ccollins/mols/noopt/b3lyp/12af12af-12af-12af-.log,12af12af-12af-12af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.90918740511,-1.36247398979,85,4.9670,-1217.2105236,2.4744,0.45
+/home/ccollins/mols/noopt/b3lyp/12ae12ae12ae12ae.log,12ae12ae12ae12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6912425772,-2.17418957029,93,0.1581,-1220.8919892,2.4513,0.683333333333
+/home/ccollins/mols/noopt/b3lyp/12fe12fe12fe12fe-.log,12fe12fe12fe12fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.18946465885,-1.96411768691,109,4.7702,-1521.8379721,2.0866,0.9
+/home/ccollins/mols/noopt/b3lyp/4lf4lf4lf-4lf.log,4lf4lf4lf-4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ll12ll12ll-12ll-.log,12ll12ll12ll-12ll-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.29012842233,-0.60763020156,133,0.0056,-1831.9825435,2.6408,0.983333333333
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-12aa-12aa-.log,12aa12aa-12aa-12aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.47463996169,-1.70288840186,69,0.7986,-916.2707114,2.7309,0.366666666667
+/home/ccollins/mols/noopt/b3lyp/12al.log,12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.48554287203,0.352931648645,26,2.2586,-344.4625262,5.5155,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4fa4fa4fa-4fa.log,4fa4fa4fa-4fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72961062844,-1.55975652277,97,5.8618,-1225.7961467,2.9496,1.0
+/home/ccollins/mols/noopt/b3lyp/111111.log,111111,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.97783351963,-5.25370188156,22,3.3727,-341.0102913,1.2704,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/12le12le12le12le.log,12le12le12le12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.12715058982,-2.03758842332,125,1.0829,-1677.8323874,1.4431,1.28333333333
+/home/ccollins/mols/noopt/b3lyp/12fi12fi-12fi-12fi-.log,12fi12fi-12fi-12fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.739116256,-1.25907073113,101,2.2823,-1374.40777,2.4173,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4il4il-4il4il.log,4il4il-4il4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12af12af-.log,12af12af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.71736550571,-0.785048424317,43,1.5763,-609.1844482,3.9186,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-4ae4ae-.log,4ae4ae-4ae4ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.95464877295,-1.97037630519,105,6.0553,-1229.4392424,2.6766,1.15
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-12aa12aa-.log,12aa12aa-12aa12aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.52824638789,-1.73935165623,69,0.0048,-916.2789161,2.7621,0.35
+/home/ccollins/mols/noopt/b3lyp/4ae4ae-4ae.log,4ae4ae-4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.21206846426,-1.83295881671,79,3.8381,-922.400911,2.7487,0.7
+/home/ccollins/mols/noopt/b3lyp/12ie12ie-12ie12ie-.log,12ie12ie-12ie12ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.29885442196,-1.91813044819,109,0.3508,-1378.1348422,2.2133,1.35
+/home/ccollins/mols/noopt/b3lyp/4ll4ll4ll.log,4ll4ll4ll,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12if12if12if-12if.log,12if12if12if-12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.69040787889,-1.19349129603,101,1.0575,-1374.4220288,2.4662,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/4la4la-.log,4la4la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.18893878798,-0.797565660892,57,2.2091,-692.1793695,4.0108,0.25
+/home/ccollins/mols/noopt/b3lyp/12el12el-12el12el-.log,12el12el-12el12el-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.17259360086,-1.94098801063,125,5.7071,-1678.6938658,2.0365,1.45
+/home/ccollins/mols/noopt/b3lyp/4ia4ia4ia4ia-.log,4ia4ia4ia4ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.73995095431,-1.42723708338,97,0.6066,-1081.9336234,3.0970,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-12fe-12fe.log,12fe12fe-12fe-12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.27273149346,-1.98289354177,109,4.0253,-1521.8305746,2.0567,0.916666666667
+/home/ccollins/mols/noopt/b3lyp/4il4il-4il-4il.log,4il4il-4il-4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-12lf12lf.log,12lf12lf-12lf12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.66265226735,-1.05416901068,117,4.5479,-1674.177815,2.5492,1.08333333333
+/home/ccollins/mols/noopt/b3lyp/4ii4ii4ii4ii-.log,4ii4ii4ii4ii-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fi4fi4fi4fi.log,4fi4fi4fi4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.3301475134,-1.05933917361,113,7.3028,-1382.718629,3.0195,2.0
+/home/ccollins/mols/noopt/b3lyp/4al4al-4al-4al.log,4al4al-4al-4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4el4el4el-4el.log,4el4el4el-4el,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ll.log,12ll,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.35955416477,0.757837040459,34,2.9883,-458.9853094,5.7007,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12ff12ff-.log,12ff12ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.45559199299,-0.521642228567,51,0.0015,-759.6511315,3.9939,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-4ia4ia-.log,4ia4ia-4ia4ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.67273883618,-1.41308716377,97,1.1299,-1081.887576,3.0335,1.36666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-4aa.log,4aa4aa-4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.24962017398,-1.61309083513,61,0.0579,-694.1166718,3.4564,0.3
+/home/ccollins/mols/noopt/b3lyp/4lf.log,4lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.15220341977,0.0612256136816,33,2.6391,-421.9386821,4.6880,0.05
+/home/ccollins/mols/noopt/b3lyp/12li.log,12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.48363807516,0.630215650163,30,1.2702,-383.7766344,5.7521,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4lf4lf-4lf4lf.log,4lf4lf-4lf4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12aa.log,12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.18106584346,0.235106356537,18,0.6658,-229.9354507,6.0410,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/4fi4fi4fi4fi-.log,4fi4fi4fi4fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.12769481749,-1.3505009809,113,4.8673,-1381.3800305,2.0471,1.96666666667
+/home/ccollins/mols/noopt/b3lyp/4ff4ff4ff-4ff-.log,4ff4ff4ff-4ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.93694301665,-1.4696868422,113,3.4579,-1525.5430493,2.1898,1.38333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae4ae4ae-.log,4ae4ae4ae4ae-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.08172593557,-2.04030956171,105,3.8818,-1229.4688078,2.6030,1.18333333333
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-4fi-4fi.log,4fi4fi-4fi-4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.40249308087,-1.49526554302,113,3.6537,-1380.8118247,0.4092,1.75
+/home/ccollins/mols/noopt/b3lyp/12ee12ee12ee.log,12ee12ee12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.81559860144,-2.35079145154,88,0.5753,-1144.383737,2.3886,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-4aa4aa-.log,4aa4aa-4aa4aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99737064561,-1.83459149974,81,0.0994,-925.0872857,2.9964,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-.log,12ef12ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.92444413687,-1.40818911468,55,1.1059,-761.4973595,3.4410,0.2
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-4ai.log,4ai4ai-4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.00090812551,-1.25634959275,73,0.5359,-811.7125409,3.4694,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/4ai4ai4ai4ai.log,4ai4ai4ai4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.82539469963,-1.45036675966,97,2.4088,-1081.8202745,3.1520,1.28333333333
+/home/ccollins/mols/noopt/b3lyp/4ll4ll-4ll4ll-.log,4ll4ll-4ll4ll-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4le4le4le4le-.log,4le4le4le4le-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12al12al-12al12al-.log,12al12al-12al12al-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85013870214,-1.41526407448,101,5.5391,-1374.2444347,2.3476,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/12le12le-.log,12le12le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.70158290307,-1.20437584958,63,2.2668,-840.0614162,3.3452,0.25
+/home/ccollins/mols/noopt/b3lyp/12aa12aa-.log,12aa12aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.14104675238,-1.00627697509,35,0.0012,-458.7149544,4.1555,0.05
+/home/ccollins/mols/noopt/b3lyp/12la12la-12la-12la-.log,12la12la-12la-12la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.67081568251,-1.22859398121,101,5.5193,-1374.3947585,2.4038,0.766666666667
+/home/ccollins/mols/noopt/b3lyp/4ei4ei4ei.log,4ei4ei4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.14948228138,-1.55240944913,91,3.4980,-1040.073107,3.2659,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12if.log,12if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.44254888554,0.588854346698,26,1.1534,-344.4734273,5.6794,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-4fe4fe.log,4fe4fe-4fe4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.71678456443,-2.31378396949,121,7.1372,-1528.7064694,-0.4832,2.33333333333
+/home/ccollins/mols/noopt/b3lyp/4if4if-4if4if.log,4if4if-4if4if,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.5339240649,-1.39485553659,113,6.5713,-1381.1507055,0.6235,1.71666666667
+/home/ccollins/mols/noopt/b3lyp/4fe4fe4fe-4fe-.log,4fe4fe4fe-4fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.20060296944,-2.04357492777,121,3.8903,-1528.9834605,0.1120,1.48333333333
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-4ai-4ai.log,4ai4ai-4ai-4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.7687950212,-1.4315909048,97,0.0543,-1081.826549,3.1078,1.35
+/home/ccollins/mols/noopt/b3lyp/12lf12lf-12lf-12lf-.log,12lf12lf-12lf-12lf-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.34618387308,-0.782327285932,117,6.8086,-1675.2013353,2.5613,1.2
+/home/ccollins/mols/noopt/b3lyp/12fi12fi12fi-12fi.log,12fi12fi12fi-12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.57965754658,-1.06995161332,101,7.1606,-1374.4351092,2.4966,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4el4el-4el4el-.log,4el4el-4el4el-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-4fi-4fi-.log,4fi4fi-4fi-4fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.40252979447,-1.61635620119,113,3.9462,-1381.1262643,2.0820,1.7
+/home/ccollins/mols/noopt/b3lyp/4fe.log,4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.59057881373,-0.514295154925,31,1.8250,-383.5625105,4.6668,0.05
+/home/ccollins/mols/noopt/b3lyp/4fi4fi-4fi.log,4fi4fi-4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.49909349356,-1.32791553229,85,3.9957,-1035.6063551,0.5702,0.85
+/home/ccollins/mols/noopt/b3lyp/12le12le12le-12le-.log,12le12le12le-12le-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.97395049869,-1.88302776301,125,5.7993,-1678.5688979,1.3579,1.38333333333
+/home/ccollins/mols/noopt/b3lyp/12fi12fi.log,12fi12fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.25558832163,-0.455246451953,51,4.7707,-687.7826496,3.7703,0.2
+/home/ccollins/mols/noopt/b3lyp/4ai4ai4ai4ai-.log,4ai4ai4ai4ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.8117890077,-1.44274757218,97,1.7226,-1081.8240669,3.1412,1.35
+/home/ccollins/mols/noopt/b3lyp/4ee4ee4ee-4ee.log,4ee4ee4ee-4ee,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12if12if-12if12if-.log,12if12if-12if12if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.7080952784,-1.18587210855,101,4.2369,-1374.4463781,2.4947,0.866666666667
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-12ei.log,12ei12ei-12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.50021866252,-1.70506531257,82,0.7881,-1033.8889596,2.6438,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/4fl4fl4fl4fl.log,4fl4fl4fl4fl,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4fe4fe4fe4fe.log,4fe4fe4fe4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.74512111724,-1.51213660102,121,6.6318,-1530.397137,2.9892,1.86666666667
+/home/ccollins/mols/noopt/b3lyp/12ee12ee12ee12ee-.log,12ee12ee12ee12ee-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6721946085,-2.51786934843,117,0.5898,-1525.4751744,2.0142,1.36666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa4aa-4aa.log,4aa4aa4aa-4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99737064561,-1.83459149974,81,0.0777,-925.087671,2.9970,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/4ea.log,4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.18814080326,-0.998113559929,27,0.3315,-308.3278295,4.9332,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4fa4fa4fa-4fa-.log,4fa4fa4fa-4fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.98403706752,-1.79295808244,97,3.5601,-1225.6757319,2.9660,1.0
+/home/ccollins/mols/noopt/b3lyp/12el12el12el-12el-.log,12el12el12el-12el-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.97367838486,-1.88302776301,125,5.7896,-1678.5686691,1.3569,1.38333333333
+/home/ccollins/mols/noopt/b3lyp/4if4if4if4if-.log,4if4if4if4if-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.20874802779,-1.08709478515,113,5.1133,-1382.3586621,0.8005,1.65
+/home/ccollins/mols/noopt/b3lyp/4ai4ai-4ai-4ai-.log,4ai4ai-4ai-4ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.78240071313,-1.43839375076,97,0.7213,-1081.8226973,3.1195,1.38333333333
+/home/ccollins/mols/noopt/b3lyp/12fa12fa12fa12fa.log,12fa12fa12fa12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.73040861316,-1.20410373574,85,5.6096,-1217.1960658,2.4620,0.433333333333
+/home/ccollins/mols/noopt/b3lyp/4lf4lf4lf4lf.log,4lf4lf4lf4lf,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4le4le4le-4le-.log,4le4le4le-4le-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12la12la12la12la-.log,12la12la12la12la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.79299479604,-1.32818764613,101,3.0529,-1374.2065871,2.3221,0.75
+/home/ccollins/mols/noopt/b3lyp/12af12af12af12af.log,12af12af12af12af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.10429302738,-1.45553692259,85,0.8549,-1217.1939883,2.5695,0.45
+/home/ccollins/mols/noopt/b3lyp/12ai12ai-12ai-12ai-.log,12ai12ai-12ai-12ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07653741584,-1.3575759407,85,1.1992,-1073.5023639,2.6455,0.666666666667
+/home/ccollins/mols/noopt/b3lyp/11.log,11,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.40530600325,-1.57662758076,8,2.1531,-114.4682052,3.8316,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/12ff.log,12ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.43955563331,0.731169884278,26,2.7544,-380.3956007,5.3566,0.0166666666667
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-12ei12ei.log,12ei12ei-12ei12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30293612954,-1.92330061112,109,0.5816,-1378.1229247,2.2644,1.41666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-4ia4ia.log,4ia4ia-4ia4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72906640077,-1.43812163692,97,1.2098,-1081.9111695,3.0689,1.45
+/home/ccollins/mols/noopt/b3lyp/4al4al.log,4al4al,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-12ei12ei-.log,12ei12ei-12ei12ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.29858230813,-1.91813044819,109,0.3513,-1378.1348769,2.2133,1.36666666667
+/home/ccollins/mols/noopt/b3lyp/12fi12fi12fi-12fi-.log,12fi12fi12fi-12fi-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.68986365121,-1.21036235403,101,3.4229,-1374.4205826,2.4651,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4af4af-4af4af.log,4af4af-4af4af,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72661737622,-1.5578517259,97,5.9490,-1225.8051374,2.9522,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4af4af-4af-4af-.log,4af4af-4af-4af-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.7723325011,-1.55757961206,97,3.9119,-1225.5696406,2.9950,1.05
+/home/ccollins/mols/noopt/b3lyp/2222-.log,2222-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.95410454528,-2.15949542301,29,0.1641,-310.7155628,3.4643,0.1
+/home/ccollins/mols/noopt/b3lyp/12le12le12le-12le.log,12le12le12le-12le,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07245570826,-2.09690924014,125,3.9084,-1678.3232489,1.3064,1.86666666667
+/home/ccollins/mols/noopt/b3lyp/12ae12ae-12ae-12ae.log,12ae12ae-12ae-12ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72199144096,-2.18371355464,93,0.3042,-1220.8927249,2.3867,0.633333333333
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-4ei4ei.log,4ei4ei-4ei4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.08713149875,-1.49145594928,121,2.7712,-1385.3198166,1.1426,1.46666666667
+/home/ccollins/mols/noopt/b3lyp/4la4la-4la.log,4la4la-4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ii12ii12ii-12ii-.log,12ii12ii12ii-12ii-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.62999860672,-1.16056552156,101,0.2630,-1230.6637244,2.4589,1.21666666667
+/home/ccollins/mols/noopt/b3lyp/12il12il-.log,12il12il-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.2419826297,-0.346400916519,59,2.1114,-766.3266168,3.8769,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/12ee.log,12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.09099616288,-0.692529719199,30,0.0550,-382.2436891,4.7609,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li-4li-4li.log,4li4li-4li-4li,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/222-.log,222-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.32036977201,-1.81908101094,22,0.1385,-233.3206648,4.0486,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-4ei4ei-.log,4ei4ei-4ei4ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.92304685408,-1.4802992819,121,4.8147,-1384.831964,0.9636,2.0
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-.log,12ee12ee-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.23927984811,-1.93908321376,59,0.0013,-763.3326919,3.2933,0.2
+/home/ccollins/mols/noopt/b3lyp/4ef4ef4ef-4ef.log,4ef4ef4ef-4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.34290015022,-1.83132613368,121,7.5234,-1528.9772924,-0.1552,8.06666666667
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-4ef.log,4ef4ef-4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.26262656783,-1.75078043746,91,5.0367,-1146.6759063,-0.1677,4.1
+/home/ccollins/mols/noopt/b3lyp/4ei4ei4ei4ei-.log,4ei4ei4ei4ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.75707576934,-1.64683295112,121,4.9167,-1385.8074797,1.2861,1.46666666667
+/home/ccollins/mols/noopt/b3lyp/12la12la12la-12la-.log,12la12la12la-12la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.73585088993,-1.28573788731,101,5.2837,-1374.3008533,2.3991,1.0
+/home/ccollins/mols/noopt/b3lyp/12ef12ef-12ef.log,12ef12ef-12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.48008223846,-1.72873921653,82,1.9645,-1141.6698737,2.5953,0.466666666667
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-4ff.log,4ff4ff-4ff,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.33693200257,-1.2073691018,85,0.0626,-1143.6080972,1.7844,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/12ie12ie12ie12ie.log,12ie12ie12ie12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.25667677698,-1.93636207537,109,1.0193,-1378.0939577,2.2209,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12li12li12li12li.log,12li12li12li12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.67462527625,-0.965459899299,117,2.2676,-1529.3850846,2.4387,1.7
+/home/ccollins/mols/noopt/b3lyp/4ai4ai4ai-4ai-.log,4ai4ai4ai-4ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.78512185152,-1.44955041814,97,0.6505,-1081.8227508,3.1016,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/4ai4ai4ai.log,4ai4ai4ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.06703178829,-1.26206398336,73,1.8507,-811.7062826,3.5676,0.6
+/home/ccollins/mols/noopt/b3lyp/12ai12ai.log,12ai12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.77314884262,-0.75185053601,43,1.6406,-537.3254116,4.0152,0.116666666667
+/home/ccollins/mols/noopt/b3lyp/4ef.log,4ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.58568076463,-0.530894099079,31,1.8645,-383.5644946,4.6696,0.05
+/home/ccollins/mols/noopt/b3lyp/12ef12ef12ef-12ef.log,12ef12ef12ef-12ef,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30211978803,-1.98507045248,109,1.7850,-1521.8445094,2.1541,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/12la12la-12la-12la.log,12la12la-12la-12la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85775788962,-1.46451667926,101,4.1080,-1374.2459837,2.3066,0.866666666667
+/home/ccollins/mols/noopt/b3lyp/12fl12fl12fl12fl-.log,12fl12fl12fl12fl-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.34618387308,-0.782055172093,117,6.8063,-1675.2015066,2.5613,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12ie12ie12ie-12ie-.log,12ie12ie12ie-12ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.27899011175,-1.90642955313,109,0.8955,-1378.1097441,2.2840,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12ai12ai12ai-12ai-.log,12ai12ai12ai-12ai-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.07953066806,-1.37390277102,85,0.3770,-1073.5024771,2.6727,0.65
+/home/ccollins/mols/noopt/b3lyp/22-2-2-.log,22-2-2-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.95437665912,-2.16003965069,29,0.1813,-310.7155672,3.4638,0.0833333333333
+/home/ccollins/mols/noopt/b3lyp/4la4la-4la4la.log,4la4la-4la4la,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ae.log,4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-6.18759657558,-0.979337705067,27,0.3519,-308.3262453,4.9384,0.0333333333333
+/home/ccollins/mols/noopt/b3lyp/4ea4ea4ea-4ea.log,4ea4ea4ea-4ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99192836884,-1.98126085874,105,4.1438,-1229.5361653,2.7587,1.23333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee4ee4ee-.log,4ee4ee4ee4ee-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4le4le4le.log,4le4le4le,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-4ef-4ef-.log,4ef4ef-4ef-4ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.48086186638,-1.69472498671,121,7.0010,-1529.6618872,0.2560,2.13333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee4ee.log,4ee4ee4ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.40445294813,-2.15704639846,97,0.3361,-1150.7976934,2.7738,1.1
+/home/ccollins/mols/noopt/b3lyp/12fe12fe12fe12fe.log,12fe12fe12fe12fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.02293098964,-1.84520393944,109,6.1273,-1521.826314,2.0402,0.933333333333
+/home/ccollins/mols/noopt/b3lyp/4ei4ei-4ei-4ei.log,4ei4ei-4ei-4ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.50482624097,-1.50832700728,121,1.1756,-1385.3206447,1.2985,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/12li12li-12li-12li-.log,12li12li-12li-12li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.39625281938,-0.921377457449,117,5.5117,-1531.4228972,2.4084,1.46666666667
+/home/ccollins/mols/noopt/b3lyp/12ee12ee-12ee12ee-.log,12ee12ee-12ee12ee-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.67083403931,-2.65174935701,117,0.0047,-1525.3974985,1.6721,1.43333333333
+/home/ccollins/mols/noopt/b3lyp/12la12la-12la12la-.log,12la12la-12la12la-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.85041081598,-1.41553618832,101,5.5455,-1374.2442049,2.3474,0.883333333333
+/home/ccollins/mols/noopt/b3lyp/4ee4ee.log,4ee4ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.7271799607,-1.93391305082,65,0.1633,-767.6372764,3.1033,0.45
+/home/ccollins/mols/noopt/b3lyp/12il12il-12il-12il-.log,12il12il-12il-12il-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.59081421397,-0.95375900424,117,3.4388,-1530.0660556,2.4047,1.55
+/home/ccollins/mols/noopt/b3lyp/4aa4aa.log,4aa4aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.72119345625,-1.18614422239,41,0.0510,-463.1466805,4.2937,0.15
+/home/ccollins/mols/noopt/b3lyp/12fl12fl-12fl.log,12fl12fl-12fl,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.75598731399,-0.765456227939,88,7.5593,-1256.5454883,2.9762,0.616666666667
+/home/ccollins/mols/noopt/b3lyp/4aa4aa-.log,4aa4aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.72064922857,-1.18532788088,41,0.0744,-463.1462949,4.2812,0.15
+/home/ccollins/mols/noopt/b3lyp/4lf4lf4lf4lf-.log,4lf4lf4lf4lf-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ei12ei-12ei-12ei-.log,12ei12ei-12ei-12ei-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.28688141307,-1.92520540799,109,0.4718,-1378.1104151,2.2569,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/111111-11-.log,111111-11-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-7.75524439967,-5.5875855615,29,0.0929,-454.2845001,0.7735,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ie4ie.log,4ie4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.43928351947,-1.29254073328,61,2.4437,-693.8700685,3.4219,0.4
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-12fa-12fa-.log,12fa12fa-12fa-12fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.1312322974,-1.52955188669,85,2.3224,-1217.2058979,2.5247,0.4
+/home/ccollins/mols/noopt/b3lyp/12al12al-12al.log,12al12al-12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.08524505868,-1.18015771794,76,5.1884,-1030.9305751,2.8182,0.483333333333
+/home/ccollins/mols/noopt/b3lyp/12al12al12al-12al.log,12al12al12al-12al,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.78129390098,-1.35812016838,101,7.6369,-1374.2404875,2.3736,0.8
+/home/ccollins/mols/noopt/b3lyp/4la.log,4la,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.87983582414,0.0590487029729,29,1.6832,-346.7066046,5.2063,0.05
+/home/ccollins/mols/noopt/b3lyp/12ai12ai12ai.log,12ai12ai12ai,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.31844661834,-1.14859251267,64,1.7030,-805.4105515,3.1655,0.3
+/home/ccollins/mols/noopt/b3lyp/4ii4ii-4ii-4ii-.log,4ii4ii-4ii-4ii-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12li12li-12li.log,12li12li-12li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.8928605748,-0.963282988591,88,1.7845,-1148.7192021,2.8195,0.983333333333
+/home/ccollins/mols/noopt/b3lyp/4ef4ef-4ef4ef.log,4ef4ef-4ef4ef,---,[],---,---,---,---,---,---,---,3.5
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-.log,12ii12ii-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.39491060698,-0.495791413902,51,0.1433,-615.9437108,3.9014,0.166666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-4ia.log,4ia4ia-4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.94947861002,-1.23240357495,73,0.7310,-811.7515021,3.4636,0.65
+/home/ccollins/mols/noopt/b3lyp/12ll12ll12ll12ll-.log,12ll12ll12ll12ll-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.34781655611,-0.612528250655,133,6.2933,-1831.9836863,2.6239,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/4fi4fi4fi-4fi.log,4fi4fi4fi-4fi,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.52385585288,-1.4302303356,113,5.9141,-1380.941234,0.5415,1.9
+/home/ccollins/mols/noopt/b3lyp/12fa12fa-12fa12fa.log,12fa12fa-12fa12fa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.87462894761,-1.32437805239,85,7.2753,-1217.2098134,2.5115,0.433333333333
+/home/ccollins/mols/noopt/b3lyp/4ef4ef4ef-4ef-.log,4ef4ef4ef-4ef-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.52140682833,-1.65526848011,121,8.3947,-1529.8649067,0.2505,2.18333333333
+/home/ccollins/mols/noopt/b3lyp/4fa4fa4fa4fa-.log,4fa4fa4fa4fa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.79001990061,-1.66832994436,97,4.9144,-1225.802954,2.9159,1.0
+/home/ccollins/mols/noopt/b3lyp/12ie12ie12ie.log,12ie12ie12ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.48171492149,-1.75105255129,82,0.9255,-1033.8612826,2.6601,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/4al4al-4al-4al-.log,4al4al-4al-4al-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ii4ii4ii-4ii-.log,4ii4ii4ii-4ii-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ll4ll4ll-4ll-.log,4ll4ll4ll-4ll-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/12ee12ee12ee12ee.log,12ee12ee12ee12ee,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.62865639433,-2.52820967429,117,0.5083,-1525.4551711,2.0205,1.26666666667
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-12ia.log,12ia12ia-12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.33967149775,-1.17444332733,64,1.0228,-805.419827,3.1382,0.316666666667
+/home/ccollins/mols/noopt/b3lyp/12li12li-.log,12li12li-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.24225474354,-0.346400916519,59,2.1129,-766.32662,3.8768,0.233333333333
+/home/ccollins/mols/noopt/b3lyp/12il12il12il-12il.log,12il12il12il-12il,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51679924987,-1.04927096158,117,7.6598,-1531.2730124,2.4221,1.51666666667
+/home/ccollins/mols/noopt/b3lyp/4ff4ff-4ff4ff-.log,4ff4ff-4ff4ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.41666135727,-1.5649266857,113,2.6887,-1524.0137744,1.5865,1.88333333333
+/home/ccollins/mols/noopt/b3lyp/12fe12fe-12fe12fe-.log,12fe12fe-12fe12fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.31708604915,-2.0000367136,109,4.0105,-1521.8500942,2.1550,0.966666666667
+/home/ccollins/mols/noopt/b3lyp/22-2.log,22-2,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.207442529,-1.9344572785,22,0.0106,-233.310262,3.6977,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/4ea4ea-4ea-4ea-.log,4ea4ea-4ea-4ea-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.08798455386,-2.06752094557,105,3.2828,-1229.5498069,2.7943,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12lf12lf12lf.log,12lf12lf12lf,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.99871285801,-0.665862563017,88,1.2113,-1254.979333,2.7750,0.583333333333
+/home/ccollins/mols/noopt/b3lyp/4fe4fe-4fe.log,4fe4fe-4fe,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-2.63977634811,-1.87268743714,91,4.3843,-1146.4296147,0.1855,1.1
+/home/ccollins/mols/noopt/b3lyp/12ii.log,12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.53289067995,0.494975072386,26,1.4683,-308.5488425,5.8450,0.05
+/home/ccollins/mols/noopt/b3lyp/12fe12fe12fe-12fe-.log,12fe12fe12fe-12fe-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.30701783712,-2.02425484523,109,3.2814,-1521.8424183,2.1486,0.95
+/home/ccollins/mols/noopt/b3lyp/4ie4ie4ie-4ie-.log,4ie4ie4ie-4ie-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.69204056192,-1.84928564702,121,3.7541,-1385.7501484,0.9771,1.5
+/home/ccollins/mols/noopt/b3lyp/12al12al-.log,12al12al-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.52144354193,-0.616337844395,51,2.2350,-687.7763865,3.8775,0.166666666667
+/home/ccollins/mols/noopt/b3lyp/4ie4ie4ie-4ie.log,4ie4ie4ie-4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.08522670188,-1.63268303151,121,2.2179,-1385.1470621,0.9987,2.0
+/home/ccollins/mols/noopt/b3lyp/4li.log,4li,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.41751441239,0.103131144824,33,1.3984,-386.0059812,4.8792,0.0666666666667
+/home/ccollins/mols/noopt/b3lyp/12ia12ia-12ia12ia.log,12ia12ia-12ia12ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.09966709212,-1.40029781336,85,1.6478,-1073.5059078,2.6607,0.65
+/home/ccollins/mols/noopt/b3lyp/12fl12fl12fl-12fl-.log,12fl12fl12fl-12fl-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.51435022532,-0.872396966503,117,6.3321,-1674.3465115,2.6012,1.03333333333
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-4ia-4ia.log,4ia4ia-4ia-4ia,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.72117509945,-1.41934578206,97,0.4123,-1081.9111263,3.0819,1.4
+/home/ccollins/mols/noopt/b3lyp/12ii12ii-12ii-12ii.log,12ii12ii-12ii-12ii,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.65775421826,-1.18179040097,101,0.3625,-1230.7004927,2.3755,1.1
+/home/ccollins/mols/noopt/b3lyp/12aa12aa12aa.log,12aa12aa12aa,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.6961406263,-1.45608115027,52,0.9445,-687.4880363,3.2619,0.166666666667
+/home/ccollins/mols/noopt/b3lyp/4li4li-4li4li-.log,4li4li-4li4li-,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4aa4aa4aa-4aa-.log,4aa4aa4aa-4aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.99791487329,-1.83540784126,81,0.0853,-925.0880631,2.9977,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/4ia4ia-4ia-4ia-.log,4ia4ia-4ia-4ia-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.77668632252,-1.44982253198,97,1.8627,-1081.9347237,3.1099,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/12ei12ei12ei12ei.log,12ei12ei12ei12ei,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.25640466315,-1.93636207537,109,1.0128,-1378.0939708,2.2208,1.31666666667
+/home/ccollins/mols/noopt/b3lyp/4il4il4il4il.log,4il4il4il4il,---,[],---,---,---,---,---,---,---,0.0
+/home/ccollins/mols/noopt/b3lyp/4ie4ie4ie4ie.log,4ie4ie4ie4ie,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.90730096504,-1.67132319659,121,5.0725,-1386.3523453,2.9509,1.78333333333
+/home/ccollins/mols/noopt/b3lyp/4ae4ae.log,4ae4ae,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-5.73534337585,-1.54914408306,53,0.9605,-615.3773044,3.4359,0.266666666667
+/home/ccollins/mols/noopt/b3lyp/12aa12aa12aa-12aa-.log,12aa12aa12aa-12aa-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.4803543523,-1.70343262954,69,0.0049,-916.2709777,2.7660,0.35
+/home/ccollins/mols/noopt/b3lyp/12ff12ff12ff-12ff-.log,12ff12ff12ff-12ff-,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-3.74537487428,-1.17879714875,101,0.0057,-1518.1501652,2.6207,0.566666666667
+/home/ccollins/mols/noopt/b3lyp/12ea12ea-12ea.log,12ea12ea-12ea,---,[],"td B3LYP/6-31g(d,p) geom=connectivity",-4.88852511018,-1.95486581639,70,0.4279,-915.9595583,2.8513,0.333333333333
+/home/ccollins/mols/noopt/b3lyp/4fl4fl4fl-4fl-.log,4fl4fl4fl-4fl-,---,[],---,---,---,---,---,---,---,0.0
