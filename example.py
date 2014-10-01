@@ -74,3 +74,58 @@ def get_features(name, limit=4):
     # fill features to limit amount of groups
     features += [0] * length * (limit - count)
     return features
+
+
+
+
+if __name__ == '__main__':
+    import os
+    import random
+
+    import numpy
+
+    features = []
+    homos = []
+    lumos = []
+    gaps = []
+
+    path = os.path.join('data', 'noopt', 'b3lyp.txt')
+    with open(path, 'r') as f:
+        for line in f:
+            name, homo, lumo, gap = line.split()
+            feat = get_features(name)
+            features.append(feat)
+            homos.append(float(homo))
+            lumos.append(float(lumo))
+            gaps.append(float(gap))
+
+
+    temp = list(zip(features, homos, lumos, gaps))
+    random.shuffle(temp)
+    features, homos, lumos, gaps = zip(*temp)
+
+    FEAT = numpy.matrix(features)
+    HOMO = numpy.matrix(homos).T
+    LUMO = numpy.matrix(lumos).T
+    GAP = numpy.matrix(gaps).T
+    sets = (
+        ('HOMO', HOMO),
+        ('LUMO', LUMO),
+        ('GAP', GAP),
+    )
+
+    for NAME, PROP in sets:
+        print NAME
+        train = int(len(feat)*.9)
+        X_train = FEAT[:train,:]
+        Y_train = PROP[:train,:]
+        X_test = FEAT[train:,:]
+        Y_test = PROP[train:,:]
+
+        w = numpy.linalg.pinv(X_train.T * X_train) * X_train.T * Y_train
+
+        mean_pred = numpy.abs(Y_train.mean() - Y_test)
+        lin_pred = numpy.abs(X_test * w - Y_test)
+        print 'Mean:', mean_pred.mean(), "+/-", mean_pred.std()
+        print 'Linear:', lin_pred.mean(), "+/-", lin_pred.std()
+        print
