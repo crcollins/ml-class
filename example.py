@@ -20,14 +20,15 @@ def tokenize(string):
     >>> tokenize('BAD')
     ValueError: Bad Substituent Name(s): ['BAD']
     '''
-    
+
     match = '(1?\d|-|[%s])' % ''.join(RGROUPS)
-    tokens = [x for x in re.split(match, string) if x and x != '_']
+    tokens = [x for x in re.split(match, string) if x]
 
     valid_tokens = set(ARYL + RGROUPS + ['-'])
-    invalid_idxs = [x for i, x in enumerate(tokens) if x not in valid_tokens]
-    if invalid_idxs:
-        raise ValueError("Bad Substituent Name(s): %s" % str(invalid_idxs))
+
+    invalid_tokens = set(tokens).difference(valid_tokens)
+    if invalid_tokens:
+        raise ValueError("Bad Substituent Name(s): %s" % str(list(invalid_tokens)))
 
     new_tokens = []
     for token in tokens:
