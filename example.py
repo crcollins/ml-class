@@ -89,15 +89,19 @@ if __name__ == '__main__':
     lumos = []
     gaps = []
 
-    path = os.path.join('data', 'noopt', 'b3lyp.txt')
-    with open(path, 'r') as f:
-        for line in f:
-            name, homo, lumo, gap = line.split()
-            feat = get_features(name)
-            features.append(feat)
-            homos.append(float(homo))
-            lumos.append(float(lumo))
-            gaps.append(float(gap))
+    for i, name in enumerate(('b3lyp.txt', 'cam.txt', 'm06hf.txt')):
+        path = os.path.join('data', 'opt', 'b3lyp', name)
+        with open(path, 'r') as f:
+            for line in f:
+                name, homo, lumo, gap = line.split()
+                feat = get_features(name)
+                temp = [0, 0, 0]
+                temp[i] = 1
+                feat += temp
+                features.append(feat)
+                homos.append(float(homo))
+                lumos.append(float(lumo))
+                gaps.append(float(gap))
 
 
     temp = list(zip(features, homos, lumos, gaps))
