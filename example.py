@@ -107,6 +107,26 @@ if __name__ == '__main__':
 
     import numpy
 
+    from sklearn import svm
+    from sklearn import neighbors
+    from sklearn import linear_model
+    from sklearn import cross_validation
+    from sklearn.metrics import mean_absolute_error
+
+    def test_clf_kfold(X, y, clf, folds=10):
+        train = numpy.zeros(folds)
+        cross = numpy.zeros(folds)
+        for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
+            X_train = X[train_idx]
+            X_test = X[test_idx]
+            y_train = y[train_idx].T.tolist()[0]
+            y_test = y[test_idx].T.tolist()[0]
+            clf.fit(X_train, y_train)
+            train[i] = mean_absolute_error(clf.predict(X_train), y_train)
+            cross[i] = mean_absolute_error(clf.predict(X_test), y_test)
+        return (train.mean(), train.std()), (cross.mean(), cross.std())
+
+
     features = []
     features2 = []
     homos = []
@@ -129,34 +149,34 @@ if __name__ == '__main__':
                 lumos.append(float(lumo))
                 gaps.append(float(gap))
 
-    for name in names:
-        path = os.path.join('data', 'opt', 'b3lyp', 'geoms', name+'.out')
-        features2.append(get_features_coulomb(path))
+    # for name in names:
+    #     path = os.path.join('data', 'opt', 'b3lyp', 'geoms', name+'.out')
+    #     features2.append(get_features_coulomb(path))
 
-    temp = list(zip(features, homos, lumos, gaps, features2))
+    temp = list(zip(features, homos, lumos, gaps))
     random.shuffle(temp)
-    features, homos, lumos, gaps, features2 = zip(*temp)
+    features, homos, lumos, gaps = zip(*temp)
 
     FEAT0 = numpy.matrix(features)
     HOMO = numpy.matrix(homos).T
     LUMO = numpy.matrix(lumos).T
     GAP = numpy.matrix(gaps).T
-    N = max(len(x) for x in features2)
+    # N = max(len(x) for x in features2)
 
-    FEAT2 = numpy.zeros((len(features2), N))
-    for i, x in enumerate(features2):
-        for j, y in enumerate(x):
-            FEAT2[i,j] = y
-    FEAT2 = numpy.matrix(FEAT2)
+    # FEAT2 = numpy.zeros((len(features2), N))
+    # for i, x in enumerate(features2):
+    #     for j, y in enumerate(x):
+    #         FEAT2[i,j] = y
+    # FEAT2 = numpy.matrix(FEAT2)
 
     sets = (
-        ('HOMO', HOMO),
-        ('LUMO', LUMO),
-        ('GAP', GAP),
+        ('HOMO', HOMO, 1, 0.1),
+        ('LUMO', LUMO, 100, 0.01),
+        ('GAP', GAP, 1, 0.1),
     )
 
-    for NAME, PROP in sets:
-        for FEAT in (FEAT0, FEAT2):
+    for NAME, PROP, C, gamma in sets:
+        for FEAT in (FEAT0, ):# FEAT2):
             print NAME
             train = int(len(feat)*.9)
             X_train = FEAT[:train,:]
@@ -168,6 +188,8 @@ if __name__ == '__main__':
 
             mean_pred = numpy.abs(Y_train.mean() - Y_test)
             lin_pred = numpy.abs(X_test * w - Y_test)
-            print 'Mean:', mean_pred.mean(), "+/-", mean_pred.std()
-            print 'Linear:', lin_pred.mean(), "+/-", lin_pred.std()
-            print
+            print 'Mean', mean_pred.mean(), "+/-", lin_pred.std()
+            print 'Linear', lin_pred.mean(), "+/-", lin_pred.std()
+            print 'SVM', test_clf_kfold(FEAT, PROP, svm.SVR(C=C, gamma=gamma))[1]
+            print 'k-NN', test_clf_kfold(FEAT, PROP, neighbors.KNeighborsRegressor(n_neighbors=5))[1]
+            print 
