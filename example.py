@@ -144,7 +144,8 @@ if __name__ == '__main__':
                 temp = [0, 0, 0]
                 temp[i] = 1
                 feat += temp
-                features.append(feat)
+                # Add bais feature
+                features.append(feat + [1])
                 homos.append(float(homo))
                 lumos.append(float(lumo))
                 gaps.append(float(gap))
