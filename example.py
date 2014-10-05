@@ -141,6 +141,7 @@ if __name__ == '__main__':
                 name, homo, lumo, gap = line.split()
                 names.append(name)
                 feat = get_features(name)
+                # Add part to feature vector to account for the 3 different data sets.
                 temp = [0, 0, 0]
                 temp[i] = 1
                 feat += temp
