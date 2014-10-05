@@ -108,6 +108,7 @@ if __name__ == '__main__':
     import numpy
 
     from sklearn import svm
+    from sklearn import dummy
     from sklearn import neighbors
     from sklearn import linear_model
     from sklearn import cross_validation
@@ -125,6 +126,20 @@ if __name__ == '__main__':
             train[i] = mean_absolute_error(clf.predict(X_train), y_train)
             cross[i] = mean_absolute_error(clf.predict(X_test), y_test)
         return (train.mean(), train.std()), (cross.mean(), cross.std())
+
+
+    class Linear(object):
+        def __init__(self):
+            self.weights = None
+
+        def fit(self, X, y):
+            X = numpy.matrix(X)
+            y = numpy.matrix(y).T
+            self.weights = numpy.linalg.pinv(X.T*X)*X.T*y
+
+        def predict(self, X):
+            X = numpy.matrix(X)
+            return X*self.weights
 
 
     features = []
@@ -190,8 +205,9 @@ if __name__ == '__main__':
 
             mean_pred = numpy.abs(Y_train.mean() - Y_test)
             lin_pred = numpy.abs(X_test * w - Y_test)
-            print 'Mean', mean_pred.mean(), "+/-", lin_pred.std()
-            print 'Linear', lin_pred.mean(), "+/-", lin_pred.std()
-            print 'SVM', test_clf_kfold(FEAT, PROP, svm.SVR(C=C, gamma=gamma))[1]
-            print 'k-NN', test_clf_kfold(FEAT, PROP, neighbors.KNeighborsRegressor(n_neighbors=5))[1]
+            print 'Mean', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, dummy.DummyRegressor())[1]
+            print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, Linear())[1]
+            print 'Linear Ridge', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.Ridge(alpha=1))[1]
+            print 'SVM', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, svm.SVR(C=C, gamma=gamma))[1]
+            print 'k-NN', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, neighbors.KNeighborsRegressor(n_neighbors=5))[1]
             print 
