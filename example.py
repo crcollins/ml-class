@@ -201,10 +201,6 @@ if __name__ == '__main__':
             X_test = FEAT[train:,:]
             Y_test = PROP[train:,:]
 
-            w = numpy.linalg.pinv(X_train.T * X_train) * X_train.T * Y_train
-
-            mean_pred = numpy.abs(Y_train.mean() - Y_test)
-            lin_pred = numpy.abs(X_test * w - Y_test)
             print 'Mean', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, dummy.DummyRegressor())[1]
             print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, Linear())[1]
             print 'Linear Ridge', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.Ridge(alpha=1))[1]
