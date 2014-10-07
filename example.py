@@ -195,12 +195,6 @@ if __name__ == '__main__':
     for NAME, PROP, C, gamma in sets:
         for FEAT in (FEAT0, ):# FEAT2):
             print NAME
-            train = int(len(feat)*.9)
-            X_train = FEAT[:train,:]
-            Y_train = PROP[:train,:]
-            X_test = FEAT[train:,:]
-            Y_test = PROP[train:,:]
-
             print 'Mean', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, dummy.DummyRegressor())[1]
             print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, Linear())[1]
             print 'Linear Ridge', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.Ridge(alpha=1))[1]
