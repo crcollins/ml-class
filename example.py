@@ -128,20 +128,6 @@ if __name__ == '__main__':
         return (train.mean(), train.std()), (cross.mean(), cross.std())
 
 
-    class Linear(object):
-        def __init__(self):
-            self.weights = None
-
-        def fit(self, X, y):
-            X = numpy.matrix(X)
-            y = numpy.matrix(y).T
-            self.weights = numpy.linalg.pinv(X.T*X)*X.T*y
-
-        def predict(self, X):
-            X = numpy.matrix(X)
-            return X*self.weights
-
-
     features = []
     features2 = []
     homos = []
@@ -196,7 +182,7 @@ if __name__ == '__main__':
         for FEAT in (FEAT0, ):# FEAT2):
             print NAME
             print 'Mean', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, dummy.DummyRegressor())[1]
-            print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, Linear())[1]
+            print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.LinearRegression())[1]
             print 'Linear Ridge', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.Ridge(alpha=1))[1]
             print 'SVM', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, svm.SVR(C=C, gamma=gamma))[1]
             print 'k-NN', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, neighbors.KNeighborsRegressor(n_neighbors=5))[1]
