@@ -1,37 +1,33 @@
-import re
+import os
+import random
 
-from numpy.linalg import norm
+import numpy
+
+from sklearn import svm
+from sklearn import dummy
+from sklearn import neighbors
+from sklearn import linear_model
+from sklearn import cross_validation
+from sklearn.metrics import mean_absolute_error
 
 from features import get_features, get_features_coulomb
 
 
+def test_clf_kfold(X, y, clf, folds=10):
+    train = numpy.zeros(folds)
+    cross = numpy.zeros(folds)
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
+        X_train = X[train_idx]
+        X_test = X[test_idx]
+        y_train = y[train_idx].T.tolist()[0]
+        y_test = y[test_idx].T.tolist()[0]
+        clf.fit(X_train, y_train)
+        train[i] = mean_absolute_error(clf.predict(X_train), y_train)
+        cross[i] = mean_absolute_error(clf.predict(X_test), y_test)
+    return (train.mean(), train.std()), (cross.mean(), cross.std())
+
+
 if __name__ == '__main__':
-    import os
-    import random
-
-    import numpy
-
-    from sklearn import svm
-    from sklearn import dummy
-    from sklearn import neighbors
-    from sklearn import linear_model
-    from sklearn import cross_validation
-    from sklearn.metrics import mean_absolute_error
-
-    def test_clf_kfold(X, y, clf, folds=10):
-        train = numpy.zeros(folds)
-        cross = numpy.zeros(folds)
-        for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
-            X_train = X[train_idx]
-            X_test = X[test_idx]
-            y_train = y[train_idx].T.tolist()[0]
-            y_test = y[test_idx].T.tolist()[0]
-            clf.fit(X_train, y_train)
-            train[i] = mean_absolute_error(clf.predict(X_train), y_train)
-            cross[i] = mean_absolute_error(clf.predict(X_test), y_test)
-        return (train.mean(), train.std()), (cross.mean(), cross.std())
-
-
     features = []
     features2 = []
     homos = []
