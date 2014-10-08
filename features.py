@@ -1,5 +1,7 @@
 import re
 
+import numpy
+from numpy.linalg import norm
 
 ARYL = ['2', '3', '4', '11', '12']
 ARYL0 = ['2', '3', '11']
