@@ -39,22 +39,26 @@ if __name__ == '__main__':
     lumos = []
     gaps = []
 
-    for i, name in enumerate(('b3lyp.txt', )):# 'cam.txt', 'm06hf.txt')):
-        path = os.path.join('data', 'opt', 'b3lyp', name)
-        with open(path, 'r') as f:
-            for line in f:
-                name, homo, lumo, gap = line.split()
-                names.append(name)
-                feat = get_features(name)
-                # Add part to feature vector to account for the 3 different data sets.
-                temp = [0, 0, 0]
-                temp[i] = 1
-                feat += temp
-                # Add bais feature
-                features.append(feat + [1])
-                homos.append(float(homo))
-                lumos.append(float(lumo))
-                gaps.append(float(gap))
+    for j, name1 in enumerate(('noopt', 'opt/b3lyp', 'opt/cam', 'opt/m06hf')):
+        for i, name in enumerate(('b3lyp.txt', 'cam.txt', 'm06hf.txt')):
+            path = os.path.join('data', name1, name)
+            with open(path, 'r') as f:
+                for line in f:
+                    name, homo, lumo, gap = line.split()
+                    names.append(name)
+                    feat = get_features(name)
+                    # Add part to feature vector to account for the 3 different data sets.
+                    temp = [0, 0, 0]
+                    temp[i] = 1
+                    feat += temp
+                    temp = [0, 0, 0, 0]
+                    temp[j] = 1
+                    feat += temp
+                    # Add bais feature
+                    features.append(feat + [1])
+                    homos.append(float(homo))
+                    lumos.append(float(lumo))
+                    gaps.append(float(gap))
 
     # for name in names:
     #     path = os.path.join('data', 'opt', 'b3lyp', 'geoms', name+'.out')
