@@ -17,5 +17,5 @@ class LinearRegression(CLF):
         y = numpy.matrix(y).T
         self.weights = numpy.linalg.pinv(X.T * X) * X.T * y
 
-    def predict(self, X, y):
+    def predict(self, X):
         return X * self.weights
