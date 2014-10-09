@@ -30,17 +30,21 @@ def test_clf_kfold(X, y, clf, folds=10):
 
 
 if __name__ == '__main__':
-    feature_vectors = {}
+
+    names = []
+    geom_paths = []
 
     homos = []
-    geom_paths = []
     lumos = []
     gaps = []
 
-    methods = ('b3lyp', 'cam', 'm06hf')
+    ends = []
+
+    methods = ('b3lyp', )#'cam', 'm06hf')
     base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
     file_paths = [x + '.txt' for x in methods]
 
+    start = time.time()
     for j, base_path in enumerate(base_paths):
         for i, file_path in enumerate(file_paths):
             path = os.path.join('data', base_path, file_path)
@@ -48,49 +52,30 @@ if __name__ == '__main__':
                 for line in f:
                     name, homo, lumo, gap = line.split()
 
+                    names.append(name)
+                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
+                    geom_paths.append(geom_path)
+
                     homos.append(float(homo))
                     lumos.append(float(lumo))
                     gaps.append(float(gap))
 
-                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
-                    geom_paths.append(geom_path)
+                    # Add part to feature vector to account for the 4 different data sets.
+                    base_part = [i == k for k, x in enumerate(base_paths)]
+                    # Add part to feature vector to account for the 3 different methods.
+                    method_part = [j == k for k, x in enumerate(file_paths)]
+                    # Add bias feature
+                    bias = [1]
 
-                    for key, function in FEATURE_FUNCTIONS.items():
-                        feat = function(name, geom_path)
+                    ends.append(base_part + method_part + bias)
 
-                        # Add part to feature vector to account for the 4 different data sets.
-                        base_part = [i == k for k, x in enumerate(base_paths)]
-
-                        # Add part to feature vector to account for the 3 different methods.
-                        method_part = [j == k for k, x in enumerate(file_paths)]
-
-                        # Add bias feature
-                        bias = [1]
-                        
-                        full = feat + base_part + method_part + bias
-                        if key in feature_vectors:
-                            feature_vectors[key].append(full)
-                        else:
-                            feature_vectors[key] = [full]
-
+    ENDS = numpy.matrix(ends)
 
     FEATURES = {}
-    for key, features in feature_vectors.items():
-        lengths = set(len(x) for x in features)
-
-        if len(lengths) > 1:
-            # Hack to create feature matrix from hetero length feature vectors
-            N = max(lengths)
-            FEAT = numpy.zeros((len(features), N))
-            
-            for i, x in enumerate(features):
-                for j, y in enumerate(x):
-                    FEAT[i,j] = y
-            FEAT = numpy.matrix(FEAT)
-        else:
-            FEAT = numpy.matrix(features)
-
-        FEATURES[key] = FEAT
+    for key, function in FEATURE_FUNCTIONS.items():
+        temp = function(names, geom_paths)
+        FEATURES[key] = numpy.concatenate((temp, ends), 1)
+    print "(%.4f secs)" % (time.time() - start)
 
     HOMO = numpy.matrix(homos).T
     LUMO = numpy.matrix(lumos).T
