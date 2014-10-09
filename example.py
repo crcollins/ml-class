@@ -10,7 +10,9 @@ from sklearn import linear_model
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
 
-from features import get_features, get_features_coulomb
+from utils import FEATURE_FUNCTIONS
+# UGH...
+import features
 
 
 def test_clf_kfold(X, y, clf, folds=10):
@@ -28,53 +30,71 @@ def test_clf_kfold(X, y, clf, folds=10):
 
 
 if __name__ == '__main__':
-    features = []
-    features2 = []
+    feature_vectors = {}
+
     homos = []
-    names = []
+    geom_paths = []
     lumos = []
     gaps = []
 
-    for j, name1 in enumerate(('noopt', 'opt/b3lyp', 'opt/cam', 'opt/m06hf')):
-        for i, name in enumerate(('b3lyp.txt', 'cam.txt', 'm06hf.txt')):
-            path = os.path.join('data', name1, name)
+    methods = ('b3lyp', 'cam', 'm06hf')
+    base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
+    file_paths = [x + '.txt' for x in methods]
+
+    for j, base_path in enumerate(base_paths):
+        for i, file_path in enumerate(file_paths):
+            path = os.path.join('data', base_path, file_path)
             with open(path, 'r') as f:
                 for line in f:
                     name, homo, lumo, gap = line.split()
-                    names.append(name)
-                    feat = get_features(name)
-                    # Add part to feature vector to account for the 3 different data sets.
-                    temp = [0, 0, 0]
-                    temp[i] = 1
-                    feat += temp
-                    temp = [0, 0, 0, 0]
-                    temp[j] = 1
-                    feat += temp
-                    # Add bais feature
-                    features.append(feat + [1])
+
                     homos.append(float(homo))
                     lumos.append(float(lumo))
                     gaps.append(float(gap))
 
-    # for name in names:
-    #     path = os.path.join('data', 'opt', 'b3lyp', 'geoms', name+'.out')
-    #     features2.append(get_features_coulomb(path))
+                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
+                    geom_paths.append(geom_path)
 
-    temp = list(zip(features, homos, lumos, gaps))
-    random.shuffle(temp)
-    features, homos, lumos, gaps = zip(*temp)
+                    for key, function in FEATURE_FUNCTIONS.items():
+                        feat = function(name, geom_path)
 
-    FEAT0 = numpy.matrix(features)
+                        # Add part to feature vector to account for the 4 different data sets.
+                        base_part = [i == k for k, x in enumerate(base_paths)]
+
+                        # Add part to feature vector to account for the 3 different methods.
+                        method_part = [j == k for k, x in enumerate(file_paths)]
+
+                        # Add bias feature
+                        bias = [1]
+                        
+                        full = feat + base_part + method_part + bias
+                        if key in feature_vectors:
+                            feature_vectors[key].append(full)
+                        else:
+                            feature_vectors[key] = [full]
+
+
+    FEATURES = {}
+    for key, features in feature_vectors.items():
+        lengths = set(len(x) for x in features)
+
+        if len(lengths) > 1:
+            # Hack to create feature matrix from hetero length feature vectors
+            N = max(lengths)
+            FEAT = numpy.zeros((len(features), N))
+            
+            for i, x in enumerate(features):
+                for j, y in enumerate(x):
+                    FEAT2[i,j] = y
+            FEAT = numpy.matrix(FEAT)
+        else:
+            FEAT = numpy.matrix(features)
+
+        FEATURES[key] = FEAT
+
     HOMO = numpy.matrix(homos).T
     LUMO = numpy.matrix(lumos).T
     GAP = numpy.matrix(gaps).T
-    # N = max(len(x) for x in features2)
-
-    # FEAT2 = numpy.zeros((len(features2), N))
-    # for i, x in enumerate(features2):
-    #     for j, y in enumerate(x):
-    #         FEAT2[i,j] = y
-    # FEAT2 = numpy.matrix(FEAT2)
 
     sets = (
         ('HOMO', HOMO, 1, 0.1),
@@ -82,12 +102,23 @@ if __name__ == '__main__':
         ('GAP', GAP, 1, 0.1),
     )
 
+    CLFS = (
+        ('Mean', dummy.DummyRegressor, {}),
+        ('Linear', linear_model.LinearRegression, {}),
+        ('LinearRidge', linear_model.Ridge, {'alpha': 1}),
+        ('SVM', svm.SVR, {}),
+        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
+    )
+
     for NAME, PROP, C, gamma in sets:
-        for FEAT in (FEAT0, ):# FEAT2):
-            print NAME
-            print 'Mean', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, dummy.DummyRegressor())[1]
-            print 'Linear', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.LinearRegression())[1]
-            print 'Linear Ridge', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, linear_model.Ridge(alpha=1))[1]
-            print 'SVM', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, svm.SVR(C=C, gamma=gamma))[1]
-            print 'k-NN', "%.4f +/- %.4f eV" % test_clf_kfold(FEAT, PROP, neighbors.KNeighborsRegressor(n_neighbors=5))[1]
+        print NAME
+        for FEAT_NAME, FEAT in FEATURES.items():
+            print "\t" + FEAT_NAME
+            for CLF_NAME, CLF, KWARGS in CLFS:
+                if CLF_NAME == 'SVM':
+                    KWARGS = {'C': C, 'gamma': gamma}
+
+                train, test = test_clf_kfold(FEAT, PROP, CLF(**KWARGS))
+                print "\t\t%s: %.4f +/- %.4f eV" % (CLF_NAME, test[0], test[1])
             print 
+        print
