@@ -1,4 +1,5 @@
 import os
+import time
 
 import numpy
 
@@ -117,7 +118,9 @@ if __name__ == '__main__':
                 if CLF_NAME == 'SVM':
                     KWARGS = {'C': C, 'gamma': gamma}
 
+                start = time.time()
                 train, test = test_clf_kfold(FEAT, PROP, CLF(**KWARGS))
-                print "\t\t%s: %.4f +/- %.4f eV" % (CLF_NAME, test[0], test[1])
+                finished = time.time() - start
+                print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished)
             print 
         print
