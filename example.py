@@ -85,7 +85,7 @@ if __name__ == '__main__':
             
             for i, x in enumerate(features):
                 for j, y in enumerate(x):
-                    FEAT2[i,j] = y
+                    FEAT[i,j] = y
             FEAT = numpy.matrix(FEAT)
         else:
             FEAT = numpy.matrix(features)
