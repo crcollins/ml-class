@@ -1,12 +1,33 @@
-import re
-
 import numpy
 from numpy.linalg import norm
 
-from utils import tokenize, ARYL, RGROUPS
+from utils import feature_function, tokenize, ARYL, RGROUPS
 
 
-def get_features(name, limit=4):
+
+
+# Example Feature function
+@feature_function
+def get_null_feature(name, path, **kwargs):
+    '''
+    name is a string with the name of the structure ('4aa')
+    path is the location of the geometry file for that structure 
+        ('data/noopt/geoms/4aa')
+    This function returns a single vector (1, N_features) in the form of a list 
+    
+    There is no need to add a bias term or try to split the structures based on
+    which data set they came from, both of these will be handled as the data is
+    loaded.
+
+    NOTE: The '@FeatureFunction' at the start of this function is required.
+    It is used to collect all the feature vectors together to reduce 
+    duplication.
+    '''
+    return []
+
+
+@feature_function
+def get_binary_feature(name, path, limit=4):
     '''
     Creates a simple boolean feature vector based on whether or not a part is 
     in the name of the structure.
@@ -44,7 +65,8 @@ def get_features(name, limit=4):
     return features
 
 
-def get_features_coulomb(path):
+# @feature_function
+def get_coulomb_feature(name, path):
     coords = []
     other = []
     types = {'C': 6, 'H': 1, 'O': 8}

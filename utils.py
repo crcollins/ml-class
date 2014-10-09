@@ -1,5 +1,13 @@
 import re
 
+# GLOBAL VARIABLES
+FEATURE_FUNCTIONS = {}
+
+
+def feature_function(f):
+	FEATURE_FUNCTIONS[f.__name__.lstrip('get_')] = f
+	return f
+
 
 ARYL = ['2', '3', '4', '11', '12']
 ARYL0 = ['2', '3', '11']
