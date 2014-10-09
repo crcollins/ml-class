@@ -110,6 +110,12 @@ if __name__ == '__main__':
         ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
     )
 
+    print "Number of Data Points:", HOMO.shape[0]
+    print "Sizes of Feature Matrices"
+    for name, feat in FEATURES.items():
+        print "\t" + name, feat.shape
+    print
+
     for NAME, PROP, C, gamma in sets:
         print NAME
         for FEAT_NAME, FEAT in FEATURES.items():
