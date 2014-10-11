@@ -13,6 +13,7 @@ from sklearn.metrics import mean_absolute_error
 from utils import FEATURE_FUNCTIONS
 # UGH...
 import features
+import clfs
 
 
 def test_clf_kfold(X, y, clf, folds=10):
@@ -90,6 +91,7 @@ if __name__ == '__main__':
     CLFS = (
         ('Mean', dummy.DummyRegressor, {}),
         ('Linear', linear_model.LinearRegression, {}),
+        ('LinearFix', clfs.LinearRegression, {}),
         ('LinearRidge', linear_model.Ridge, {'alpha': 1}),
         ('SVM', svm.SVR, {}),
         ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
