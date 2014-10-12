@@ -18,7 +18,7 @@ import clfs
 
 def test_clf_kfold(X, y, clf, folds=10):
     train = numpy.zeros(folds)
-    cross = numpy.zeros(folds)
+    test = numpy.zeros(folds)
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
         X_train = X[train_idx]
         X_test = X[test_idx]
@@ -26,12 +26,11 @@ def test_clf_kfold(X, y, clf, folds=10):
         y_test = y[test_idx].T.tolist()[0]
         clf.fit(X_train, y_train)
         train[i] = mean_absolute_error(clf.predict(X_train), y_train)
-        cross[i] = mean_absolute_error(clf.predict(X_test), y_test)
-    return (train.mean(), train.std()), (cross.mean(), cross.std())
+        test[i] = mean_absolute_error(clf.predict(X_test), y_test)
+    return (train.mean(), train.std()), (test.mean(), test.std())
 
 
 if __name__ == '__main__':
-
     names = []
     geom_paths = []
 
