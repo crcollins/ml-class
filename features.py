@@ -151,6 +151,52 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
 
 
 @feature_function
+def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
+    '''
+    This feature vector works the same as the centered decay feature vector 
+    with the addition that it takes into account the side of the center that
+    the rings are on instead of just looking at the magnitude of the distance.
+    '''
+    first = ARYL
+    second = ['*'] + RGROUPS
+    length = len(first) + 2 * len(second)
+    vector_map = first + 2 * second
+
+    vectors = []
+    for name in names:
+        name = name.replace('-', '')  # no support for flipping yet
+        
+        end = tokenize(name)
+        # One set is for the left (negative) side and the other is for the 
+        # right side.
+        partfeatures = [[0] * length, [0] * length]
+
+        # Get the center index (x / 3 is to account for the triplet sets)
+        # The x - 0.5 is to offset the value between index values.
+        center = len(end) / 3. / 2. - 0.5
+        for i, char in enumerate(end):
+            # abs(x) is used to not make it not differentiate which 
+            # direction each half of the structure is going relative to
+            # the center
+            count = (i / 3) - center
+            # This is used as a switch to pick the correct side
+            is_negative = count < 0
+            count = abs(count)
+            part = i % 3
+
+            idx = vector_map.index(char)
+            if char in second and part == 2:
+                # If this is the second r group, change to use the second
+                # R group location in the feature vector.
+                idx = vector_map.index(char, idx + 1)
+
+            # Needs to be optimized for power, H, and factor
+            partfeatures[is_negative][idx] += decay_function(count + 1, power, H, factor)
+        vectors.append(partfeatures[0] + partfeatures[1])
+    return numpy.matrix(vectors)
+
+
+@feature_function
 def get_coulomb_feature(names, paths):
     vectors = []
     for path in paths:
