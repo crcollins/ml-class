@@ -110,6 +110,47 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1):
 
 
 @feature_function
+def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
+    '''
+    This feature vector takes the same approach as the decay feature vector
+    with the addition that it does the decay from the center of the structure.
+    '''
+    first = ARYL
+    second = ['*'] + RGROUPS
+    length = len(first) + 2 * len(second)
+    vector_map = first + 2 * second
+
+    vectors = []
+    for name in names:
+
+        name = name.replace('-', '')  # no support for flipping yet
+        
+        end = tokenize(name)
+        partfeatures = [0] * length
+
+        # Get the center index (x / 3 is to account for the triplet sets)
+        # The x - 0.5 is to offset the value between index values.
+        center = len(end) / 3. / 2. - 0.5
+        for i, char in enumerate(end):
+            # abs(x) is used to not make it not differentiate which 
+            # direction each half of the structure is going relative to
+            # the center
+            count = abs((i / 3) - center)
+            part = i % 3
+
+            idx = vector_map.index(char)
+            if char in second and part == 2:
+                # If this is the second r group, change to use the second
+                # R group location in the feature vector.
+                idx = vector_map.index(char, idx + 1)
+
+            # Needs to be optimized for power, H, and factor
+            partfeatures[idx] += decay_function(count + 1, power, H, factor)
+        vectors.append(partfeatures)
+    return numpy.matrix(vectors)
+
+
+@feature_function
 def get_coulomb_feature(names, paths):
     vectors = []
     for path in paths:
