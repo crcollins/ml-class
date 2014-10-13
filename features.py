@@ -66,6 +66,49 @@ def get_binary_feature(names, paths, limit=4):
     return numpy.matrix(vectors)
 
 
+def decay_function(distance, power=1, H=1, factor=1):
+    return (factor * (distance ** -H)) ** power
+
+
+@feature_function
+def get_decay_feature(names, paths, power=1, H=1, factor=1):
+    '''
+    This feature vector works about the same as the binary feature vector
+    with the exception that it does not have O(N) scaling as the length of
+    the molecule gains more rings. This is because it treats the 
+    interaction between rings as some decay as they move further from the
+    "start" of the structure (the start of the name).
+    '''
+    first = ARYL
+    second = ['*'] + RGROUPS
+    length = len(first) + 2 * len(second)
+    vector_map = first + 2 * second
+
+    vectors = []
+    for name in names:
+
+        name = name.replace('-', '')  # no support for flipping yet
+        end = tokenize(name)
+        temp = [0] * length
+        for i, char in enumerate(end):
+            # Use i / 3 because the tokens come in sets of 3 (Aryl, R1, R2)
+            # Use i % 3 to get which part it is in the set (Aryl, R1, R2)
+            count, part = divmod(i, 3)
+
+            idx = vector_map.index(char)
+            if char in second and part == 2:
+                # If this is the second r group, change to use the second
+                # R group location in the feature vector.
+                idx = vector_map.index(char, idx + 1)
+
+            # Needs to be optimized for power, H, and factor
+            # count + 1 is used so that the first value will be 1, and 
+            # subsequent values will have their respective scaling.
+            temp[idx] += decay_function(count + 1, power, H, factor)
+        vectors.append(temp)
+    return numpy.matrix(vectors)
+
+
 @feature_function
 def get_coulomb_feature(names, paths):
     vectors = []
