@@ -1,7 +1,7 @@
 import numpy
 from numpy.linalg import norm
 
-from utils import feature_function, tokenize, ARYL, RGROUPS
+from utils import feature_function, tokenize, ARYL, RGROUPS, decay_function
 
 
 # Example Feature function
@@ -66,10 +66,6 @@ def get_binary_feature(names, paths, limit=4):
         features += [0] * length * (limit - count)
         vectors.append(features)
     return numpy.matrix(vectors)
-
-
-def decay_function(distance, power=1, H=1, factor=1):
-    return (factor * (distance ** -H)) ** power
 
 
 @feature_function

@@ -78,3 +78,7 @@ def tokenize(string):
         if token in ARYL0:
             new_tokens.extend(['*', '*'])
     return new_tokens
+
+
+def decay_function(distance, power=1, H=1, factor=1):
+    return (factor * (distance ** -H)) ** power
