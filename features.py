@@ -69,6 +69,48 @@ def get_binary_feature(names, paths, limit=4):
 
 
 @feature_function
+def get_flip_binary_feature(names, paths, limit=4):
+    '''
+    This creates a feature vector that is the same as the normal binary one
+    with the addition of an additional element for each triplet to account
+    for if the aryl group is flipped.
+    NOTE: This feature vector size scales O(N), where N is the limit.
+    NOTE: Any parts of the name larger than the limit will be stripped off.
+    '''
+    first = ARYL
+    second = ['*'] + RGROUPS
+    length = len(first) + 2 * len(second)
+
+    vectors = []
+    for name in names:
+        features = []
+        count = 0
+        flips = []
+        for token in tokenize(name):
+            if token == '-':
+                flips[-1] = 1
+                continue
+
+            base = second
+            if token in first:
+                if count == limit:
+                    break
+                count += 1
+                flips.append(0)
+                base = first
+            temp = [0] * len(base)
+            temp[base.index(token)] = 1
+            features.extend(temp)
+
+        # fill features to limit amount of groups
+        features += [0] * length * (limit - count)
+        flips += [0] * (limit - count)
+        vectors.append(features + flips)
+
+    return numpy.matrix(vectors)
+
+
+@feature_function
 def get_decay_feature(names, paths, power=1, H=1, factor=1):
     '''
     This feature vector works about the same as the binary feature vector
