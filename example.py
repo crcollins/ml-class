@@ -75,11 +75,16 @@ if __name__ == '__main__':
     for key, function in FEATURE_FUNCTIONS.items():
         temp = function(names, geom_paths)
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
-    print "(%.4f secs)" % (time.time() - start)
 
     HOMO = numpy.matrix(homos).T
     LUMO = numpy.matrix(lumos).T
     GAP = numpy.matrix(gaps).T
+
+    print "Took %.4f secs to load %d data points." % (HOMO.shape[0], (time.time() - start))
+    print "Sizes of Feature Matrices"
+    for name, feat in FEATURES.items():
+        print "\t" + name, feat.shape
+    print
 
     sets = (
         ('HOMO', HOMO, 1, 0.1),
@@ -96,11 +101,6 @@ if __name__ == '__main__':
         ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
     )
 
-    print "Number of Data Points:", HOMO.shape[0]
-    print "Sizes of Feature Matrices"
-    for name, feat in FEATURES.items():
-        print "\t" + name, feat.shape
-    print
 
     for NAME, PROP, C, gamma in sets:
         print NAME
