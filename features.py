@@ -28,17 +28,19 @@ def get_null_feature(names, paths, **kwargs):
 def get_binary_feature(names, paths, limit=4):
     '''
     Creates a simple boolean feature vector based on whether or not a part is 
-    in the name of the structure.
+    in the name of the structure. 
+    NOTE: This feature vector size scales O(N), where N is the limit.
+    NOTE: Any parts of the name larger than the limit will be stripped off.
 
-    >>> get_features(['4aa'], limit=1)
-    [[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
-    >>> get_features(['3'], limit=1)
-    [[0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]]
-    >>> get_features(['4aa4aa'], limit=1)
-    [[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]]
-    >>> get_features(['4aa'], limit=2)
-    [[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0]]
+    >>> get_binary_feature(['4aa'], ['path/'], limit=1)
+    matrix([[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]])
+    >>> get_binary_feature(['3'], ['path/'], limit=1)
+    matrix([[0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]])
+    >>> get_binary_feature(['4aa4aa'], ['path/'], limit=1)
+    matrix([[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]])
+    >>> get_binary_feature(['4aa4aa'], ['path/'], limit=2)
+    matrix([[0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0,
+             0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]])
     '''
     first = ARYL
     second = ['*'] + RGROUPS
@@ -191,13 +193,25 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
                 idx = vector_map.index(char, idx + 1)
 
             # Needs to be optimized for power, H, and factor
-            partfeatures[is_negative][idx] += decay_function(count + 1, power, H, factor)
+            partfeatures[is_negative][idx] += decay_function(count + 1, power,
+                                                            H, factor)
         vectors.append(partfeatures[0] + partfeatures[1])
     return numpy.matrix(vectors)
 
 
 @feature_function
 def get_coulomb_feature(names, paths):
+    '''
+    This feature vector is based on a distance matrix between all of the atoms
+    in the structure with each element multiplied by the number of protons in 
+    each of atom in the pair. The diagonal is 0.5 * protons ^ 2.4. The 
+    exponent comes from a fit.
+    This is based off the following work:
+    M. Rupp, et al. Physical Review Letters, 108(5):058301, 2012.
+
+    NOTE: This feature vector scales O(N^2) where N is the number of atoms in
+    largest structure.
+    '''
     vectors = []
     for path in paths:
         coords = []
