@@ -80,7 +80,7 @@ if __name__ == '__main__':
     LUMO = numpy.matrix(lumos).T
     GAP = numpy.matrix(gaps).T
 
-    print "Took %.4f secs to load %d data points." % (HOMO.shape[0], (time.time() - start))
+    print "Took %.4f secs to load %d data points." % ((time.time() - start), HOMO.shape[0])
     print "Sizes of Feature Matrices"
     for name, feat in FEATURES.items():
         print "\t" + name, feat.shape
