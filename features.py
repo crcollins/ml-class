@@ -1,6 +1,8 @@
 import numpy
 from numpy.linalg import norm
 
+from sklearn import decomposition
+
 from utils import feature_function, tokenize, ARYL, RGROUPS, decay_function
 
 
@@ -280,3 +282,28 @@ def get_coulomb_feature(names, paths):
         for j, y in enumerate(x):
             FEAT[i,j] = y
     return numpy.matrix(FEAT)
+
+
+@feature_function
+def get_pca_coulomb_feature(names, paths, dimensions=100):
+    '''
+    This feature vector takes the feature matrix from get_coulomb_feature and 
+    does Principal Component Analysis on it to extract the N most influential
+    dimensions. The goal of this is to reduce the size of the feature vector
+    which can reduce overfitting, and most importantly dramatically reduce 
+    running time.
+
+    In principal, the number of dimensions used should correspond
+    to at least 95% of the variability of the features (This is denoted by the
+    `sum(pca.explained_variance_ratio_)`. For a full listing of the influence of 
+    each dimension look at pca.explained_variance_ratio_.
+
+    This method works by taking the N highest eigenvalues of the matrix (And
+    their corresponding eigenvectors) and mapping the feature matrix into 
+    this new lower dimensional space.
+    '''
+    feat = get_coulomb_feature(names, paths)
+    pca = decomposition.PCA(n_components=dimensions)
+    pca.fit(feat)
+    # print pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
+    return numpy.matrix(pca.transform(feat))
