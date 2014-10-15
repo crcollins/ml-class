@@ -10,7 +10,7 @@ from sklearn import linear_model
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
 
-# UGH...
+from utils import load_data
 import features
 import clfs
 
@@ -30,45 +30,13 @@ def test_clf_kfold(X, y, clf, folds=10):
 
 
 if __name__ == '__main__':
-    names = []
-    geom_paths = []
-
-    homos = []
-    lumos = []
-    gaps = []
-
-    ends = []
-
     methods = ('b3lyp', )#'cam', 'm06hf')
     base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
-    for j, base_path in enumerate(base_paths):
-        for i, file_path in enumerate(file_paths):
-            path = os.path.join('data', base_path, file_path)
-            with open(path, 'r') as f:
-                for line in f:
-                    name, homo, lumo, gap = line.split()
+    names, geom_paths, properties, ends = load_data(base_paths, file_paths)
 
-                    names.append(name)
-                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
-                    geom_paths.append(geom_path)
-
-                    homos.append(float(homo))
-                    lumos.append(float(lumo))
-                    gaps.append(float(gap))
-
-                    # Add part to feature vector to account for the 4 different data sets.
-                    base_part = [i == k for k, x in enumerate(base_paths)]
-                    # Add part to feature vector to account for the 3 different methods.
-                    method_part = [j == k for k, x in enumerate(file_paths)]
-                    # Add bias feature
-                    bias = [1]
-
-                    ends.append(base_part + method_part + bias)
-
-    ENDS = numpy.matrix(ends)
     FEATURE_FUNCTIONS = [
         features.get_null_feature,
         features.get_binary_feature,
@@ -86,20 +54,18 @@ if __name__ == '__main__':
         temp = function(names, geom_paths)
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
 
-    HOMO = numpy.matrix(homos).T
-    LUMO = numpy.matrix(lumos).T
-    GAP = numpy.matrix(gaps).T
+    PROPS = [numpy.matrix(x).T for x in properties]
 
-    print "Took %.4f secs to load %d data points." % ((time.time() - start), HOMO.shape[0])
+    print "Took %.4f secs to load %d data points." % ((time.time() - start), PROPS[0].shape[0])
     print "Sizes of Feature Matrices"
     for name, feat in FEATURES.items():
         print "\t" + name, feat.shape
     print
 
     sets = (
-        ('HOMO', HOMO, 1, 0.1),
-        ('LUMO', LUMO, 100, 0.01),
-        ('GAP', GAP, 1, 0.1),
+        ('HOMO', PROPS[0], 1, 0.1),
+        ('LUMO', PROPS[1], 100, 0.01),
+        ('GAP', PROPS[2], 1, 0.1),
     )
 
     CLFS = (

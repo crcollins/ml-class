@@ -1,4 +1,5 @@
 import re
+import os
 
 class CLF(object):
     def __init__(self, **kwargs):
@@ -73,3 +74,34 @@ def tokenize(string):
 
 def decay_function(distance, power=1, H=1, factor=1):
     return (factor * (distance ** -H)) ** power
+
+
+def load_data(base_paths, file_paths):
+    names = []
+    geom_paths = []
+    properties = []
+    ends = []
+
+    for j, base_path in enumerate(base_paths):
+        for i, file_path in enumerate(file_paths):
+            path = os.path.join('data', base_path, file_path)
+            with open(path, 'r') as f:
+                for line in f:
+                    temp = line.split()
+                    name, props = temp[0], temp[1:]
+                    names.append(name)
+                    
+                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
+                    geom_paths.append(geom_path)
+
+                    properties.append([float(x) for x in props])
+
+                    # Add part to feature vector to account for the 4 different data sets.
+                    base_part = [i == k for k, x in enumerate(base_paths)]
+                    # Add part to feature vector to account for the 3 different methods.
+                    method_part = [j == k for k, x in enumerate(file_paths)]
+                    # Add bias feature
+                    bias = [1]
+                    ends.append(base_part + method_part + bias)
+
+    return names, geom_paths, zip(*properties), ends
