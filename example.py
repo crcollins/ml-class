@@ -10,7 +10,6 @@ from sklearn import linear_model
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
 
-from utils import FEATURE_FUNCTIONS
 # UGH...
 import features
 import clfs
@@ -70,9 +69,20 @@ if __name__ == '__main__':
                     ends.append(base_part + method_part + bias)
 
     ENDS = numpy.matrix(ends)
+    FEATURE_FUNCTIONS = [
+        features.get_null_feature,
+        features.get_binary_feature,
+        features.get_flip_binary_feature,
+        features.get_decay_feature,
+        features.get_centered_decay_feature,
+        features.get_signed_centered_decay_feature,
+        # features.get_coulomb_feature,
+        # features.get_pca_coulomb_feature,
+    ]
 
     FEATURES = {}
-    for key, function in FEATURE_FUNCTIONS.items():
+    for function in FEATURE_FUNCTIONS:
+        key = function.__name__.lstrip('get_')
         temp = function(names, geom_paths)
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
 

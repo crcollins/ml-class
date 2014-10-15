@@ -1,14 +1,5 @@
 import re
 
-# GLOBAL VARIABLES
-FEATURE_FUNCTIONS = {}
-
-
-def feature_function(f):
-	FEATURE_FUNCTIONS[f.__name__.lstrip('get_')] = f
-	return f
-
-
 class CLF(object):
 	def __init__(self, **kwargs):
 		'''

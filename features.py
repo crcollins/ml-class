@@ -3,11 +3,10 @@ from numpy.linalg import norm
 
 from sklearn import decomposition
 
-from utils import feature_function, tokenize, ARYL, RGROUPS, decay_function
+from utils import tokenize, ARYL, RGROUPS, decay_function
 
 
 # Example Feature function
-@feature_function
 def get_null_feature(names, paths, **kwargs):
     '''
     names is a list of strings with the name of the structure (['4aa'])
@@ -26,7 +25,6 @@ def get_null_feature(names, paths, **kwargs):
     return numpy.matrix(numpy.zeros((len(names), 0)))
 
 
-@feature_function
 def get_binary_feature(names, paths, limit=4):
     '''
     Creates a simple boolean feature vector based on whether or not a part is 
@@ -70,7 +68,6 @@ def get_binary_feature(names, paths, limit=4):
     return numpy.matrix(vectors)
 
 
-@feature_function
 def get_flip_binary_feature(names, paths, limit=4):
     '''
     This creates a feature vector that is the same as the normal binary one
@@ -112,7 +109,6 @@ def get_flip_binary_feature(names, paths, limit=4):
     return numpy.matrix(vectors)
 
 
-@feature_function
 def get_decay_feature(names, paths, power=1, H=1, factor=1):
     '''
     This feature vector works about the same as the binary feature vector
@@ -151,7 +147,6 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-@feature_function
 def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     '''
     This feature vector takes the same approach as the decay feature vector
@@ -192,7 +187,6 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-@feature_function
 def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     '''
     This feature vector works the same as the centered decay feature vector 
@@ -239,7 +233,6 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-@feature_function
 def get_coulomb_feature(names, paths):
     '''
     This feature vector is based on a distance matrix between all of the atoms
@@ -284,7 +277,6 @@ def get_coulomb_feature(names, paths):
     return numpy.matrix(FEAT)
 
 
-@feature_function
 def get_pca_coulomb_feature(names, paths, dimensions=100):
     '''
     This feature vector takes the feature matrix from get_coulomb_feature and 
