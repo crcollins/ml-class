@@ -1,37 +1,37 @@
 import re
 
 class CLF(object):
-	def __init__(self, **kwargs):
-		'''
-		Self initialization code goes here.
-		'''
-		pass
+    def __init__(self, **kwargs):
+        '''
+        Self initialization code goes here.
+        '''
+        pass
 
-	def fit(self, X, y):
-		'''
-		X is a (N_samples, N_features) array.
-		y is a (N_samples, ) array.
-		NOTE: These are arrays and NOT matrices. To do matrix-like operations
-		on them you need to convert them to a matrix with 
-		numpy.matrix(X) (or you can use numpy.dot(X, y), and etc).
-		Note: This method does not return anything, it only stores state
-		for later calls to self.predict()
-		'''
-		raise NotImplementedError
+    def fit(self, X, y):
+        '''
+        X is a (N_samples, N_features) array.
+        y is a (N_samples, ) array.
+        NOTE: These are arrays and NOT matrices. To do matrix-like operations
+        on them you need to convert them to a matrix with 
+        numpy.matrix(X) (or you can use numpy.dot(X, y), and etc).
+        Note: This method does not return anything, it only stores state
+        for later calls to self.predict()
+        '''
+        raise NotImplementedError
 
-	def predict(self, X):
-		'''
-		X is a (N_samples, N_features) array.
-		NOTE: This input is also an array and NOT a matrix.
-		'''
-		raise NotImplementedError
+    def predict(self, X):
+        '''
+        X is a (N_samples, N_features) array.
+        NOTE: This input is also an array and NOT a matrix.
+        '''
+        raise NotImplementedError
 
-	@classmethod
-	def clfs(cls):
-		'''
-		You do not need need to implement this. This is for book keeping.
-		'''
-		return cls.__subclasses__()
+    @classmethod
+    def clfs(cls):
+        '''
+        You do not need need to implement this. This is for book keeping.
+        '''
+        return cls.__subclasses__()
 
 
 ARYL = ['2', '3', '4', '11', '12']
