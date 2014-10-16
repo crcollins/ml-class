@@ -22,11 +22,16 @@ if __name__ == '__main__':
     start = time.time()
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
 
+    tuned_decay = partial(features.get_decay_feature, power=2, factor=.75),
+    tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75),
+
     FEATURE_FUNCTIONS = [
         features.get_null_feature,
         features.get_binary_feature,
         features.get_flip_binary_feature,
         features.get_decay_feature,
+        tuned_decay,
+        tuned_centered,
         features.get_centered_decay_feature,
         features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
