@@ -1,5 +1,6 @@
 import os
 import time
+from functools import partial
 
 import numpy
 
@@ -22,8 +23,10 @@ if __name__ == '__main__':
     start = time.time()
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
 
-    tuned_decay = partial(features.get_decay_feature, power=2, factor=.75),
-    tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75),
+    tuned_decay = partial(features.get_decay_feature, power=2, factor=.75)
+    tuned_decay.__name__ = "get_tuned_decay_feature"
+    tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75)
+    tuned_centered.__name__ = "get_tuned_centered_feature"
 
     FEATURE_FUNCTIONS = [
         features.get_null_feature,
