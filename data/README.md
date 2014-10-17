@@ -2,9 +2,11 @@ Data
 ====
 
 This directory contains all of the current data. It is broken down into two main groups (non-optimized structures and optimized structures).
-Under the `opt` directory, there are three more directories corresponding to optimizing the structures with B3LYP, CAM-B3LYP, and M06HF respectively.
+Under the `opt` directory, there are three more directories corresponding to optimizing the structures with B3LYP, CAM-B3LYP, and M06HF respectively. (All of these calculations are done with the 6-31g(d,p) basis set.)
 
-Each one of these sub folders contains 10 files, and 1 folder (The noopt dir does not currently have the indo results due to a bug). The folder contains all of the final geometries used for this set of calculations in a simple `Elem X Y Z` format. The folders are then broken down into two types. The more raw `*.csv` files contain various properties parsed from the raw Gaussian log files. The `*.txt` files contain a cleaner set of data containing only structure names, HOMO, LUMO, and Band Gap energies. The names of each of these files indicates the final computational method that was used to calculate the properties.
+Each one of these sub folders contains 10 files, and 1 folder (The noopt dir does not currently have the INDO results due to a bug). The folder contains all of the final geometries used for this set of calculations in a simple `Elem X Y Z` format. The folders are then broken down into two types. The more raw `*.csv` files contain various properties parsed from the raw Gaussian log files. The `*.txt` files contain a cleaner set of data containing only structure names, HOMO, LUMO, and Band Gap energies. The names of each of these files indicates the final computational method that was used to calculate the properties. 
+
+The indo_x.txt files correspond to INDO with (default parameters, parameters fit to B3LYP, parameters fit to CAM-B3LYP, parameters fit to M06HF). NOTE: The INDO data sets are 1 datapoint smaller than the other datasets because for some reason `11` does not work with INDO.
 
 
 	├── noopt
