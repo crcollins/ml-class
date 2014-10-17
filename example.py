@@ -43,7 +43,10 @@ if __name__ == '__main__':
 
     FEATURES = {}
     for function in FEATURE_FUNCTIONS:
-        key = function.__name__.lstrip('get_')
+        if function.__name__.startswith('get_'):
+            key = function.__name__[4:]
+        else:
+            key = function.__name__
         temp = function(names, geom_paths)
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
 
