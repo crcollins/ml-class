@@ -71,6 +71,7 @@ if __name__ == '__main__':
         ('LinearRidge', linear_model.Ridge, {'alpha': 1}),
         ('SVM', svm.SVR, {}),
         ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
+        ('Tree', tree.DecisionTreeRegressor, {'max_depth': 5}),
     )
 
 
