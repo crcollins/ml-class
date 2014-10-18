@@ -10,7 +10,7 @@ from sklearn import neighbors
 from sklearn import linear_model
 from sklearn import tree
 
-from utils import load_data, test_clf_kfold
+from utils import load_data, test_clf_kfold, cross_clf_kfold
 import features
 import clfs
 
@@ -68,24 +68,25 @@ if __name__ == '__main__':
         ('Mean', dummy.DummyRegressor, {}),
         ('Linear', linear_model.LinearRegression, {}),
         ('LinearFix', clfs.LinearRegression, {}),
-        ('LinearRidge', linear_model.Ridge, {'alpha': 1}),
-        ('SVM', svm.SVR, {}),
-        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': 2}),
-        ('Tree', tree.DecisionTreeRegressor, {'max_depth': 5}),
+        ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
+        ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 4, 5]}),
+        ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
     )
-
 
     for NAME, PROP, C, gamma in sets:
         print NAME
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
             for CLF_NAME, CLF, KWARGS in CLFS:
-                if CLF_NAME == 'SVM':
-                    KWARGS = {'C': C, 'gamma': gamma}
-
                 start = time.time()
-                train, test = test_clf_kfold(FEAT, PROP, CLF(**KWARGS))
+                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=5)
                 finished = time.time() - start
-                print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished)
+                print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
+
             print 
         print
+
+
+

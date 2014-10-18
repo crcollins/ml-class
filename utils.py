@@ -1,5 +1,6 @@
 import re
 import os
+from itertools import product
 
 import numpy
 
@@ -111,6 +112,39 @@ def load_data(base_paths, file_paths):
                     ends.append(base_part + method_part + bias)
 
     return names, geom_paths, zip(*properties), ends
+
+
+def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
+    groups = {}
+    param_names = params_sets.keys()
+
+    n_sets = len(list(product(*params_sets.values())))
+
+    train = numpy.zeros((cross_folds, n_sets))
+    test = numpy.zeros((cross_folds, n_sets))
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds)):
+        X_train = X[train_idx]
+        X_test = X[test_idx]
+        y_train = y[train_idx].T.tolist()[0]
+        y_test = y[test_idx].T.tolist()[0]
+
+        for j, group in enumerate(product(*params_sets.values())):
+            params = dict(zip(param_names, group))
+            clf = clf_base(**params)
+
+            X_use = numpy.matrix(X_train)
+            y_use = numpy.matrix(y_train).T
+            (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+
+            train[i,j] = test_mean
+
+            clf.fit(X_train, y_train)
+            test[i,j] = mean_absolute_error(clf.predict(X_test), y_test)
+
+    for j, group in enumerate(product(*params_sets.values())):
+        groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
+
+    return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
 
 
 def test_clf_kfold(X, y, clf, folds=10):
