@@ -81,7 +81,7 @@ if __name__ == '__main__':
             print "\t" + FEAT_NAME
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=5)
+                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=10)
                 finished = time.time() - start
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
 
