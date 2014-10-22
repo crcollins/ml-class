@@ -2,6 +2,11 @@ import numpy
 from scipy.spatial.distance import cdist
 from sklearn import svm
 
+from pybrain.datasets import SupervisedDataSet
+from pybrain.supervised.trainers import BackpropTrainer
+from pybrain.structure import FeedForwardNetwork
+from pybrain.structure import LinearLayer, SigmoidLayer
+from pybrain.structure import FullConnection
 
 from utils import CLF
 
@@ -40,3 +45,56 @@ class SVMLaplace(svm.SVR):
                  cache_size=cache_size, verbose=verbose, max_iter=max_iter,
                  random_state=random_state)
         self.kernel = laplace_kernel_gen(gamma)
+
+
+class NeuralNet(object):
+    def __init__(self, hidden_layers=None):
+        self.hidden_layers = list(hidden_layers)
+        self.ds = None
+
+    def build_network(self, layers=None):
+        layerobjects = []
+        for item in layers:
+            try:
+                t, n = item
+                if t == "sig":
+                    if n == 0:
+                        continue
+                    layerobjects.append(SigmoidLayer(n))
+            except TypeError:
+                layerobjects.append(LinearLayer(item))
+
+        n = FeedForwardNetwork()
+        n.addInputModule(layerobjects[0])
+
+        for i, layer in enumerate(layerobjects[1:-1]):
+            n.addModule(layer)
+            connection = FullConnection(layerobjects[i], layerobjects[i+1])
+            n.addConnection(connection)
+
+        n.addOutputModule(layerobjects[-1])
+        connection = FullConnection(layerobjects[-2], layerobjects[-1])
+        n.addConnection(connection)
+
+        n.sortModules()
+        return n
+
+    def improve(self, n=10):
+        trainer = BackpropTrainer(self.nn, self.ds)
+        for i in xrange(n):
+            print trainer.train()
+
+    def fit(self, X, y):
+        n = X.shape[1]
+        self.nn = self.build_network([n]+self.hidden_layers+[1])
+        ds = SupervisedDataSet(n, 1)
+        for i, row in enumerate(X):
+            ds.addSample(row.tolist(), y[i])
+        self.ds = ds
+        self.improve()
+
+    def predict(self, X):
+        r = []
+        for row in X.tolist():
+            r.append(self.nn.activate(row)[0])
+        return numpy.array(r)
