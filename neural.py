@@ -3,9 +3,67 @@ import time
 
 import numpy
 
+from pybrain.datasets import SupervisedDataSet
+from pybrain.supervised.trainers import BackpropTrainer
+from pybrain.structure import FeedForwardNetwork
+from pybrain.structure import LinearLayer, SigmoidLayer
+from pybrain.structure import FullConnection
+
 from utils import load_data
 import features
-import clfs
+
+
+class NeuralNet(object):
+    def __init__(self, hidden_layers=None):
+        self.hidden_layers = list(hidden_layers)
+        self.ds = None
+
+    def build_network(self, layers=None):
+        layerobjects = []
+        for item in layers:
+            try:
+                t, n = item
+                if t == "sig":
+                    if n == 0:
+                        continue
+                    layerobjects.append(SigmoidLayer(n))
+            except TypeError:
+                layerobjects.append(LinearLayer(item))
+
+        n = FeedForwardNetwork()
+        n.addInputModule(layerobjects[0])
+
+        for i, layer in enumerate(layerobjects[1:-1]):
+            n.addModule(layer)
+            connection = FullConnection(layerobjects[i], layerobjects[i+1])
+            n.addConnection(connection)
+
+        n.addOutputModule(layerobjects[-1])
+        connection = FullConnection(layerobjects[-2], layerobjects[-1])
+        n.addConnection(connection)
+
+        n.sortModules()
+        return n
+
+    def improve(self, n=10):
+        trainer = BackpropTrainer(self.nn, self.ds)
+        for i in xrange(n):
+            print trainer.train()
+
+    def fit(self, X, y):
+        n = X.shape[1]
+        self.nn = self.build_network([n]+self.hidden_layers+[1])
+        ds = SupervisedDataSet(n, 1)
+        for i, row in enumerate(X):
+            ds.addSample(row.tolist(), y[i])
+        self.ds = ds
+        self.improve()
+
+    def predict(self, X):
+        r = []
+        for row in X.tolist():
+            r.append(self.nn.activate(row)[0])
+        return numpy.array(r)
 
 
 if __name__ == '__main__':
@@ -66,9 +124,11 @@ if __name__ == '__main__':
     yTrain = y[:split]
     yTest = y[split:]
 
-    clf = clfs.NeuralNet([('sig', 600), ('sig', 200)])
+    clf = NeuralNet([('sig', 600), ('sig', 200)])
     clf.fit(XTrain, yTrain)
     print numpy.abs(clf.predict(XTest)-yTest).mean()
     for i in xrange(100):
         clf.improve(50)
         print numpy.abs(clf.predict(XTest)-yTest).mean()
+
+
