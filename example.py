@@ -59,9 +59,9 @@ if __name__ == '__main__':
     print
 
     sets = (
-        ('HOMO', PROPS[0], 1, 0.1),
-        ('LUMO', PROPS[1], 100, 0.01),
-        ('GAP', PROPS[2], 1, 0.1),
+        ('HOMO', PROPS[0]),
+        ('LUMO', PROPS[1]),
+        ('GAP', PROPS[2]),
     )
 
     CLFS = (
@@ -75,7 +75,7 @@ if __name__ == '__main__':
         ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
     )
 
-    for NAME, PROP, C, gamma in sets:
+    for NAME, PROP in sets:
         print NAME
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
@@ -87,6 +87,3 @@ if __name__ == '__main__':
 
             print 
         print
-
-
-
