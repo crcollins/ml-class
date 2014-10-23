@@ -18,7 +18,7 @@ class NeuralNet(object):
         self.hidden_layers = list(hidden_layers)
         self.ds = None
 
-    def build_network(self, layers=None):
+    def build_network(self, layers=None, end=1):
         layerobjects = []
         for item in layers:
             try:
@@ -52,8 +52,13 @@ class NeuralNet(object):
 
     def fit(self, X, y):
         n = X.shape[1]
-        self.nn = self.build_network([n]+self.hidden_layers+[1])
-        ds = SupervisedDataSet(n, 1)
+        if len(y.shape) > 1:
+            m = y.shape[1]
+        else:
+            m = 1
+
+        self.nn = self.build_network([n]+self.hidden_layers+[m])
+        ds = SupervisedDataSet(n, m)
         for i, row in enumerate(X):
             ds.addSample(row.tolist(), y[i])
         self.ds = ds
@@ -61,8 +66,8 @@ class NeuralNet(object):
 
     def predict(self, X):
         r = []
-        for row in X.tolist():
-            r.append(self.nn.activate(row)[0])
+        for row in X:
+            r.append(self.nn.activate(row))
         return numpy.array(r)
 
 
@@ -111,7 +116,8 @@ if __name__ == '__main__':
     )
 
     X = numpy.array(FEATURES['binary_feature'])
-    y = numpy.array(PROPS[0].T.tolist()[0])
+    y = numpy.array(numpy.concatenate(PROPS, 1))
+
     import random
     temp = range(len(X))
     random.shuffle(temp)
@@ -126,9 +132,9 @@ if __name__ == '__main__':
 
     clf = NeuralNet([('sig', 600), ('sig', 200)])
     clf.fit(XTrain, yTrain)
-    print numpy.abs(clf.predict(XTest)-yTest).mean()
+    print numpy.abs(clf.predict(XTest)-yTest).mean(0)
     for i in xrange(100):
-        clf.improve(50)
-        print numpy.abs(clf.predict(XTest)-yTest).mean()
+        clf.improve(10)
+        print numpy.abs(clf.predict(XTest)-yTest).mean(0)
 
 
