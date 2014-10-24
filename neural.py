@@ -129,9 +129,11 @@ if __name__ == '__main__':
 
     clf = NeuralNet([('sig', 600), ('sig', 200)])
     clf.fit(XTrain, yTrain)
-    print numpy.abs(clf.predict(XTest)-yTest).mean(0)
+    temp = numpy.abs(clf.predict(XTest)-yTest).mean(0)
+    print temp, numpy.linalg.norm(temp)
     for i in xrange(100):
         clf.improve(10)
-        print numpy.abs(clf.predict(XTest)-yTest).mean(0)
+        temp = numpy.abs(clf.predict(XTest)-yTest).mean(0)
+        print temp, numpy.linalg.norm(temp)
 
 
