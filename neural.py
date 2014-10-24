@@ -8,7 +8,7 @@ from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.structure import FeedForwardNetwork
-from pybrain.structure import LinearLayer, SigmoidLayer
+from pybrain.structure import LinearLayer, SigmoidLayer, TanhLayer
 from pybrain.structure import FullConnection
 
 from utils import load_data
@@ -61,7 +61,8 @@ class NeuralNet(object):
 
         # self.nn = self.build_network([n]+self.hidden_layers+[m])
         # self.nn = buildNetwork(n, 800, 50, m, bias=True, hiddenclass=SigmoidLayer)
-        self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
+        # self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
+        self.nn = buildNetwork(n, 20, 20, m, bias=True, hiddenclass=TanhLayer)
         ds = SupervisedDataSet(n, m)
         for i, row in enumerate(X):
             ds.addSample(row.tolist(), y[i])
