@@ -4,6 +4,7 @@ import random
 
 import numpy
 
+from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.structure import FeedForwardNetwork
@@ -58,7 +59,9 @@ class NeuralNet(object):
         else:
             m = 1
 
-        self.nn = self.build_network([n]+self.hidden_layers+[m])
+        # self.nn = self.build_network([n]+self.hidden_layers+[m])
+        # self.nn = buildNetwork(n, 800, 50, m, bias=True, hiddenclass=SigmoidLayer)
+        self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
         ds = SupervisedDataSet(n, m)
         for i, row in enumerate(X):
             ds.addSample(row.tolist(), y[i])
