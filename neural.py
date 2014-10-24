@@ -69,7 +69,6 @@ class NeuralNet(object):
         # self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
         # self.nn = buildNetwork(n, 200, 100, 20, m, bias=True, hiddenclass=TanhLayer)
         self.nn = buildNetwork(*self.layers, bias=True, hiddenclass=SigmoidLayer)
-
         ds = SupervisedDataSet(n, m)
         for i, row in enumerate(X):
             ds.addSample(row.tolist(), y[i])
