@@ -1,5 +1,6 @@
 import os
 import time
+import random
 
 import numpy
 
@@ -109,16 +110,9 @@ if __name__ == '__main__':
         print "\t" + name, feat.shape
     print
 
-    sets = (
-        ('HOMO', PROPS[0]),
-        ('LUMO', PROPS[1]),
-        ('GAP', PROPS[2]),
-    )
-
     X = numpy.array(FEATURES['binary_feature'])
     y = numpy.array(numpy.concatenate(PROPS, 1))
 
-    import random
     temp = range(len(X))
     random.shuffle(temp)
     X = X[temp,:]
