@@ -7,7 +7,12 @@ from sklearn import decomposition
 from rdkit import Chem
 from rdkit.Chem.Fingerprints import FingerprintMols
 
+<<<<<<< HEAD
 from utils import tokenize, ARYL, RGROUPS, decay_function, gauss_decay_function
+=======
+from utils import tokenize, ARYL, RGROUPS, decay_function
+>>>>>>> Add a new feature vector based off chemical fingerprinting
+
 
 
 # Example Feature function
