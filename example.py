@@ -45,6 +45,7 @@ if __name__ == '__main__':
         features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
         # features.get_pca_coulomb_feature,
+        features.get_fingerprint_feature,
     ]
 
     # Construct (name, vector) pairs to auto label features when iterating over them 

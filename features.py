@@ -1,7 +1,11 @@
+import os
 import numpy
 from numpy.linalg import norm
 
 from sklearn import decomposition
+
+from rdkit import Chem
+from rdkit.Chem.Fingerprints import FingerprintMols
 
 from utils import tokenize, ARYL, RGROUPS, decay_function, gauss_decay_function
 
@@ -340,3 +344,25 @@ def get_pca_coulomb_feature(names, paths, dimensions=100):
     pca.fit(feat)
     # print pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
     return numpy.matrix(pca.transform(feat))
+
+
+def get_fingerprint_feature(names, paths, size=256):
+    '''
+    This feature vector is constructed from a chemical fingerprint algorithm.
+    Basically, this ends up being a boolean vector of whether or not different
+    structural features occur within the molecule. These could be any sort of
+    bonding chain or atom pairing. The specifics of the fingerprinting can be
+    found here.
+    http://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity
+    '''
+    vectors = []
+    for path in paths:
+        base, filename = os.path.split(path)
+        path = os.path.join(base, "mol2", filename.replace(".out", ".mol2"))
+        
+        m = Chem.MolFromMol2File(path)
+        f = FingerprintMols.FingerprintMol(m, fpSize=size, minPath=1, 
+                                        maxPath=7, bitsPerHash=2, useHs=True,
+                                        tgtDensity=0, minSize=size)
+        vectors.append([x == '1' for x in f.ToBitString()])
+    return numpy.matrix(vectors)
