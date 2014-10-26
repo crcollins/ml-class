@@ -16,8 +16,9 @@ import features
 
 
 class NeuralNet(object):
-    def __init__(self, hidden_layers=None):
-        self.hidden_layers = list(hidden_layers)
+    def __init__(self, layers):
+        self.layers = layers
+        # self.hidden_layers = list(hidden_layers)
         self.ds = None
         self.train_error = []
         self.test_error = []
@@ -65,7 +66,9 @@ class NeuralNet(object):
         # self.nn = self.build_network([n]+self.hidden_layers+[m])
         # self.nn = buildNetwork(n, 800, 50, m, bias=True, hiddenclass=SigmoidLayer)
         # self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
-        self.nn = buildNetwork(n, 20, 20, m, bias=True, hiddenclass=TanhLayer)
+        # self.nn = buildNetwork(n, 200, 100, 20, m, bias=True, hiddenclass=TanhLayer)
+        self.nn = buildNetwork(*self.layers, bias=True, hiddenclass=SigmoidLayer)
+
         ds = SupervisedDataSet(n, m)
         for i, row in enumerate(X):
             ds.addSample(row.tolist(), y[i])
