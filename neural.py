@@ -19,6 +19,8 @@ class NeuralNet(object):
     def __init__(self, hidden_layers=None):
         self.hidden_layers = list(hidden_layers)
         self.ds = None
+        self.train_error = []
+        self.test_error = []
 
     def build_network(self, layers=None, end=1):
         layerobjects = []
@@ -50,7 +52,8 @@ class NeuralNet(object):
     def improve(self, n=10):
         trainer = BackpropTrainer(self.nn, self.ds)
         for i in xrange(n):
-            print trainer.train()
+            self.train_error.append(trainer.train())
+            # print self.train_error[-1]
 
     def fit(self, X, y):
         n = X.shape[1]
