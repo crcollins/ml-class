@@ -91,16 +91,17 @@ if __name__ == '__main__':
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
 
     FEATURE_FUNCTIONS = [
-        features.get_null_feature,
-        features.get_binary_feature,
+        # features.get_null_feature,
+        # features.get_binary_feature,
         # features.get_flip_binary_feature,
-        features.get_decay_feature,
+        # features.get_decay_feature,
         # tuned_decay,
         # tuned_centered,
-        features.get_centered_decay_feature,
-        features.get_signed_centered_decay_feature,
+        # features.get_centered_decay_feature,
+        # features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
         # features.get_pca_coulomb_feature,
+        features.get_fingerprint_feature,
     ]
 
     FEATURES = {}
@@ -109,7 +110,7 @@ if __name__ == '__main__':
             key = function.__name__[4:]
         else:
             key = function.__name__
-        temp = function(names, geom_paths)
+        temp = function(names, geom_paths, size=1024)
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
 
     PROPS = [numpy.matrix(x).T for x in properties]
@@ -120,7 +121,7 @@ if __name__ == '__main__':
         print "\t" + name, feat.shape
     print
 
-    X = numpy.array(FEATURES['binary_feature'])
+    X = numpy.array(FEATURES['fingerprint_feature'])
     y = numpy.array(numpy.concatenate(PROPS, 1))
 
     temp = range(len(X))
