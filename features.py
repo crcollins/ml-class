@@ -362,9 +362,7 @@ def get_fingerprint_feature(names, paths, size=256):
     '''
     vectors = []
     for path in paths:
-        base, filename = os.path.split(path)
-        path = os.path.join(base, "mol2", filename.replace(".out", ".mol2"))
-        
+        path = path.replace("out", "mol2")
         m = Chem.MolFromMol2File(path)
         f = FingerprintMols.FingerprintMol(m, fpSize=size, minPath=1, 
                                         maxPath=7, bitsPerHash=2, useHs=True,
