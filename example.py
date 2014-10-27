@@ -16,18 +16,23 @@ import clfs
 
 
 if __name__ == '__main__':
+    # Change this to adjust which optimization sets to use
     methods = ('b3lyp', )#'cam', 'm06hf')
+
+    # Change this to adjust the data sets to use
     base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
 
+    # Testing manaully adjusted feature vector parameters
     tuned_decay = partial(features.get_decay_feature, power=2, factor=.75)
     tuned_decay.__name__ = "get_tuned_decay_feature"
     tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75)
     tuned_centered.__name__ = "get_tuned_centered_feature"
 
+    # Change this to modify which feature vectors will be used for the testing
     FEATURE_FUNCTIONS = [
         features.get_null_feature,
         features.get_binary_feature,
@@ -41,6 +46,7 @@ if __name__ == '__main__':
         # features.get_pca_coulomb_feature,
     ]
 
+    # Construct (name, vector) pairs to auto label features when iterating over them 
     FEATURES = {}
     for function in FEATURE_FUNCTIONS:
         if function.__name__.startswith('get_'):
@@ -48,9 +54,10 @@ if __name__ == '__main__':
         else:
             key = function.__name__
         temp = function(names, geom_paths)
+        # Add the associtated file/data/opt meta data to each of the feature vectors
         FEATURES[key] = numpy.concatenate((temp, ends), 1)
-
     PROPS = [numpy.matrix(x).T for x in properties]
+
 
     print "Took %.4f secs to load %d data points." % ((time.time() - start), PROPS[0].shape[0])
     print "Sizes of Feature Matrices"
@@ -58,12 +65,19 @@ if __name__ == '__main__':
         print "\t" + name, feat.shape
     print
 
+    # Adjust the properties to test
     sets = (
         ('HOMO', PROPS[0]),
         ('LUMO', PROPS[1]),
         ('GAP', PROPS[2]),
     )
 
+    # Adjust the models/parameters to test
+    # This is a collection of names, model pointers, and parameter values to cross validate
+    # The parameters take the form of a dict with the keys being the parameter name for the model,
+    # and the values being cross validated. For the cross validation parameters, it does a simple
+    # cartesian product of all of the parameter lists and tests with all of them and then picks the 
+    # model with the lowest cross validation error and uses it for the final testing.
     CLFS = (
         ('Mean', dummy.DummyRegressor, {}),
         ('Linear', linear_model.LinearRegression, {}),
