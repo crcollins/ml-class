@@ -1,0 +1,15 @@
+@<TRIPOS>MOLECULE
+mol_data/opt/cam/geoms/mol2/11.out
+ 4 3 0 0 0
+SMALL
+GASTEIGER
+
+@<TRIPOS>ATOM
+      1 O           1.3270    2.5993   -0.0191 O.2     1  LIG1       -0.3047
+      2 C           0.1245    2.6017   -0.0190 C.2     1  LIG1        0.1071
+      3 H          -0.4646    3.5393    0.0138 H       1  LIG1        0.0988
+      4 H          -0.4683    1.6664   -0.0517 H       1  LIG1        0.0988
+@<TRIPOS>BOND
+     1     4     2    1
+     2     1     2    2
+     3     2     3    1
