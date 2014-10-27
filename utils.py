@@ -3,6 +3,7 @@ import os
 from itertools import product
 
 import numpy
+import scipy
 
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
