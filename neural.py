@@ -1,6 +1,7 @@
 import os
 import time
 import random
+from itertools import product
 
 import numpy
 
@@ -134,8 +135,6 @@ if __name__ == '__main__':
     XTest = X[split:,:]
     yTrain = y[:split]
     yTest = y[split:]
-
-    from itertools import product
 
     first = [25, 50, 100, 200, 400]
     second = [25, 50, 100, None]
