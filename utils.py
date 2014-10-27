@@ -98,7 +98,7 @@ def load_data(base_paths, file_paths):
                     name, props = temp[0], temp[1:]
                     names.append(name)
                     
-                    geom_path = os.path.join('data', base_path, 'geoms', name + '.out')
+                    geom_path = os.path.join('data', base_path, 'geoms', 'out', name + '.out')
                     geom_paths.append(geom_path)
 
                     properties.append([float(x) for x in props])
