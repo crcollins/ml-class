@@ -14,6 +14,9 @@ from utils import load_data, test_clf_kfold, cross_clf_kfold
 import features
 import clfs
 
+import matplotlib.pyplot as plt
+import clfplot
+
 
 if __name__ == '__main__':
     methods = ('b3lyp', )#'cam', 'm06hf')
@@ -69,21 +72,38 @@ if __name__ == '__main__':
         ('Linear', linear_model.LinearRegression, {}),
         ('LinearFix', clfs.LinearRegression, {}),
         ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
-        ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
-        ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
-        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 4, 5]}),
-        ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
+        #('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        #('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        #('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 4, 5]}),
+        #('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
     )
 
     for NAME, PROP in sets:
         print NAME
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
+
+            #####for plot only####
+            tempresult=numpy.zeros([len(CLFS),2])
+            i=0
+            #####for plot only####
+
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
                 pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=10)
                 finished = time.time() - start
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
 
-            print 
+                #####for plot only####
+                tempresult[i] = [test[0], test[1]]
+                i += 1
+                #####for plot only####
+
+            #####for plot only####
+            clfplot.lineplot(tempresult[:, 0], tempresult[:, 1], [CLFS[i][0] for i in range(len(CLFS))], FEAT_NAME)
+            #####for plot only####
+            print
+        #####for plot only####
+        plt.show()
+        #####for plot only####
         print
