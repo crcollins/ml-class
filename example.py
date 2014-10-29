@@ -38,6 +38,7 @@ if __name__ == '__main__':
         features.get_binary_feature,
         features.get_flip_binary_feature,
         features.get_decay_feature,
+        features.get_gauss_decay_feature,
         tuned_decay,
         tuned_centered,
         features.get_centered_decay_feature,

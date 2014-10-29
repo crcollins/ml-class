@@ -76,6 +76,10 @@ def decay_function(distance, power=1, H=1, factor=1):
     return (factor * (distance ** -H)) ** power
 
 
+def gauss_decay_function(x, sigma=6):
+    return numpy.exp(-(x / float(sigma)) ** 2)
+
+
 def load_data(base_paths, file_paths):
     names = []
     geom_paths = []

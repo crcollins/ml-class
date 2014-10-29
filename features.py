@@ -3,7 +3,7 @@ from numpy.linalg import norm
 
 from sklearn import decomposition
 
-from utils import tokenize, ARYL, RGROUPS, decay_function
+from utils import tokenize, ARYL, RGROUPS, decay_function, gauss_decay_function
 
 
 # Example Feature function
@@ -143,6 +143,47 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1):
             # count + 1 is used so that the first value will be 1, and 
             # subsequent values will have their respective scaling.
             temp[idx] += decay_function(count + 1, power, H, factor)
+        vectors.append(temp)
+    return numpy.matrix(vectors)
+
+
+def get_gauss_decay_feature(names, paths, sigma=2):
+    '''
+    This feature vector works the exact same as the normal decay feature
+    vector with the exception that it uses a Gaussian distribution for the
+    decay. This was picked because looking at the PCA components for the 
+    parts of the structure and their relative influence as they were farther
+    in the name from the start in the binary feature vector. 
+    In the future, this might need to be a per component decay.
+
+    NOTE: The sigma value is kind of arbitrary. With a little bit of tuning
+    sigma=2 produced a reasonably low error. (From the PCA, the expected 
+    value was sigma=6)
+    '''
+    first = ARYL
+    second = ['*'] + RGROUPS
+    length = len(first) + 2 * len(second)
+    vector_map = first + 2 * second
+
+    vectors = []
+    for name in names:
+
+        name = name.replace('-', '')  # no support for flipping yet
+        end = tokenize(name)
+        temp = [0] * length
+        for i, char in enumerate(end):
+            # Use i / 3 because the tokens come in sets of 3 (Aryl, R1, R2)
+            # Use i % 3 to get which part it is in the set (Aryl, R1, R2)
+            count, part = divmod(i, 3)
+
+            idx = vector_map.index(char)
+            if char in second and part == 2:
+                # If this is the second r group, change to use the second
+                # R group location in the feature vector.
+                idx = vector_map.index(char, idx + 1)
+
+            # This starts from 0 and goes out unlike the other decay function.
+            temp[idx] += gauss_decay_function(count, sigma)
         vectors.append(temp)
     return numpy.matrix(vectors)
 
