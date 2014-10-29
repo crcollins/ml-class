@@ -34,13 +34,6 @@ class CLF(object):
         '''
         raise NotImplementedError
 
-    @classmethod
-    def clfs(cls):
-        '''
-        You do not need need to implement this. This is for book keeping.
-        '''
-        return cls.__subclasses__()
-
 
 ARYL = ['2', '3', '4', '11', '12']
 ARYL0 = ['2', '3', '11']
