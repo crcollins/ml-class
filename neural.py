@@ -83,6 +83,20 @@ class NeuralNet(object):
         return numpy.array(r)
 
 
+def split_data(X, y, percent=0.8):
+    temp = range(len(X))
+    random.shuffle(temp)
+    X = X[temp,:]
+    y = y[temp,:]
+
+    split = int(percent*X.shape[0])
+    XTrain = X[:split,:]
+    XTest = X[split:,:]
+    yTrain = y[:split]
+    yTest = y[split:]
+    return XTrain, yTrain, XTest, yTest
+
+
 if __name__ == '__main__':
     methods = ('b3lyp', 'cam', 'm06hf')
     base_paths = tuple(os.path.join('opt', x) for x in methods)
@@ -125,16 +139,8 @@ if __name__ == '__main__':
     X = numpy.array(FEATURES['fingerprint_feature'])
     y = numpy.array(numpy.concatenate(PROPS, 1))
 
-    temp = range(len(X))
-    random.shuffle(temp)
-    X = X[temp,:]
-    y = y[temp,:]
+    XTrain, yTrain, XTest, yTest = split_data(X, y)
 
-    split = int(.8*X.shape[0])
-    XTrain = X[:split,:]
-    XTest = X[split:,:]
-    yTrain = y[:split]
-    yTest = y[split:]
 
     first = [25, 50, 100, 200, 400]
     second = [25, 50, 100, None]
