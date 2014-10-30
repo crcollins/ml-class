@@ -1,8 +1,10 @@
 import numpy
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
-
+from scipy import tanh
 from sklearn import decomposition
+from pybrain.tools.functions import sigmoid
+
 
 
 def pca_plot(X, y, title="Principal Component Analysis", save=None):
@@ -53,3 +55,27 @@ def pca_plot_3d(X, y, title="Principal Component Analysis"):
     plt.clf()
 
 
+def plot_neural_net(X, y, clf):
+    values = X
+    pca_plot(X, y)
+    for layer in clf.nn.modulesSorted:
+        name = layer.__class__.__name__
+        if name == "BiasUnit":
+            continue
+
+        try:
+            conn = clf.nn.connections[layer][0]
+        except IndexError:
+            continue
+
+        if "Linear" not in name:
+            if "Sigmoid" in name:
+                values = sigmoid(values)
+            elif "Tanh" in name:
+                values = tanh(values)
+            pca_plot(values, y)
+
+        shape = (conn.outdim, conn.indim)
+        temp = numpy.dot(numpy.reshape(conn.params, shape), values.T)
+        pca_plot(temp.T, y)
+        values = temp.T
