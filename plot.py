@@ -57,8 +57,9 @@ def pca_plot_3d(X, y, title="Principal Component Analysis"):
 
 def plot_neural_net(X, y, clf):
     values = X
-    pca_plot(X, y)
-    for layer in clf.nn.modulesSorted:
+    pca_plot(X, y, save="00_conn.png")
+    counter = 1
+    for i, layer in enumerate(clf.nn.modulesSorted):
         name = layer.__class__.__name__
         if name == "BiasUnit":
             continue
@@ -70,12 +71,16 @@ def plot_neural_net(X, y, clf):
 
         if "Linear" not in name:
             if "Sigmoid" in name:
+                add = "sigmoid"
                 values = sigmoid(values)
             elif "Tanh" in name:
+                add = "tanh"
                 values = tanh(values)
-            pca_plot(values, y)
+            pca_plot(values, y, save="%02d_conn_%s.png" % (counter, add))
+            counter += 1
 
         shape = (conn.outdim, conn.indim)
         temp = numpy.dot(numpy.reshape(conn.params, shape), values.T)
-        pca_plot(temp.T, y)
+        pca_plot(temp.T, y, save="%02d_conn.png" % counter)
+        counter += 1
         values = temp.T
