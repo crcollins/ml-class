@@ -8,15 +8,15 @@ from sklearn import decomposition
 def pca_plot(X, y, title="Principal Component Analysis", save=None):
     pca = decomposition.PCA(n_components=2)
     pca.fit(X)
-    temp = pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
-    temper = pca.transform(X)
-    Xs = temper[:,0]
-    Ys = temper[:,1]
+    variability = pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
+    transformed = pca.transform(X)
+    Xs = transformed[:,0]
+    Ys = transformed[:,1]
     y = numpy.array(y.T.tolist()[0])
     COLOR = (y-y.min())/y.max()
     # cm = plt.get_cmap("HOT")
     plt.scatter(Xs, Ys, c=COLOR, s=15, marker='o', edgecolors='none')
-    plt.title(title + "\n%s %s" % temp)
+    plt.title(title + "\n%s %s" % variability)
     plt.xlabel("PCA 1")
     plt.ylabel("PCA 2")
     if save is None:
@@ -34,14 +34,14 @@ def plot_and_save_all_pca(features, property_sets):
             pca_plot(feat, prop, title=title, save=save)
 
 
-def PCA_stuff_3d(X, y, title="Principal Component Analysis"):
+def pca_plot_3d(X, y, title="Principal Component Analysis"):
     pca = decomposition.PCA(n_components=3)
     pca.fit(X)
     print pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
-    temper = pca.transform(X)
-    Xs = temper[:,0]
-    Ys = temper[:,1]
-    Zs = temper[:,2]
+    transformed = pca.transform(X)
+    Xs = transformed[:,0]
+    Ys = transformed[:,1]
+    Zs = transformed[:,2]
     y = numpy.array(y.T.tolist()[0])
     COLOR = (y-y.min())/y.max()
     cm = plt.get_cmap("HOT")
