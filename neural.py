@@ -141,31 +141,21 @@ if __name__ == '__main__':
 
     XTrain, yTrain, XTest, yTest = split_data(X, y)
 
+    n = XTrain.shape[1]
+    if len(y.shape) > 1:
+        m = y.shape[1]
+    else:
+        m = 1
 
-    first = [25, 50, 100, 200, 400]
-    second = [25, 50, 100, None]
-    third = [10, 25, 50, None]
+    layers = [n] + [25, 10] + [m]
 
-    clfs = {}
-    temp = list(product(first, second, third))
-    for layers in reversed(temp):
-        n = X.shape[1]
-        if len(y.shape) > 1:
-            m = y.shape[1]
-        else:
-            m = 1
+    print layers
+    clf = NeuralNet(layers)
+    clf.fit(XTrain, yTrain)
+    clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
+    print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
 
-        layers = [n] + [x for x in layers if x] + [m]
-
-        print layers
-        clf = NeuralNet(layers)
-        clfs[tuple(layers)] = clf
-        clf.fit(XTrain, yTrain)
+    for i in xrange(5):
+        clf.improve(10)
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-        print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
-        for i in xrange(100):
-            clf.improve(10)
-            clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-            print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
-
-        print
+        print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
