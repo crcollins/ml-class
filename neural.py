@@ -97,6 +97,41 @@ def split_data(X, y, percent=0.8):
     return XTrain, yTrain, XTest, yTest
 
 
+def test_architectures(X, y, layer_groups=None):
+    if layer_groups is None:
+        layer_groups = [
+                        [25, 50, 100, 200, 400],
+                        [25, 50, 100, None],
+                        [10, 25, 50, None],
+                        ]
+
+    layers_set = set(tuple(y for y in x if y) for x in product(*layer_groups)))
+    XTrain, yTrain, XTest, yTest = split_data(X, y)
+
+    n = X.shape[1]
+    if len(y.shape) > 1:
+        m = y.shape[1]
+    else:
+        m = 1
+ 
+    clfs = {}
+    for layers in layers_set: 
+        layers = (n, ) + layers + (m, )
+        print layers
+
+        clf = NeuralNet(layers)
+        clfs[layers] = clf 
+        clf.fit(XTrain, yTrain)
+
+        clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
+        print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+        for i in xrange(35):
+            clf.improve(10)
+            clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
+            print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+        print
+
+
 if __name__ == '__main__':
     methods = ('b3lyp', 'cam', 'm06hf')
     base_paths = tuple(os.path.join('opt', x) for x in methods)
