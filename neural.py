@@ -105,7 +105,7 @@ def test_architectures(X, y, layer_groups=None):
                         [10, 25, 50, None],
                         ]
 
-    layers_set = set(tuple(y for y in x if y) for x in product(*layer_groups)))
+    layers_set = set(tuple(y for y in x if y) for x in product(*layer_groups))
     XTrain, yTrain, XTest, yTest = split_data(X, y)
 
     n = X.shape[1]
