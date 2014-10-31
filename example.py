@@ -38,8 +38,8 @@ if __name__ == '__main__':
         features.get_decay_feature,
         tuned_decay,
         tuned_centered,
-        features.get_centered_decay_feature,
-        features.get_signed_centered_decay_feature,
+        #features.get_centered_decay_feature,
+        #features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
         # features.get_pca_coulomb_feature,
     ]
@@ -80,6 +80,9 @@ if __name__ == '__main__':
 
     for NAME, PROP in sets:
         print NAME
+        #####for plot only####
+        plt.figure()
+        #####for plot only####
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
 
@@ -100,7 +103,8 @@ if __name__ == '__main__':
                 #####for plot only####
 
             #####for plot only####
-            clfplot.lineplot(tempresult[:, 0], tempresult[:, 1], [CLFS[i][0] for i in range(len(CLFS))], FEAT_NAME)
+            clfplot.lineplot(tempresult[:, 0], tempresult[:, 1], [CLFS[i][0] for i in range(len(CLFS))], FEAT_NAME, NAME)
+            #clfplot.lineplotall(tempresult[:, 0], tempresult[:, 1], [CLFS[i][0] for i in range(len(CLFS))], FEAT_NAME, NAME)
             #####for plot only####
             print
         #####for plot only####
