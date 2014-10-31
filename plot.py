@@ -7,16 +7,32 @@ from pybrain.tools.functions import sigmoid
 
 
 
-def pca_plot(X, y, title="Principal Component Analysis", save=None):
+def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=False):
     pca = decomposition.PCA(n_components=2)
     pca.fit(X)
     variability = pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
     transformed = pca.transform(X)
     Xs = transformed[:,0]
     Ys = transformed[:,1]
-    y = numpy.array(y.T.tolist()[0])
-    COLOR = (y-y.min())/y.max()
-    # cm = plt.get_cmap("HOT")
+
+    if len(y.shape) > 1 and y.shape[1] == 3:
+        red, green, blue = y.T
+        red = numpy.matrix((red - red.min()) / (red.max() - red.min()))
+        green = numpy.matrix((green - green.min()) / (green.max() - green.min()))
+        blue = numpy.matrix((blue - blue.min()) / (blue.max() - blue.min()))
+        alpha = numpy.matrix(numpy.ones(blue.shape)) * .75
+        if segment:
+            red = red > 0.5
+            green = green > 0.5
+            blue = blue > 0.5
+        COLOR = numpy.concatenate((red.T, green.T, blue.T, alpha.T), 1)
+        if segment:
+            mm = numpy.array((red & green & blue).tolist()[0])
+            COLOR[mm,:] = [0.75, 0.75, 0.75, 0.75]
+    else:
+        # y = numpy.array(y.T.tolist()[0])
+        COLOR = (y - y.min()) / (y.max() - y.min())
+
     plt.scatter(Xs, Ys, c=COLOR, s=15, marker='o', edgecolors='none')
     plt.title(title + "\n%s %s" % variability)
     plt.xlabel("PCA 1")
@@ -55,9 +71,9 @@ def pca_plot_3d(X, y, title="Principal Component Analysis"):
     plt.clf()
 
 
-def plot_neural_net(X, y, clf):
+def plot_neural_net(X, y, clf, segment=False):
     values = X
-    pca_plot(X, y, save="00_conn.png")
+    pca_plot(X, y, save="00_conn.png", segment=segment)
     counter = 1
     for i, layer in enumerate(clf.nn.modulesSorted):
         name = layer.__class__.__name__
@@ -76,11 +92,10 @@ def plot_neural_net(X, y, clf):
             elif "Tanh" in name:
                 add = "tanh"
                 values = tanh(values)
-            pca_plot(values, y, save="%02d_conn_%s.png" % (counter, add))
+            pca_plot(values, y, save="%02d_conn_%s.png" % (counter, add), segment=segment)
             counter += 1
-
         shape = (conn.outdim, conn.indim)
         temp = numpy.dot(numpy.reshape(conn.params, shape), values.T)
-        pca_plot(temp.T, y, save="%02d_conn.png" % counter)
+        pca_plot(temp.T, y, save="%02d_conn.png" % counter, segment=segment)
         counter += 1
         values = temp.T
