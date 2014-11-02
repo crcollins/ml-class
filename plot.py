@@ -30,9 +30,7 @@ def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=Fals
             mm = numpy.array((red & green & blue).tolist()[0])
             COLOR[mm,:] = [0.75, 0.75, 0.75, 0.75]
     else:
-        # y = numpy.array(y.T.tolist()[0])
         COLOR = (y - y.min()) / (y.max() - y.min())
-
     plt.scatter(Xs, Ys, c=COLOR, s=15, marker='o', edgecolors='none')
     plt.title(title + "\n%s %s" % variability)
     plt.xlabel("PCA 1")

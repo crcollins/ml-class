@@ -29,7 +29,7 @@ def get_null_feature(names, paths, **kwargs):
     return numpy.matrix(numpy.zeros((len(names), 0)))
 
 
-def get_binary_feature(names, paths, limit=4):
+def get_binary_feature(names, paths, limit=4, **kwargs):
     '''
     Creates a simple boolean feature vector based on whether or not a part is 
     in the name of the structure. 
@@ -72,7 +72,7 @@ def get_binary_feature(names, paths, limit=4):
     return numpy.matrix(vectors)
 
 
-def get_flip_binary_feature(names, paths, limit=4):
+def get_flip_binary_feature(names, paths, limit=4, **kwargs):
     '''
     This creates a feature vector that is the same as the normal binary one
     with the addition of an additional element for each triplet to account
@@ -113,7 +113,7 @@ def get_flip_binary_feature(names, paths, limit=4):
     return numpy.matrix(vectors)
 
 
-def get_decay_feature(names, paths, power=1, H=1, factor=1):
+def get_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
     '''
     This feature vector works about the same as the binary feature vector
     with the exception that it does not have O(N) scaling as the length of
@@ -151,7 +151,7 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-def get_gauss_decay_feature(names, paths, sigma=2):
+def get_gauss_decay_feature(names, paths, sigma=2, **kwargs):
     '''
     This feature vector works the exact same as the normal decay feature
     vector with the exception that it uses a Gaussian distribution for the
@@ -192,7 +192,7 @@ def get_gauss_decay_feature(names, paths, sigma=2):
     return numpy.matrix(vectors)
 
 
-def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
+def get_centered_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
     '''
     This feature vector takes the same approach as the decay feature vector
     with the addition that it does the decay from the center of the structure.
@@ -232,7 +232,8 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
+def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1, 
+                                                                    **kwargs):
     '''
     This feature vector works the same as the centered decay feature vector 
     with the addition that it takes into account the side of the center that
@@ -278,7 +279,7 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1):
     return numpy.matrix(vectors)
 
 
-def get_coulomb_feature(names, paths):
+def get_coulomb_feature(names, paths, **kwargs):
     '''
     This feature vector is based on a distance matrix between all of the atoms
     in the structure with each element multiplied by the number of protons in 
@@ -322,7 +323,7 @@ def get_coulomb_feature(names, paths):
     return numpy.matrix(FEAT)
 
 
-def get_pca_coulomb_feature(names, paths, dimensions=100):
+def get_pca_coulomb_feature(names, paths, dimensions=100, **kwargs):
     '''
     This feature vector takes the feature matrix from get_coulomb_feature and 
     does Principal Component Analysis on it to extract the N most influential
@@ -346,7 +347,7 @@ def get_pca_coulomb_feature(names, paths, dimensions=100):
     return numpy.matrix(pca.transform(feat))
 
 
-def get_fingerprint_feature(names, paths, size=256):
+def get_fingerprint_feature(names, paths, size=256, **kwargs):
     '''
     This feature vector is constructed from a chemical fingerprint algorithm.
     Basically, this ends up being a boolean vector of whether or not different
