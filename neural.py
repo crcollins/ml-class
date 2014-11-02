@@ -23,6 +23,7 @@ class NeuralNet(object):
         self.ds = None
         self.train_error = []
         self.test_error = []
+        self.test_error_norm = []
 
     def build_network(self, layers=None, end=1):
         layerobjects = []
@@ -124,11 +125,13 @@ def test_architectures(X, y, layer_groups=None):
         clf.fit(XTrain, yTrain)
 
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-        print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+        clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
+        print -1, clf.test_error[-1], clf.test_error_norm[-1]
         for i in xrange(35):
             clf.improve(10)
             clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-            print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+            clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
+            print i, clf.test_error[-1], clf.test_error_norm[-1]
         print
 
 
