@@ -35,9 +35,9 @@ class CLF(object):
         raise NotImplementedError
 
 
-ARYL = ['2', '3', '4', '11', '12']
+ARYL = ['2', '3', '4', '6', '11', '12', '13']
 ARYL0 = ['2', '3', '11']
-RGROUPS = ['a', 'e', 'f', 'i', 'l']
+RGROUPS = ['a', 'd', 'e', 'f', 'h', 'i', 'l']
 
 
 def tokenize(string):
