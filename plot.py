@@ -97,3 +97,33 @@ def plot_neural_net(X, y, clf, segment=False):
         pca_plot(temp.T, y, save="%02d_conn.png" % counter, segment=segment)
         counter += 1
         values = temp.T
+
+
+def plot_errors(values, property_name):
+    fig, ax = plt.subplots()
+
+    ind = numpy.arange(len(values.keys()))
+
+    errors = {}
+    for feature, methods in values.items():
+        for method, error in methods.items():
+            try:
+                errors[method].append(error)
+            except:
+                errors[method] = [error]
+
+    width = 0.9 / len(errors)
+
+    colors = ['r', 'y', 'g', 'c', 'b', 'm', 'k']
+    for i, (method, errors) in enumerate(errors.items()):
+            plt.bar(ind+i*width, errors, width, color=colors[i], label=method)
+
+    plt.title(property_name)
+    plt.xticks(rotation=10)
+    ax.set_xticks(ind + (len(errors)/2 * width))
+    ax.set_xticklabels(values.keys())
+    ax.set_ylabel("Mean Absolute Error (eV)")
+    plt.legend(loc="best")
+
+    plt.tight_layout()
+    plt.show()
