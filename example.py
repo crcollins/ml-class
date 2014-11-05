@@ -20,17 +20,11 @@ if __name__ == '__main__':
     methods = ('b3lyp', )#'cam', 'm06hf')
 
     # Change this to adjust the data sets to use
-    base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
+    base_paths = tuple(os.path.join('opt', x) for x in ('b3lyp', ))
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
-
-    # Testing manaully adjusted feature vector parameters
-    tuned_decay = partial(features.get_decay_feature, power=2, factor=.75)
-    tuned_decay.__name__ = "get_tuned_decay_feature"
-    tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75)
-    tuned_centered.__name__ = "get_tuned_centered_feature"
 
     # Change this to modify which feature vectors will be used for the testing
     FEATURE_FUNCTIONS = [
@@ -39,8 +33,6 @@ if __name__ == '__main__':
         features.get_flip_binary_feature,
         features.get_decay_feature,
         features.get_gauss_decay_feature,
-        tuned_decay,
-        tuned_centered,
         features.get_centered_decay_feature,
         features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
