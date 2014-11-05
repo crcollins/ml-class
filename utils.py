@@ -119,7 +119,7 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 
     train = numpy.zeros((cross_folds, n_sets))
     test = numpy.zeros((cross_folds, n_sets))
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds)):
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds, shuffle=True, random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
@@ -147,7 +147,7 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 def test_clf_kfold(X, y, clf, folds=10):
     train = numpy.zeros(folds)
     test = numpy.zeros(folds)
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds, shuffle=True, random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
