@@ -127,12 +127,13 @@ def test_architectures(X, y, layer_groups=None):
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
         clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
         print -1, clf.test_error[-1], clf.test_error_norm[-1]
-        for i in xrange(35):
+        for i in xrange(10):
             clf.improve(10)
             clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
             clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
             print i, clf.test_error[-1], clf.test_error_norm[-1]
         print
+    return clfs
 
 
 if __name__ == '__main__':
