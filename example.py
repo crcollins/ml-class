@@ -83,15 +83,18 @@ if __name__ == '__main__':
         ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
     )
 
+    results = {}
     for NAME, PROP in sets:
         print NAME
+        results[NAME] = {}
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
+            results[NAME][FEAT_NAME] = {}
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=10)
+                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
                 finished = time.time() - start
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
-
+                results[NAME][FEAT_NAME][CLF_NAME] = test[0]
             print 
         print
