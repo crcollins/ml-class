@@ -64,10 +64,6 @@ class NeuralNet(object):
         else:
             m = 1
 
-        # self.nn = self.build_network([n]+self.hidden_layers+[m])
-        # self.nn = buildNetwork(n, 800, 50, m, bias=True, hiddenclass=SigmoidLayer)
-        # self.nn = buildNetwork(n, 800, 35, m, bias=True, hiddenclass=SigmoidLayer)
-        # self.nn = buildNetwork(n, 200, 100, 20, m, bias=True, hiddenclass=TanhLayer)
         self.nn = buildNetwork(*self.layers, bias=True, hiddenclass=SigmoidLayer)
 
         ds = SupervisedDataSet(n, m)
