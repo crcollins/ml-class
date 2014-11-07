@@ -1,3 +1,7 @@
+Took 48.2177 secs to load 6694 data points.
+Sizes of Feature Matrices
+	fingerprint_feature (1024) (6694, 1032)
+
 Took 49.3897 secs to load 6694 data points.
 Sizes of Feature Matrices
 	fingerprint_feature (6694, 264)
@@ -20,6 +24,16 @@ HOMO
 		SVM Laplace: 0.1892 +/- 0.0497 eV (21663.3436 secs) (1000, 0.001)
 		k-NN: 0.4100 +/- 0.2510 eV (1170.9270 secs) (2,)
 		Tree: 0.4103 +/- 0.2822 eV (11.8023 secs) (5,)
+
+	fingerprint_feature (1024)
+		Mean: 1.3199 +/- 0.4577 eV (16.1302 secs) ()
+		Linear: 0.2388 +/- 0.0980 eV (524.0370 secs) ()
+		LinearFix: 0.2369 +/- 0.0982 eV (574.3015 secs) ()
+		LinearRidge: 0.2369 +/- 0.0982 eV (616.7949 secs) (0.001,)
+		SVM: 0.1329 +/- 0.0559 eV (47976.2367 secs) (1000, 0.001)
+		SVM Laplace: 0.1816 +/- 0.0570 eV (81860.4760 secs) (1000, 0.001)
+		k-NN: 0.4591 +/- 0.2977 eV (2602.4285 secs) (2,)
+		Tree: 0.4023 +/- 0.2734 eV (127.9521 secs) (5,)
 
 	flip_binary_feature
 		Mean: 1.3199 +/- 0.4577 eV (0.1158 secs) ()
@@ -113,6 +127,16 @@ LUMO
 		k-NN: 0.3522 +/- 0.1483 eV (1299.7858 secs) (2,)
 		Tree: 0.3813 +/- 0.0887 eV (13.9451 secs) (5,)
 
+	fingerprint_feature (1014)
+		Mean: 0.9528 +/- 0.2807 eV (16.8673 secs) ()
+		Linear: 0.1537 +/- 0.0436 eV (559.8193 secs) ()
+		LinearFix: 0.1532 +/- 0.0433 eV (592.4976 secs) ()
+		LinearRidge: 0.1532 +/- 0.0433 eV (623.7163 secs) (0.1,)
+		SVM: 0.1029 +/- 0.0306 eV (44705.1154 secs) (1000, 0.001)
+		SVM Laplace: 0.1344 +/- 0.0375 eV (81918.8765 secs) (1000, 0.001)
+		k-NN: 0.3691 +/- 0.1821 eV (2619.9799 secs) (2,)
+		Tree: 0.3384 +/- 0.0976 eV (135.1063 secs) (5,)
+
 	flip_binary_feature
 		Mean: 0.9528 +/- 0.2807 eV (0.1471 secs) ()
 		Linear: 0.1749 +/- 0.0390 eV (3.0489 secs) ()
@@ -204,6 +228,16 @@ GAP
 		SVM Laplace: 0.2285 +/- 0.0684 eV (22267.0373 secs) (1000, 0.001)
 		k-NN: 0.5096 +/- 0.2802 eV (1206.0918 secs) (3,)
 		Tree: 0.4053 +/- 0.1051 eV (11.8857 secs) (5,)
+
+	fingerprint_feature (1024)
+		Mean: 0.8862 +/- 0.2718 eV (19.2980 secs) ()
+		Linear: 0.3080 +/- 0.0951 eV (513.8805 secs) ()
+		LinearFix: 0.3067 +/- 0.0954 eV (573.8215 secs) ()
+		LinearRidge: 0.3067 +/- 0.0954 eV (654.3323 secs) (0.001,)
+		SVM: 0.1417 +/- 0.0639 eV (47517.0005 secs) (100, 0.01)
+		SVM Laplace: 0.1976 +/- 0.0654 eV (81901.8056 secs) (1000, 0.001)
+		k-NN: 0.5578 +/- 0.3460 eV (2574.6745 secs) (5,)
+		Tree: 0.3765 +/- 0.0769 eV (127.9204 secs) (5,)
 
 	flip_binary_feature
 		Mean: 0.8862 +/- 0.2718 eV (0.1150 secs) ()
