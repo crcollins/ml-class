@@ -1,6 +1,7 @@
 import re
 import os
 from itertools import product
+from multiprocessing import Pool, cpu_count
 
 import numpy
 
@@ -111,6 +112,19 @@ def load_data(base_paths, file_paths):
     return names, geom_paths, zip(*properties), ends
 
 
+def _parallel_params(params):
+    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
+    params = dict(zip(param_names, group))
+    clf = clf_base(**params)
+
+    X_use = numpy.matrix(X_train)
+    y_use = numpy.matrix(y_train).T
+    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+
+    clf.fit(X_train, y_train)
+    return mean_absolute_error(clf.predict(X_test), y_test)
+
+
 def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
     groups = {}
     param_names = params_sets.keys()
@@ -119,24 +133,27 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 
     train = numpy.zeros((cross_folds, n_sets))
     test = numpy.zeros((cross_folds, n_sets))
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds, shuffle=True, random_state=1)):
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], 
+                                                                    n_folds=cross_folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
         y_test = y[test_idx].T.tolist()[0]
 
+        data = []
         for j, group in enumerate(product(*params_sets.values())):
-            params = dict(zip(param_names, group))
-            clf = clf_base(**params)
+            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
 
-            X_use = numpy.matrix(X_train)
-            y_use = numpy.matrix(y_train).T
-            (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+        pool = Pool(processes=cpu_count())
+        results = pool.map(_parallel_params, data)
 
-            train[i,j] = test_mean
-
-            clf.fit(X_train, y_train)
-            test[i,j] = mean_absolute_error(clf.predict(X_test), y_test)
+        pool.close()
+        pool.terminate()
+        pool.join()
+        
+        test[i,:] = results
 
     for j, group in enumerate(product(*params_sets.values())):
         groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
@@ -147,7 +164,10 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 def test_clf_kfold(X, y, clf, folds=10):
     train = numpy.zeros(folds)
     test = numpy.zeros(folds)
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds, shuffle=True, random_state=1)):
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], 
+                                                                    n_folds=folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
