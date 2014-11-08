@@ -113,19 +113,21 @@ def load_data(base_paths, file_paths):
 
 
 def _parallel_params(params):
-    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
+    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds, parallel = params
     params = dict(zip(param_names, group))
     clf = clf_base(**params)
 
     X_use = numpy.matrix(X_train)
     y_use = numpy.matrix(y_train).T
-    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds, parallel=parallel)
 
     clf.fit(X_train, y_train)
     return mean_absolute_error(clf.predict(X_test), y_test)
 
 
-def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
+def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel_cross=False, parallel_test=False):
+    if parallel_cross and parallel_test:
+        raise ValueError("Can not do both parallel_cross and parallel_test at the same time.")
     groups = {}
     param_names = params_sets.keys()
 
@@ -133,7 +135,7 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 
     train = numpy.zeros((cross_folds, n_sets))
     test = numpy.zeros((cross_folds, n_sets))
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], 
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=cross_folds,
                                                                     shuffle=True,
                                                                     random_state=1)):
@@ -144,14 +146,17 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 
         data = []
         for j, group in enumerate(product(*params_sets.values())):
-            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
+            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds, parallel_test))
 
-        pool = Pool(processes=min(cpu_count(), len(data)))
-        results = pool.map(_parallel_params, data)
+        if parallel_cross:
+            pool = Pool(processes=min(cpu_count(), len(data)))
+            results = pool.map(_parallel_params, data)
 
-        pool.close()
-        pool.terminate()
-        pool.join()
+            pool.close()
+            pool.terminate()
+            pool.join()
+        else:
+            results = map(_parallel_params, data)
 
         test[i,:] = results
 
@@ -163,7 +168,6 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
 
 def _parallel(params):
     X, y, clf, train_idx, test_idx = params
-    #clf = c(**p)
     X_train = X[train_idx]
     X_test = X[test_idx]
     y_train = y[train_idx].T.tolist()[0]
@@ -172,19 +176,23 @@ def _parallel(params):
     return mean_absolute_error(clf.predict(X_test), y_test)
 
 
-def test_clf_kfold(X, y, clf, folds=10):
+def test_clf_kfold(X, y, clf, folds=10, parallel=False):
     data = []
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=folds,
                                                                     shuffle=True,
                                                                     random_state=1)):
         data.append((X, y, clf, train_idx, test_idx))
-    pool = Pool(processes=min(cpu_count(), folds))
-    results = pool.map(_parallel, data)
 
-    pool.close()
-    pool.terminate()
-    pool.join()
+    if parallel:
+        pool = Pool(processes=min(cpu_count(), folds))
+        results = pool.map(_parallel, data)
+
+        pool.close()
+        pool.terminate()
+        pool.join()
+    else:
+        results = map(_parallel, data)
 
     temp = numpy.array(results)
     return (temp.mean(), temp.std()), (temp.mean(), temp.std())
