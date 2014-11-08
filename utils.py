@@ -113,21 +113,19 @@ def load_data(base_paths, file_paths):
 
 
 def _parallel_params(params):
-    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds, parallel = params
+    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
     params = dict(zip(param_names, group))
     clf = clf_base(**params)
 
     X_use = numpy.matrix(X_train)
     y_use = numpy.matrix(y_train).T
-    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds, parallel=parallel)
+    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
 
     clf.fit(X_train, y_train)
     return mean_absolute_error(clf.predict(X_test), y_test)
 
 
-def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel_cross=False, parallel_test=False):
-    if parallel_cross and parallel_test:
-        raise ValueError("Can not do both parallel_cross and parallel_test at the same time.")
+def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
     groups = {}
     param_names = params_sets.keys()
 
@@ -146,9 +144,9 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
 
         data = []
         for j, group in enumerate(product(*params_sets.values())):
-            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds, parallel_test))
+            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
 
-        if parallel_cross:
+        if parallel:
             pool = Pool(processes=min(cpu_count(), len(data)))
             results = pool.map(_parallel_params, data)
 
@@ -166,33 +164,16 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
     return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
 
 
-def _parallel(params):
-    X, y, clf, train_idx, test_idx = params
-    X_train = X[train_idx]
-    X_test = X[test_idx]
-    y_train = y[train_idx].T.tolist()[0]
-    y_test = y[test_idx].T.tolist()[0]
-    clf.fit(X_train, y_train)
-    return mean_absolute_error(clf.predict(X_test), y_test)
-
-
-def test_clf_kfold(X, y, clf, folds=10, parallel=False):
-    data = []
+def test_clf_kfold(X, y, clf, folds=10):
+    results = numpy.zeros(folds)
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=folds,
                                                                     shuffle=True,
                                                                     random_state=1)):
-        data.append((X, y, clf, train_idx, test_idx))
-
-    if parallel:
-        pool = Pool(processes=min(cpu_count(), folds))
-        results = pool.map(_parallel, data)
-
-        pool.close()
-        pool.terminate()
-        pool.join()
-    else:
-        results = map(_parallel, data)
-
-    temp = numpy.array(results)
-    return (temp.mean(), temp.std()), (temp.mean(), temp.std())
+        X_train = X[train_idx]
+        X_test = X[test_idx]
+        y_train = y[train_idx].T.tolist()[0]
+        y_test = y[test_idx].T.tolist()[0]
+        clf.fit(X_train, y_train)
+        results[i] = mean_absolute_error(clf.predict(X_test), y_test)
+    return (results.mean(), results.std()), (results.mean(), results.std())
