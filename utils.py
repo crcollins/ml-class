@@ -146,13 +146,13 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
         for j, group in enumerate(product(*params_sets.values())):
             data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
 
-        pool = Pool(processes=cpu_count())
+        pool = Pool(processes=min(cpu_count(), len(data)))
         results = pool.map(_parallel_params, data)
 
         pool.close()
         pool.terminate()
         pool.join()
-        
+
         test[i,:] = results
 
     for j, group in enumerate(product(*params_sets.values())):
