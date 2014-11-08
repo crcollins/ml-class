@@ -161,19 +161,30 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
     return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
 
 
+def _parallel(params):
+    X, y, clf, train_idx, test_idx = params
+    #clf = c(**p)
+    X_train = X[train_idx]
+    X_test = X[test_idx]
+    y_train = y[train_idx].T.tolist()[0]
+    y_test = y[test_idx].T.tolist()[0]
+    clf.fit(X_train, y_train)
+    return mean_absolute_error(clf.predict(X_test), y_test)
+
+
 def test_clf_kfold(X, y, clf, folds=10):
-    train = numpy.zeros(folds)
-    test = numpy.zeros(folds)
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], 
+    data = []
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=folds,
                                                                     shuffle=True,
                                                                     random_state=1)):
-        X_train = X[train_idx]
-        X_test = X[test_idx]
-        y_train = y[train_idx].T.tolist()[0]
-        y_test = y[test_idx].T.tolist()[0]
-        clf.fit(X_train, y_train)
-        train[i] = mean_absolute_error(clf.predict(X_train), y_train)
-        test[i] = mean_absolute_error(clf.predict(X_test), y_test)
-    return (train.mean(), train.std()), (test.mean(), test.std())
+        data.append((X, y, clf, train_idx, test_idx))
+    pool = Pool(processes=min(cpu_count(), folds))
+    results = pool.map(_parallel, data)
 
+    pool.close()
+    pool.terminate()
+    pool.join()
+
+    temp = numpy.array(results)
+    return (temp.mean(), temp.std()), (temp.mean(), temp.std())
