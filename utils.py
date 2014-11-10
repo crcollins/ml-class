@@ -21,7 +21,7 @@ class CLF(object):
         X is a (N_samples, N_features) array.
         y is a (N_samples, ) array.
         NOTE: These are arrays and NOT matrices. To do matrix-like operations
-        on them you need to convert them to a matrix with 
+        on them you need to convert them to a matrix with
         numpy.matrix(X) (or you can use numpy.dot(X, y), and etc).
         Note: This method does not return anything, it only stores state
         for later calls to self.predict()
@@ -43,7 +43,7 @@ RGROUPS = ['a', 'e', 'f', 'i', 'l']
 
 def tokenize(string):
     '''
-    Tokenizes a given string into the proper name segments. This includes the 
+    Tokenizes a given string into the proper name segments. This includes the
     addition of '*' tokens for aryl groups that do not support r groups.
 
     >>> tokenize('4al')
@@ -95,7 +95,7 @@ def load_data(base_paths, file_paths):
                     temp = line.split()
                     name, props = temp[0], temp[1:]
                     names.append(name)
-                    
+
                     geom_path = os.path.join('data', base_path, 'geoms', 'out', name + '.out')
                     geom_paths.append(geom_path)
 
@@ -143,7 +143,7 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
         y_test = y[test_idx].T.tolist()[0]
 
         data = []
-        for j, group in enumerate(product(*params_sets.values())):
+        for group in product(*params_sets.values()):
             data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
 
         if parallel:
