@@ -82,6 +82,10 @@ def gauss_decay_function(x, sigma=6):
 
 
 def load_data(base_paths, file_paths):
+    '''
+    Load data from data sets and return lists of structure names, full paths
+    to the geometry data, the properties, and the meta data.
+    '''
     names = []
     geom_paths = []
     properties = []
@@ -143,8 +147,11 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
         y_test = y[test_idx].T.tolist()[0]
 
         data = []
+        # This parallelization could probably be more efficient with an
+        # iterator
         for group in product(*params_sets.values()):
-            data.append((param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds))
+            data.append((param_names, group, clf_base, X_train, y_train,
+                        X_test, y_test, test_folds))
 
         if parallel:
             pool = Pool(processes=min(cpu_count(), len(data)))
@@ -161,6 +168,8 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
     for j, group in enumerate(product(*params_sets.values())):
         groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
 
+    # Sort groups.items() based on the test error and return the lowest one
+    # x[1] is the value in groups [1] is the test values, and [0] is the mean
     return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
 
 
