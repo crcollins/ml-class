@@ -40,7 +40,7 @@ if __name__ == '__main__':
         features.get_fingerprint_feature,
     ]
 
-    # Construct (name, vector) pairs to auto label features when iterating over them 
+    # Construct (name, vector) pairs to auto label features when iterating over them
     FEATURES = {}
     for function in FEATURE_FUNCTIONS:
         if function.__name__.startswith('get_'):
@@ -70,7 +70,7 @@ if __name__ == '__main__':
     # This is a collection of names, model pointers, and parameter values to cross validate
     # The parameters take the form of a dict with the keys being the parameter name for the model,
     # and the values being cross validated. For the cross validation parameters, it does a simple
-    # cartesian product of all of the parameter lists and tests with all of them and then picks the 
+    # cartesian product of all of the parameter lists and tests with all of them and then picks the
     # model with the lowest cross validation error and uses it for the final testing.
     CLFS = (
         ('Mean', dummy.DummyRegressor, {}),
@@ -92,9 +92,9 @@ if __name__ == '__main__':
             results[NAME][FEAT_NAME] = {}
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
+                pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
                 finished = time.time() - start
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
                 results[NAME][FEAT_NAME][CLF_NAME] = test[0]
-            print 
+            print
         print

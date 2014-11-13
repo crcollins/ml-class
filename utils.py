@@ -123,7 +123,7 @@ def _parallel_params(params):
 
     X_use = numpy.matrix(X_train)
     y_use = numpy.matrix(y_train).T
-    (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+    test_mean, test_std = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
 
     clf.fit(X_train, y_train)
     return mean_absolute_error(clf.predict(X_test), y_test)
@@ -135,7 +135,6 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
 
     n_sets = len(list(product(*params_sets.values())))
 
-    train = numpy.zeros((cross_folds, n_sets))
     test = numpy.zeros((cross_folds, n_sets))
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=cross_folds,
@@ -166,11 +165,11 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
         test[i,:] = results
 
     for j, group in enumerate(product(*params_sets.values())):
-        groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
+        groups[group] = (test.mean(0)[j], test.std(0)[j])
 
     # Sort groups.items() based on the test error and return the lowest one
     # x[1] is the value in groups [1] is the test values, and [0] is the mean
-    return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
+    return sorted(groups.items(), key=lambda x:x[1][0])[0]
 
 
 def test_clf_kfold(X, y, clf, folds=10):
@@ -185,4 +184,4 @@ def test_clf_kfold(X, y, clf, folds=10):
         y_test = y[test_idx].T.tolist()[0]
         clf.fit(X_train, y_train)
         results[i] = mean_absolute_error(clf.predict(X_test), y_test)
-    return (results.mean(), results.std()), (results.mean(), results.std())
+    return results.mean(), results.std()
