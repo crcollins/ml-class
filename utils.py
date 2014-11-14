@@ -117,6 +117,10 @@ def load_data(base_paths, file_paths):
 
 
 def _parallel_params(params):
+    '''
+    This is a helper function to run the parallel code. It contains the same
+    code that the cross_clf_kfold had in the inner loop.
+    '''
     param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
     params = dict(zip(param_names, group))
     clf = clf_base(**params)
@@ -130,6 +134,13 @@ def _parallel_params(params):
 
 
 def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
+    '''
+    This runs cross validation of a clf given a set of hyperparameters to
+    test. It does this by splitting the data into testing and training data,
+    and then it passes the training data into the test_clf_kfold function
+    to get the error. The hyperparameter set that has the lowest test error is
+    then returned from the function and its respective error.
+    '''
     groups = {}
     param_names = params_sets.keys()
 
