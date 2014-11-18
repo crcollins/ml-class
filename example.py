@@ -20,7 +20,7 @@ if __name__ == '__main__':
     methods = ('b3lyp', )#'cam', 'm06hf')
 
     # Change this to adjust the data sets to use
-    base_paths = tuple(os.path.join('opt', x) for x in ('b3lyp', ))
+    base_paths = tuple(os.path.join('opt', x) for x in methods) + ('noopt', )
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
