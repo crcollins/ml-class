@@ -85,7 +85,7 @@ class FollowDotCursor(object):
             return x, y, '---'
 
 
-def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=False, names=None, inspect=False):
+def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=False, names=None, inspect=False, perturb=None):
     pca = decomposition.PCA(n_components=2)
     pca.fit(X)
     variability = pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
@@ -111,6 +111,11 @@ def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=Fals
         COLOR = (y - y.min()) / (y.max() - y.min())
         COLOR = numpy.squeeze(numpy.array(COLOR))
 
+    if perturb is not None:
+        rx = numpy.random.randn(*Xs.shape)
+        ry = numpy.random.randn(*Ys.shape)
+        Xs += rx * perturb
+        Ys += ry * perturb
     plt.scatter(Xs, Ys, c=COLOR, s=15, marker='o', edgecolors='none')
     plt.title(title + "\n%s %s" % variability)
     plt.xlabel("PCA 1")
