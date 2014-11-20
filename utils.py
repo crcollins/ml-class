@@ -121,16 +121,14 @@ def _parallel_params(params):
     This is a helper function to run the parallel code. It contains the same
     code that the cross_clf_kfold had in the inner loop.
     '''
-    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
+    param_names, group, clf_base, X_train, y_train, test_folds = params
     params = dict(zip(param_names, group))
     clf = clf_base(**params)
 
     X_use = numpy.matrix(X_train)
     y_use = numpy.matrix(y_train).T
     test_mean, test_std = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
-
-    clf.fit(X_train, y_train)
-    return mean_absolute_error(clf.predict(X_test), y_test), test_mean
+    return test_mean
 
 
 def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
@@ -145,10 +143,9 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
     param_names = params_sets.keys()
 
     n_sets = len(list(product(*params_sets.values())))
-
-    test = numpy.zeros((cross_folds, n_sets))
     cross = numpy.zeros((cross_folds, n_sets))
 
+    # Calculate the cross validation errors for all of the parameter sets.
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
                                                                     n_folds=cross_folds,
                                                                     shuffle=True,
@@ -162,8 +159,7 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
         # This parallelization could probably be more efficient with an
         # iterator
         for group in product(*params_sets.values()):
-            data.append((param_names, group, clf_base, X_train, y_train,
-                        X_test, y_test, test_folds))
+            data.append((param_names, group, clf_base, X_train, y_train, test_folds))
 
         if parallel:
             pool = Pool(processes=min(cpu_count(), len(data)))
@@ -175,13 +171,21 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
         else:
             results = map(_parallel_params, data)
 
-        test[i,:], cross[i,:] = zip(*results)
+        cross[i,:] = results
 
+    # Get the set of parameters with the lowest cross validation error
     idx = numpy.argmin(cross.mean(0))
-
     for j, group in enumerate(product(*params_sets.values())):
         if j == idx:
-            return group, (test.mean(0)[j], test.std(0)[j])
+            params = dict(zip(param_names, group))
+            break
+
+    # Get test error for set of params with lowest cross val error
+    # The random_state used for the kfolds must be the same as the one used
+    # before
+    clf = clf_base(**params)
+    return params, test_clf_kfold(X, y, clf, folds=cross_folds)
+
 
 
 def test_clf_kfold(X, y, clf, folds=10):
