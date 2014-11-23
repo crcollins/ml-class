@@ -20,17 +20,11 @@ if __name__ == '__main__':
     methods = ('b3lyp', )#'cam', 'm06hf')
 
     # Change this to adjust the data sets to use
-    base_paths = ('noopt', ) + tuple(os.path.join('opt', x) for x in methods)
+    base_paths = tuple(os.path.join('opt', x) for x in methods) + ('noopt', )
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
     names, geom_paths, properties, ends = load_data(base_paths, file_paths)
-
-    # Testing manaully adjusted feature vector parameters
-    tuned_decay = partial(features.get_decay_feature, power=2, factor=.75)
-    tuned_decay.__name__ = "get_tuned_decay_feature"
-    tuned_centered = partial(features.get_centered_decay_feature, power=.75, factor=.5, H=.75)
-    tuned_centered.__name__ = "get_tuned_centered_feature"
 
     # Change this to modify which feature vectors will be used for the testing
     FEATURE_FUNCTIONS = [
@@ -39,8 +33,6 @@ if __name__ == '__main__':
         features.get_flip_binary_feature,
         features.get_decay_feature,
         features.get_gauss_decay_feature,
-        tuned_decay,
-        tuned_centered,
         features.get_centered_decay_feature,
         features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
@@ -48,7 +40,7 @@ if __name__ == '__main__':
         features.get_fingerprint_feature,
     ]
 
-    # Construct (name, vector) pairs to auto label features when iterating over them 
+    # Construct (name, vector) pairs to auto label features when iterating over them
     FEATURES = {}
     for function in FEATURE_FUNCTIONS:
         if function.__name__.startswith('get_'):
@@ -78,7 +70,7 @@ if __name__ == '__main__':
     # This is a collection of names, model pointers, and parameter values to cross validate
     # The parameters take the form of a dict with the keys being the parameter name for the model,
     # and the values being cross validated. For the cross validation parameters, it does a simple
-    # cartesian product of all of the parameter lists and tests with all of them and then picks the 
+    # cartesian product of all of the parameter lists and tests with all of them and then picks the
     # model with the lowest cross validation error and uses it for the final testing.
     CLFS = (
         ('Mean', dummy.DummyRegressor, {}),
@@ -87,19 +79,22 @@ if __name__ == '__main__':
         ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
         ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
         ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
-        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 4, 5]}),
-        ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 4, 5]}),
+        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 5, 8, 13]}),
+        ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 5, 8, 13, 21, 34, 55, 89]}),
     )
 
+    results = {}
     for NAME, PROP in sets:
         print NAME
+        results[NAME] = {}
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
+            results[NAME][FEAT_NAME] = {}
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                pair, (train, test) = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=10)
+                pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
                 finished = time.time() - start
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
-
-            print 
+                results[NAME][FEAT_NAME][CLF_NAME] = test[0]
+            print
         print

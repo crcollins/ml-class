@@ -1,6 +1,7 @@
 import re
 import os
 from itertools import product
+from multiprocessing import Pool, cpu_count
 
 import numpy
 
@@ -20,7 +21,7 @@ class CLF(object):
         X is a (N_samples, N_features) array.
         y is a (N_samples, ) array.
         NOTE: These are arrays and NOT matrices. To do matrix-like operations
-        on them you need to convert them to a matrix with 
+        on them you need to convert them to a matrix with
         numpy.matrix(X) (or you can use numpy.dot(X, y), and etc).
         Note: This method does not return anything, it only stores state
         for later calls to self.predict()
@@ -42,7 +43,7 @@ RGROUPS = ['a', 'd', 'e', 'f', 'h', 'i', 'l']
 
 def tokenize(string):
     '''
-    Tokenizes a given string into the proper name segments. This includes the 
+    Tokenizes a given string into the proper name segments. This includes the
     addition of '*' tokens for aryl groups that do not support r groups.
 
     >>> tokenize('4al')
@@ -81,6 +82,10 @@ def gauss_decay_function(x, sigma=6):
 
 
 def load_data(base_paths, file_paths):
+    '''
+    Load data from data sets and return lists of structure names, full paths
+    to the geometry data, the properties, and the meta data.
+    '''
     names = []
     geom_paths = []
     properties = []
@@ -94,7 +99,7 @@ def load_data(base_paths, file_paths):
                     temp = line.split()
                     name, props = temp[0], temp[1:]
                     names.append(name)
-                    
+
                     geom_path = os.path.join('data', base_path, 'geoms', 'out', name + '.out')
                     geom_paths.append(geom_path)
 
@@ -111,49 +116,88 @@ def load_data(base_paths, file_paths):
     return names, geom_paths, zip(*properties), ends
 
 
-def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
+def _parallel_params(params):
+    '''
+    This is a helper function to run the parallel code. It contains the same
+    code that the cross_clf_kfold had in the inner loop.
+    '''
+    param_names, group, clf_base, X_train, y_train, test_folds = params
+    params = dict(zip(param_names, group))
+    clf = clf_base(**params)
+
+    X_use = numpy.matrix(X_train)
+    y_use = numpy.matrix(y_train).T
+    test_mean, test_std = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+    return test_mean
+
+
+def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
+    '''
+    This runs cross validation of a clf given a set of hyperparameters to
+    test. It does this by splitting the data into testing and training data,
+    and then it passes the training data into the test_clf_kfold function
+    to get the error. The hyperparameter set that has the lowest test error is
+    then returned from the function and its respective error.
+    '''
     groups = {}
     param_names = params_sets.keys()
 
     n_sets = len(list(product(*params_sets.values())))
+    cross = numpy.zeros((cross_folds, n_sets))
 
-    train = numpy.zeros((cross_folds, n_sets))
-    test = numpy.zeros((cross_folds, n_sets))
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds)):
+    # Calculate the cross validation errors for all of the parameter sets.
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
+                                                                    n_folds=cross_folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
         y_test = y[test_idx].T.tolist()[0]
 
-        for j, group in enumerate(product(*params_sets.values())):
-            params = dict(zip(param_names, group))
-            clf = clf_base(**params)
+        data = []
+        # This parallelization could probably be more efficient with an
+        # iterator
+        for group in product(*params_sets.values()):
+            data.append((param_names, group, clf_base, X_train, y_train, test_folds))
 
-            X_use = numpy.matrix(X_train)
-            y_use = numpy.matrix(y_train).T
-            (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+        if parallel:
+            pool = Pool(processes=min(cpu_count(), len(data)))
+            results = pool.map(_parallel_params, data)
 
-            train[i,j] = test_mean
+            pool.close()
+            pool.terminate()
+            pool.join()
+        else:
+            results = map(_parallel_params, data)
 
-            clf.fit(X_train, y_train)
-            test[i,j] = mean_absolute_error(clf.predict(X_test), y_test)
+        cross[i,:] = results
 
+    # Get the set of parameters with the lowest cross validation error
+    idx = numpy.argmin(cross.mean(0))
     for j, group in enumerate(product(*params_sets.values())):
-        groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
+        if j == idx:
+            params = dict(zip(param_names, group))
+            break
 
-    return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
+    # Get test error for set of params with lowest cross val error
+    # The random_state used for the kfolds must be the same as the one used
+    # before
+    clf = clf_base(**params)
+    return params, test_clf_kfold(X, y, clf, folds=cross_folds)
+
 
 
 def test_clf_kfold(X, y, clf, folds=10):
-    train = numpy.zeros(folds)
-    test = numpy.zeros(folds)
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
+    results = numpy.zeros(folds)
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
+                                                                    n_folds=folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
         y_test = y[test_idx].T.tolist()[0]
         clf.fit(X_train, y_train)
-        train[i] = mean_absolute_error(clf.predict(X_train), y_train)
-        test[i] = mean_absolute_error(clf.predict(X_test), y_test)
-    return (train.mean(), train.std()), (test.mean(), test.std())
-
+        results[i] = mean_absolute_error(clf.predict(X_test), y_test)
+    return results.mean(), results.std()

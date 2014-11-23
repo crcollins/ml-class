@@ -2,12 +2,90 @@ import numpy
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from scipy import tanh
+import scipy.spatial as spatial
 from sklearn import decomposition
 from pybrain.tools.functions import sigmoid
 
 
+def fmt(x, y, name):
+    return name
 
-def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=False):
+
+class FollowDotCursor(object):
+    """
+    Display the x,y location of the nearest data point.
+
+    Adapted from http://stackoverflow.com/questions/13306519/get-data-from-plot-with-matplotlib
+    """
+    def __init__(self, ax, x, y, names, tolerance=5, formatter=fmt, offsets=(-20, 20)):
+        try:
+            x = numpy.asarray(x, dtype='float')
+        except (TypeError, ValueError):
+            x = numpy.asarray(mdates.date2num(x), dtype='float')
+        y = numpy.asarray(y, dtype='float')
+        self._points = numpy.column_stack((x, y))
+        self._names = names
+        self.offsets = offsets
+        self.scale = x.ptp()
+        self.scale = y.ptp() / self.scale if self.scale else 1
+        self.tree = spatial.cKDTree(self.scaled(self._points))
+        self.formatter = formatter
+        self.tolerance = tolerance
+        self.ax = ax
+        self.fig = ax.figure
+        self.ax.xaxis.set_label_position('top')
+        self.dot = ax.scatter(
+            [x.min()], [y.min()], s=130, color='green', alpha=0.7)
+        self.annotation = self.setup_annotation()
+        plt.connect('motion_notify_event', self)
+
+    def scaled(self, points):
+        points = numpy.asarray(points)
+        return points * (self.scale, 1)
+
+    def __call__(self, event):
+        ax = self.ax
+        # event.inaxes is always the current axis. If you use twinx, ax could be
+        # a different axis.
+        if event.inaxes == ax:
+            x, y = event.xdata, event.ydata
+        elif event.inaxes is None:
+            return
+        else:
+            inv = ax.transData.inverted()
+            x, y = inv.transform([(event.x, event.y)]).ravel()
+        annotation = self.annotation
+        x, y, name = self.snap(x, y)
+        annotation.xy = x, y
+        annotation.set_text(self.formatter(x, y, name))
+        self.dot.set_offsets((x, y))
+        bbox = ax.viewLim
+        event.canvas.draw()
+
+    def setup_annotation(self):
+        """Draw and hide the annotation box."""
+        annotation = self.ax.annotate(
+            '', xy=(0, 0), ha = 'right',
+            xytext = self.offsets, textcoords = 'offset points', va = 'bottom',
+            bbox = dict(
+                boxstyle='round,pad=0.5', fc='yellow', alpha=0.75),
+            arrowprops = dict(
+                arrowstyle='->', connectionstyle='arc3,rad=0'))
+        return annotation
+
+    def snap(self, x, y):
+        """Return the value in self.tree closest to x, y."""
+        dist, idx = self.tree.query(self.scaled((x, y)), k=1, p=1)
+        try:
+            x, y = self._points[idx]
+            return x, y, self._names[idx]
+        except IndexError:
+            # IndexError: index out of bounds
+            x, y = self._points[0]
+            return x, y, '---'
+
+
+def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=False, names=None, inspect=False, perturb=None):
     pca = decomposition.PCA(n_components=2)
     pca.fit(X)
     variability = pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
@@ -31,11 +109,22 @@ def pca_plot(X, y, title="Principal Component Analysis", save=None, segment=Fals
             COLOR[mm,:] = [0.75, 0.75, 0.75, 0.75]
     else:
         COLOR = (y - y.min()) / (y.max() - y.min())
+        COLOR = numpy.squeeze(numpy.array(COLOR))
+
+    if perturb is not None:
+        rx = numpy.random.randn(*Xs.shape)
+        ry = numpy.random.randn(*Ys.shape)
+        Xs += rx * perturb
+        Ys += ry * perturb
     plt.scatter(Xs, Ys, c=COLOR, s=15, marker='o', edgecolors='none')
     plt.title(title + "\n%s %s" % variability)
     plt.xlabel("PCA 1")
     plt.ylabel("PCA 2")
-    if save is None:
+
+    if save is None or inspect:
+        if inspect:
+            ax = plt.gca()
+            cursor = FollowDotCursor(ax, Xs, Ys, names)
         plt.show()
     else:
         plt.savefig(save)
@@ -97,3 +186,61 @@ def plot_neural_net(X, y, clf, segment=False):
         pca_plot(temp.T, y, save="%02d_conn.png" % counter, segment=segment)
         counter += 1
         values = temp.T
+
+
+def plot_feature_errors(values, property_name):
+    fig, ax = plt.subplots()
+
+    errors = {}
+    for feature, methods in values.items():
+        for method, error in methods.items():
+            try:
+                errors[method].append(error)
+            except:
+                errors[method] = [error]
+
+    width = 0.9 / len(errors)
+
+    colors = ['r', 'y', 'g', 'c', 'b', 'm', 'k']
+    ind = numpy.arange(len(values.keys()))
+    for i, (feature, errors) in enumerate(errors.items()):
+            plt.bar(ind+i*width, errors, width, color=colors[i], label=feature)
+
+    plt.title(property_name)
+    plt.xticks(rotation=10)
+    ax.set_xticks(ind + (len(errors)/2 * width))
+    ax.set_xticklabels(values.keys())
+    ax.set_ylabel("Mean Absolute Error (eV)")
+    plt.legend(loc="best")
+
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_method_errors(values, property_name):
+    fig, ax = plt.subplots()
+
+    errors = {}
+    for feature, methods in values.items():
+        for method, error in methods.items():
+            try:
+                errors[feature].append(error)
+            except:
+                errors[feature] = [error]
+    methods = methods.keys()
+    width = 0.9 / len(errors)
+
+    colors = ['r', 'y', 'g', 'c', 'b', 'm', 'k']
+    ind = numpy.arange(len(methods))
+    for i, (method, errors) in enumerate(errors.items()):
+        plt.bar(ind+i*width, errors, width, color=colors[i], label=method)
+
+    plt.title(property_name)
+    plt.xticks(rotation=10)
+    ax.set_xticks(ind + (len(errors)/2 * width))
+    ax.set_xticklabels(methods)
+    ax.set_ylabel("Mean Absolute Error (eV)")
+    plt.legend(loc="best")
+
+    plt.tight_layout()
+    plt.show()
