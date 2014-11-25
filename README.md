@@ -5,7 +5,7 @@ Andrew ids: ccollin1, haichenl, zhonghal
 
 Quantum mechanics allows us to predict chemical compounds' properties to a very high accuracy, given that we are able to solve certain nonlinear ill-conditioned partial differential equations. Because of their chaotic nature, these equations are extremely hard and expensive to solve. Linear approximations based on machine learning ideas have the potential to help us circumvent such dilemma; research done by astronomers/biologists have shown that linear methods can be effective in approximating nonlinear problems(CITE), and the corresponding mathematical tools for these methods have been exhaustively studied.
 
-Our specific goal is to predict thermodynamic/spectroscopic properties of a given type of chemical compounds, taking the advantage that they have similar chemical compositions, structures, and behaviors. Empirically, molecules having similar functional groups will have similar properties, even if they differ greatly in size. For small size molecules, high accuracy quantum mechanics calculations can be relatively easily performed, but for large molecules it is typically impossible because most of the quantum mechanics methods scale with O(n^{4~7}) time where n is the number of atoms in a molecule (single structures with dozens of atoms might take on the order of hours to calculate). However, as stated previously, it is known that chemically similar compounds will have highly correlated properties. Thus, there is a chance that some machine learning based regression models can be used to exploit these correlations in a quantitative sense. 
+Our specific goal is to predict thermodynamic/spectroscopic properties of a given type of chemical compounds, taking the advantage that they have similar chemical compositions, structures, and behaviors. Empirically, molecules having similar functional groups will have similar properties, even if they differ greatly in size. For small size molecules, high accuracy quantum mechanics calculations can be relatively easily performed, but for large molecules it is typically impossible because most of the quantum mechanics methods scale with O(n^{4~7}) time where n is the number of atoms in a molecule (single structures with dozens of atoms might take on the order of hours to calculate). However, as stated previously, it is known that chemically similar compounds will have highly correlated properties. Thus, there is a chance that some machine learning based regression models can be used to exploit these correlations in a quantitative sense.
 
 Data set:
 ---------
@@ -27,4 +27,30 @@ The minimum goal would be to a certain degree of certainty be able to predict mo
 Long term goal:
 ---------------
 Chemists have well-defined classifications of chemical compounds, and it has been determined, experimentally, that each class of compounds share a lot of common properties. Eventually, we hope that our method can be applied to every class of chemicals so that for every newly proposed chemical structure we can predict its crucial properties (therefore its potential usage) cheaply and accurately. This will enable computers to help chemists design new materials and drugs far more efficiently.
+
+
+
+
+
+Usage
+-----
+
+	git clone https://github.com/crcollins/ml-class
+	# Install the required dependencies (Really these should be in a requirements.txt file.)
+	pip install PyBrain==0.3
+	pip install matplotlib==1.4.2
+	pip install numpy==1.9.0
+	pip install scikit-learn==0.15.2
+	pip install scipy==0.14.0
+	# Since the data is now in a submodule, it requires one extra step to get it loaded when you clone/pull the repo.
+	git submodule init
+	git submodule update
+	# Now run the test script
+	python example.py
+	# Or run the neural net test script
+	python neural.py
+
+
+
+
 
