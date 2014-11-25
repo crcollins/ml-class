@@ -110,14 +110,14 @@ def test_architectures(X, y, layer_groups=None):
         m = y.shape[1]
     else:
         m = 1
- 
+
     clfs = {}
-    for layers in layers_set: 
+    for layers in layers_set:
         layers = (n, ) + layers + (m, )
         print layers
 
         clf = NeuralNet(layers)
-        clfs[layers] = clf 
+        clfs[layers] = clf
         clf.fit(XTrain, yTrain)
 
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
@@ -136,14 +136,15 @@ if __name__ == '__main__':
     methods = ('b3lyp', 'cam', 'm06hf')
     base_paths = tuple(os.path.join('opt', x) for x in methods)
     file_paths = [x + '.txt' for x in methods]# + ('indo_default', 'indo_b3lyp', 'indo_cam', 'indo_m06hf')]
+    atom_sets = ['O', 'N']
 
     start = time.time()
-    names, geom_paths, properties, ends = load_data(base_paths, file_paths)
+    names, geom_paths, properties, ends = load_data(base_paths, file_paths, atom_sets)
 
     FEATURE_FUNCTIONS = [
         # features.get_null_feature,
         # features.get_binary_feature,
-        # features.get_flip_binary_feature,
+        features.get_flip_binary_feature,
         # features.get_decay_feature,
         # tuned_decay,
         # tuned_centered,
@@ -151,7 +152,7 @@ if __name__ == '__main__':
         # features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
         # features.get_pca_coulomb_feature,
-        features.get_fingerprint_feature,
+        # features.get_fingerprint_feature,
     ]
 
     FEATURES = {}
@@ -171,7 +172,7 @@ if __name__ == '__main__':
         print "\t" + name, feat.shape
     print
 
-    X = numpy.array(FEATURES['fingerprint_feature'])
+    X = numpy.array(FEATURES['flip_binary_feature'])
     y = numpy.array(numpy.concatenate(PROPS, 1))
 
     XTrain, yTrain, XTest, yTest = split_data(X, y)
@@ -182,7 +183,8 @@ if __name__ == '__main__':
     else:
         m = 1
 
-    layers = [n] + [25, 10] + [m]
+    # layers = [n] + [25, 10] + [m]
+    layers = [n] + [20, 20] + [m]
 
     print layers
     clf = NeuralNet(layers)
