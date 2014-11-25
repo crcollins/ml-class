@@ -36,12 +36,8 @@ Usage
 -----
 
 	git clone https://github.com/crcollins/ml-class
-	# Install the required dependencies (Really these should be in a requirements.txt file.)
-	pip install PyBrain==0.3
-	pip install matplotlib==1.4.2
-	pip install numpy==1.9.0
-	pip install scikit-learn==0.15.2
-	pip install scipy==0.14.0
+	# Install the required dependencies
+	pip install -r requirements.txt
 	# Since the data is now in a submodule, it requires one extra step to get it loaded when you clone/pull the repo.
 	git submodule init
 	git submodule update

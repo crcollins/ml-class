@@ -1,0 +1,5 @@
+pip install numpy==1.9.0
+pip install PyBrain==0.3
+pip install matplotlib==1.4.2
+pip install scikit-learn==0.15.2
+pip install scipy==0.14.0
