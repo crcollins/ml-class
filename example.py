@@ -22,9 +22,10 @@ if __name__ == '__main__':
     # Change this to adjust the data sets to use
     base_paths = tuple(os.path.join('opt', x) for x in methods) + ('noopt', )
     file_paths = [x + '.txt' for x in methods]
+    atom_sets = ['O', 'N']
 
     start = time.time()
-    names, geom_paths, properties, ends = load_data(base_paths, file_paths)
+    names, geom_paths, properties, ends = load_data(base_paths, file_paths, atom_sets)
 
     # Change this to modify which feature vectors will be used for the testing
     FEATURE_FUNCTIONS = [

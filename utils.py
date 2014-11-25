@@ -81,7 +81,7 @@ def gauss_decay_function(x, sigma=6):
     return numpy.exp(-(x / float(sigma)) ** 2)
 
 
-def load_data(base_paths, file_paths):
+def load_data(base_paths, file_paths, atom_sets):
     '''
     Load data from data sets and return lists of structure names, full paths
     to the geometry data, the properties, and the meta data.
@@ -93,25 +93,28 @@ def load_data(base_paths, file_paths):
 
     for j, base_path in enumerate(base_paths):
         for i, file_path in enumerate(file_paths):
-            path = os.path.join('data', base_path, file_path)
-            with open(path, 'r') as f:
-                for line in f:
-                    temp = line.split()
-                    name, props = temp[0], temp[1:]
-                    names.append(name)
+            for m, atom_set in enumerate(atom_sets):
+                path = os.path.join('mol_data', base_path, atom_set, file_path)
+                with open(path, 'r') as f:
+                    for line in f:
+                        temp = line.split()
+                        name, props = temp[0], temp[1:]
+                        names.append(name)
 
-                    geom_path = os.path.join('data', base_path, 'geoms', 'out', name + '.out')
-                    geom_paths.append(geom_path)
+                        geom_path = os.path.join('mol_data', base_path, 'geoms', 'out', name + '.out')
+                        geom_paths.append(geom_path)
 
-                    properties.append([float(x) for x in props])
+                        properties.append([float(x) for x in props])
 
-                    # Add part to feature vector to account for the 4 different data sets.
-                    base_part = [i == k for k, x in enumerate(base_paths)]
-                    # Add part to feature vector to account for the 3 different methods.
-                    method_part = [j == k for k, x in enumerate(file_paths)]
-                    # Add bias feature
-                    bias = [1]
-                    ends.append(base_part + method_part + bias)
+                        # Add part to feature vector to account for the 4 different data sets.
+                        base_part = [i == k for k, x in enumerate(base_paths)]
+                        # Add part to feature vector to account for the 3 different methods.
+                        method_part = [j == k for k, x in enumerate(file_paths)]
+                        # Add part to feature vector to account for the addition of N.
+                        atom_part = [m == k for k, x in enumerate(atom_sets)]
+                        # Add bias feature
+                        bias = [1]
+                        ends.append(base_part + method_part + atom_part + bias)
 
     return names, geom_paths, zip(*properties), ends
 
