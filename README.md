@@ -38,6 +38,7 @@ Usage
 	git clone https://github.com/crcollins/ml-class
 	# Install the required dependencies
 	pip install -r requirements.txt
+	sudo apt-get install python-rdkit librdkit1 rdkit-data
 	# Since the data is now in a submodule, it requires one extra step to get it loaded when you clone/pull the repo.
 	git submodule init
 	git submodule update
