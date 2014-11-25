@@ -3,6 +3,7 @@ import os
 from itertools import product
 
 import numpy
+import scipy
 
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
@@ -114,49 +115,118 @@ def load_data(base_paths, file_paths):
     return names, geom_paths, zip(*properties), ends
 
 
-def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10):
+def _parallel_params(params):
+    param_names, group, clf_base, X_train, y_train, X_test, y_test, test_folds = params
+    params = dict(zip(param_names, group))
+    clf = clf_base(**params)
+
+    X_use = numpy.matrix(X_train)
+    y_use = numpy.matrix(y_train).T
+    test_mean, test_std = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+
+    clf.fit(X_train, y_train)
+    return mean_absolute_error(clf.predict(X_test), y_test)
+
+
+def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
     groups = {}
     param_names = params_sets.keys()
 
     n_sets = len(list(product(*params_sets.values())))
 
-    train = numpy.zeros((cross_folds, n_sets))
     test = numpy.zeros((cross_folds, n_sets))
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=cross_folds)):
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
+                                                                    n_folds=cross_folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
         y_test = y[test_idx].T.tolist()[0]
 
-        for j, group in enumerate(product(*params_sets.values())):
-            params = dict(zip(param_names, group))
-            clf = clf_base(**params)
+        data = []
+        # This parallelization could probably be more efficient with an
+        # iterator
+        for group in product(*params_sets.values()):
+            data.append((param_names, group, clf_base, X_train, y_train,
+                        X_test, y_test, test_folds))
 
-            X_use = numpy.matrix(X_train)
-            y_use = numpy.matrix(y_train).T
-            (train_mean, train_std), (test_mean, test_std) = test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+        if parallel:
+            pool = Pool(processes=min(cpu_count(), len(data)))
+            results = pool.map(_parallel_params, data)
 
-            train[i,j] = test_mean
+            pool.close()
+            pool.terminate()
+            pool.join()
+        else:
+            results = map(_parallel_params, data)
 
-            clf.fit(X_train, y_train)
-            test[i,j] = mean_absolute_error(clf.predict(X_test), y_test)
+        test[i,:] = results
 
     for j, group in enumerate(product(*params_sets.values())):
-        groups[group] = (train.mean(0)[j], train.std(0)[j]), (test.mean(0)[j], test.std(0)[j])
+        groups[group] = (test.mean(0)[j], test.std(0)[j])
 
-    return sorted(groups.items(), key=lambda x:x[1][1][0])[0]
+    # Sort groups.items() based on the test error and return the lowest one
+    # x[1] is the value in groups [1] is the test values, and [0] is the mean
+    return sorted(groups.items(), key=lambda x:x[1][0])[0]
 
 
 def test_clf_kfold(X, y, clf, folds=10):
-    train = numpy.zeros(folds)
-    test = numpy.zeros(folds)
-    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0], n_folds=folds)):
+    results = numpy.zeros(folds)
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
+                                                                    n_folds=folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
         X_train = X[train_idx]
         X_test = X[test_idx]
         y_train = y[train_idx].T.tolist()[0]
         y_test = y[test_idx].T.tolist()[0]
         clf.fit(X_train, y_train)
-        train[i] = mean_absolute_error(clf.predict(X_train), y_train)
-        test[i] = mean_absolute_error(clf.predict(X_test), y_test)
-    return (train.mean(), train.std()), (test.mean(), test.std())
+        results[i] = mean_absolute_error(clf.predict(X_test), y_test)
+    return results.mean(), results.std()
 
+
+###cross-validation for various CLF methods####
+class OptimizedCLF(object):
+    def __init__(self, X, y, func, params):
+        self.params = params
+        self.func = func
+        self.X = X
+        self.y = y
+        self.optimized_clf = None
+        self.optimized_params = None
+
+    def errorfunction(self, *args):
+        a = dict(zip(self.params.keys(), *args))
+        clf = self.func(**a)
+        train, test = test_clf_kfold(self.X, self.y, clf, folds=5)
+        return test[0]
+
+    def get_optimized_clf(self):
+        if not len(self.params.keys()):
+            self.optimized_clf = self.func()
+        if self.optimized_clf is not None:
+            return self.optimized_clf
+        listparams = dict((k,v) for k,v in self.params.items() if type(v) in [list, tuple])
+        itemparams = dict((k,v) for k,v in self.params.items() if type(v) not in [list, tuple])
+        listvalues = []
+        itemvalues = []
+        #~ if listparams:
+            #~ _, test = scan(self.X, self.y, self.func, listparams)
+            #~ listvalues = []
+            #~ temp = numpy.unravel_index(test.argmin(), test.shape)
+            #~ for i, pick in enumerate(listparams.values()):
+                #~ listvalues.append(pick[temp[i]])
+            #~ listvalues = listvalues[::-1]
+        if itemparams:
+            bounds = ((1e-8, None), ) * len(self.params.keys())
+            results = scipy.optimize.fmin_l_bfgs_b(
+                self.errorfunction, self.params.values(),
+                bounds=bounds,
+                approx_grad=True, epsilon=1e-3)
+            itemvalues = results[0].tolist()
+        keys = listparams.keys() + itemparams.keys()
+        values = listvalues + itemvalues
+        self.optimized_params = dict(zip(keys, values))
+        self.optimized_clf = self.func(**self.optimized_params)
+        return self.optimized_clf
