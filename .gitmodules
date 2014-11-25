@@ -1,0 +1,3 @@
+[submodule "mol_data"]
+	path = mol_data
+	url = https://github.com/crcollins/mol_data
