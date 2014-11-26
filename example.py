@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 from functools import partial
 
 import numpy
@@ -59,6 +60,7 @@ if __name__ == '__main__':
     for name, feat in FEATURES.items():
         print "\t" + name, feat.shape
     print
+    sys.stdout.flush()
 
     # Adjust the properties to test
     sets = (
@@ -98,4 +100,5 @@ if __name__ == '__main__':
                 print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
                 results[NAME][FEAT_NAME][CLF_NAME] = test[0]
             print
+            sys.stdout.flush()
         print
