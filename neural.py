@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import random
 from itertools import product
@@ -184,7 +185,7 @@ if __name__ == '__main__':
         m = 1
 
     # layers = [n] + [25, 10] + [m]
-    layers = [n] + [20, 20] + [m]
+    layers = [n] + [int(x) for x in sys.argv[1:]] + [m]
 
     print layers
     clf = NeuralNet(layers)
