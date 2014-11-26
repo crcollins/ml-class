@@ -44,8 +44,8 @@ Usage
 	git submodule update
 	# Now run the test script
 	python example.py
-	# Or run the neural net test script
-	python neural.py
+	# Or run the neural net test script (This creates a neural net with 2 hidden layers)
+	python neural.py 40 40
 
 
 
