@@ -244,3 +244,11 @@ def plot_method_errors(values, property_name):
 
     plt.tight_layout()
     plt.show()
+
+
+def plot_surface(x, y, Z):
+    fig = plt.figure()
+    ax = fig.gca(projection='3d')
+    X, Y = numpy.meshgrid(x, y)
+    surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, linewidth=0)
+    plt.show()
