@@ -195,7 +195,7 @@ if __name__ == '__main__':
     print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
     sys.stdout.flush()
 
-    for i in xrange(5):
+    for i in xrange(5000):
         clf.improve(10)
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
         print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
