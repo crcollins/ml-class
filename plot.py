@@ -1,9 +1,13 @@
 import numpy
+
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
+
 from scipy import tanh
 import scipy.spatial as spatial
+
 from sklearn import decomposition
+
 from pybrain.tools.functions import sigmoid
 
 
