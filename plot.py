@@ -1,6 +1,7 @@
 import numpy
 
 import matplotlib.pyplot as plt
+from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 
 from scipy import tanh
@@ -254,5 +255,5 @@ def plot_surface(x, y, Z):
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     X, Y = numpy.meshgrid(x, y)
-    surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, linewidth=0)
+    surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.coolwarm, linewidth=0)
     plt.show()
