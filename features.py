@@ -4,9 +4,6 @@ from numpy.linalg import norm
 
 from sklearn import decomposition
 
-from rdkit import Chem
-from rdkit.Chem.Fingerprints import FingerprintMols
-
 from utils import tokenize, ARYL, RGROUPS, decay_function, gauss_decay_function
 
 
@@ -356,6 +353,13 @@ def get_fingerprint_feature(names, paths, size=256, **kwargs):
     found here.
     http://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity
     '''
+    try:
+        from rdkit import Chem
+        from rdkit.Chem.Fingerprints import FingerprintMols
+    except ImportError:
+        print "Please install RDkit."
+        return numpy.matrix([[] for path in paths])
+
     vectors = []
     for path in paths:
         path = path.replace("out", "mol2")
