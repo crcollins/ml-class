@@ -292,7 +292,7 @@ def get_coulomb_feature(names, paths, **kwargs):
     for path in paths:
         coords = []
         other = []
-        types = {'C': 6, 'H': 1, 'O': 8}
+        types = {'C': 6, 'H': 1, 'O': 8, 'N': 7}
         with open(path, 'r') as f:
             # print path
             for line in f:
