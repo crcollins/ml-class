@@ -11,16 +11,16 @@ from utils import tokenize, ARYL, RGROUPS, decay_function, gauss_decay_function
 def get_null_feature(names, paths, **kwargs):
     '''
     names is a list of strings with the name of the structure (['4aa'])
-    paths is a list of locations of the geometry files for that structures 
+    paths is a list of locations of the geometry files for that structures
         (['data/noopt/geoms/4aa'])
-    This function returns a single vector (1, N_features) in the form of a list 
-    
+    This function returns a single vector (1, N_features) in the form of a list
+
     There is no need to add a bias term or try to split the structures based on
     which data set they came from, both of these will be handled as the data is
     loaded.
 
     NOTE: The '@FeatureFunction' at the start of this function is required.
-    It is used to collect all the feature vectors together to reduce 
+    It is used to collect all the feature vectors together to reduce
     duplication.
     '''
     return numpy.matrix(numpy.zeros((len(names), 0)))
@@ -28,8 +28,8 @@ def get_null_feature(names, paths, **kwargs):
 
 def get_binary_feature(names, paths, limit=4, **kwargs):
     '''
-    Creates a simple boolean feature vector based on whether or not a part is 
-    in the name of the structure. 
+    Creates a simple boolean feature vector based on whether or not a part is
+    in the name of the structure.
     NOTE: This feature vector size scales O(N), where N is the limit.
     NOTE: Any parts of the name larger than the limit will be stripped off.
 
@@ -114,7 +114,7 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
     '''
     This feature vector works about the same as the binary feature vector
     with the exception that it does not have O(N) scaling as the length of
-    the molecule gains more rings. This is because it treats the 
+    the molecule gains more rings. This is because it treats the
     interaction between rings as some decay as they move further from the
     "start" of the structure (the start of the name).
     '''
@@ -141,7 +141,7 @@ def get_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
                 idx = vector_map.index(char, idx + 1)
 
             # Needs to be optimized for power, H, and factor
-            # count + 1 is used so that the first value will be 1, and 
+            # count + 1 is used so that the first value will be 1, and
             # subsequent values will have their respective scaling.
             temp[idx] += decay_function(count + 1, power, H, factor)
         vectors.append(temp)
@@ -152,13 +152,13 @@ def get_gauss_decay_feature(names, paths, sigma=2, **kwargs):
     '''
     This feature vector works the exact same as the normal decay feature
     vector with the exception that it uses a Gaussian distribution for the
-    decay. This was picked because looking at the PCA components for the 
+    decay. This was picked because looking at the PCA components for the
     parts of the structure and their relative influence as they were farther
-    in the name from the start in the binary feature vector. 
+    in the name from the start in the binary feature vector.
     In the future, this might need to be a per component decay.
 
     NOTE: The sigma value is kind of arbitrary. With a little bit of tuning
-    sigma=2 produced a reasonably low error. (From the PCA, the expected 
+    sigma=2 produced a reasonably low error. (From the PCA, the expected
     value was sigma=6)
     '''
     first = ARYL
@@ -203,7 +203,7 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
     for name in names:
 
         name = name.replace('-', '')  # no support for flipping yet
-        
+
         end = tokenize(name)
         partfeatures = [0] * length
 
@@ -211,7 +211,7 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
         # The x - 0.5 is to offset the value between index values.
         center = len(end) / 3. / 2. - 0.5
         for i, char in enumerate(end):
-            # abs(x) is used to not make it not differentiate which 
+            # abs(x) is used to not make it not differentiate which
             # direction each half of the structure is going relative to
             # the center
             count = abs((i / 3) - center)
@@ -229,10 +229,10 @@ def get_centered_decay_feature(names, paths, power=1, H=1, factor=1, **kwargs):
     return numpy.matrix(vectors)
 
 
-def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1, 
+def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1,
                                                                     **kwargs):
     '''
-    This feature vector works the same as the centered decay feature vector 
+    This feature vector works the same as the centered decay feature vector
     with the addition that it takes into account the side of the center that
     the rings are on instead of just looking at the magnitude of the distance.
     '''
@@ -244,9 +244,9 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1,
     vectors = []
     for name in names:
         name = name.replace('-', '')  # no support for flipping yet
-        
+
         end = tokenize(name)
-        # One set is for the left (negative) side and the other is for the 
+        # One set is for the left (negative) side and the other is for the
         # right side.
         partfeatures = [[0] * length, [0] * length]
 
@@ -254,7 +254,7 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1,
         # The x - 0.5 is to offset the value between index values.
         center = len(end) / 3. / 2. - 0.5
         for i, char in enumerate(end):
-            # abs(x) is used to not make it not differentiate which 
+            # abs(x) is used to not make it not differentiate which
             # direction each half of the structure is going relative to
             # the center
             count = (i / 3) - center
@@ -279,8 +279,8 @@ def get_signed_centered_decay_feature(names, paths, power=1, H=1, factor=1,
 def get_coulomb_feature(names, paths, **kwargs):
     '''
     This feature vector is based on a distance matrix between all of the atoms
-    in the structure with each element multiplied by the number of protons in 
-    each of atom in the pair. The diagonal is 0.5 * protons ^ 2.4. The 
+    in the structure with each element multiplied by the number of protons in
+    each of atom in the pair. The diagonal is 0.5 * protons ^ 2.4. The
     exponent comes from a fit.
     This is based off the following work:
     M. Rupp, et al. Physical Review Letters, 108(5):058301, 2012.
@@ -322,19 +322,19 @@ def get_coulomb_feature(names, paths, **kwargs):
 
 def get_pca_coulomb_feature(names, paths, dimensions=100, **kwargs):
     '''
-    This feature vector takes the feature matrix from get_coulomb_feature and 
+    This feature vector takes the feature matrix from get_coulomb_feature and
     does Principal Component Analysis on it to extract the N most influential
     dimensions. The goal of this is to reduce the size of the feature vector
-    which can reduce overfitting, and most importantly dramatically reduce 
+    which can reduce overfitting, and most importantly dramatically reduce
     running time.
 
     In principal, the number of dimensions used should correspond
     to at least 95% of the variability of the features (This is denoted by the
-    `sum(pca.explained_variance_ratio_)`. For a full listing of the influence of 
+    `sum(pca.explained_variance_ratio_)`. For a full listing of the influence of
     each dimension look at pca.explained_variance_ratio_.
 
     This method works by taking the N highest eigenvalues of the matrix (And
-    their corresponding eigenvectors) and mapping the feature matrix into 
+    their corresponding eigenvectors) and mapping the feature matrix into
     this new lower dimensional space.
     '''
     feat = get_coulomb_feature(names, paths)
@@ -364,7 +364,7 @@ def get_fingerprint_feature(names, paths, size=256, **kwargs):
     for path in paths:
         path = path.replace("out", "mol2")
         m = Chem.MolFromMol2File(path)
-        f = FingerprintMols.FingerprintMol(m, fpSize=size, minPath=1, 
+        f = FingerprintMols.FingerprintMol(m, fpSize=size, minPath=1,
                                         maxPath=7, bitsPerHash=2, useHs=True,
                                         tgtDensity=0, minSize=size)
         vectors.append([x == '1' for x in f.ToBitString()])
