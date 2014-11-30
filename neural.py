@@ -192,11 +192,13 @@ if __name__ == '__main__':
     clf = NeuralNet(layers)
     clf.fit(XTrain, yTrain)
     clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-    print -1, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+    clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
+    print -1, clf.test_error[-1], clf.test_error_norm[-1]
     sys.stdout.flush()
 
     for i in xrange(5000):
         clf.improve(10)
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
-        print i, clf.test_error[-1], numpy.linalg.norm(clf.test_error[-1])
+        clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
+        print i, clf.test_error[-1], clf.test_error_norm[-1]
         sys.stdout.flush()
