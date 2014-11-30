@@ -299,3 +299,127 @@ def get_pca_coulomb_feature(names, paths, dimensions=100):
     pca.fit(feat)
     # print pca.explained_variance_ratio_, sum(pca.explained_variance_ratio_)
     return numpy.matrix(pca.transform(feat))
+
+
+def get_cndo_feature(names, paths)
+    all_names = []
+    properties = []
+    valid_names = []
+    valid_properties = []
+    with open('./semi_feat/cndo.csv', 'r') as semi_feature_file:
+        for line in semi_feature_file:
+            temp = line.split(',')
+            name, props = temp[1], temp[5:12]
+            all_names.append(name)
+            properties.append([float(x) for x in props])
+    
+    for validName in names:
+        for i, dummyName in enumerate(all_names):
+            if validName == dummyName:
+                valid_names.append(dummyName)
+                valid_properties.append(properties[i])
+                break
+    
+    FEAT = numpy.zeros((len(valid_properties), 7))
+    for i, x in enumerate(valid_properties):
+        FEAT[i,:] = x
+    return numpy.matrix(FEAT)
+
+
+def get_indo_feature(names, paths)
+    all_names = []
+    properties = []
+    valid_names = []
+    valid_properties = []
+    with open('./semi_feat/indo.csv', 'r') as semi_feature_file:
+        for line in semi_feature_file:
+            temp = line.split(',')
+            name, props = temp[1], temp[5:12]
+            all_names.append(name)
+            properties.append([float(x) for x in props])
+    
+    for validName in names:
+        for i, dummyName in enumerate(all_names):
+            if validName == dummyName:
+                valid_names.append(dummyName)
+                valid_properties.append(properties[i])
+                break
+    
+    FEAT = numpy.zeros((len(valid_properties), 7))
+    for i, x in enumerate(valid_properties):
+        FEAT[i,:] = x
+    return numpy.matrix(FEAT)
+
+
+def get_mndo_feature(names, paths)
+    all_names = []
+    properties = []
+    valid_names = []
+    valid_properties = []
+    with open('./semi_feat/mndo.csv', 'r') as semi_feature_file:
+        for line in semi_feature_file:
+            temp = line.split(',')
+            name, props = temp[1], temp[5:12]
+            all_names.append(name)
+            properties.append([float(x) for x in props])
+    
+    for validName in names:
+        for i, dummyName in enumerate(all_names):
+            if validName == dummyName:
+                valid_names.append(dummyName)
+                valid_properties.append(properties[i])
+                break
+    
+    FEAT = numpy.zeros((len(valid_properties), 7))
+    for i, x in enumerate(valid_properties):
+        FEAT[i,:] = x
+    return numpy.matrix(FEAT)
+
+def get_am1_feature(names, paths)
+    all_names = []
+    properties = []
+    valid_names = []
+    valid_properties = []
+    with open('./semi_feat/am1.csv', 'r') as semi_feature_file:
+        for line in semi_feature_file:
+            temp = line.split(',')
+            name, props = temp[1], temp[5:12]
+            all_names.append(name)
+            properties.append([float(x) for x in props])
+    
+    for validName in names:
+        for i, dummyName in enumerate(all_names):
+            if validName == dummyName:
+                valid_names.append(dummyName)
+                valid_properties.append(properties[i])
+                break
+    
+    FEAT = numpy.zeros((len(valid_properties), 7))
+    for i, x in enumerate(valid_properties):
+        FEAT[i,:] = x
+    return numpy.matrix(FEAT)
+
+
+def get_am1_feature(names, paths)
+    all_names = []
+    properties = []
+    valid_names = []
+    valid_properties = []
+    with open('./semi_feat/pm3.csv', 'r') as semi_feature_file:
+        for line in semi_feature_file:
+            temp = line.split(',')
+            name, props = temp[1], temp[5:12]
+            all_names.append(name)
+            properties.append([float(x) for x in props])
+    
+    for validName in names:
+        for i, dummyName in enumerate(all_names):
+            if validName == dummyName:
+                valid_names.append(dummyName)
+                valid_properties.append(properties[i])
+                break
+    
+    FEAT = numpy.zeros((len(valid_properties), 7))
+    for i, x in enumerate(valid_properties):
+        FEAT[i,:] = x
+    return numpy.matrix(FEAT)
