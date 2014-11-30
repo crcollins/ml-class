@@ -10,9 +10,10 @@ from sklearn import neighbors
 from sklearn import linear_model
 from sklearn import tree
 
-from utils import load_data, test_clf_kfold, cross_clf_kfold
+from utils import load_data, test_clf_kfold, cross_clf_kfold, OptimizedCLF
 import features
 import clfs
+import newclfs
 
 
 if __name__ == '__main__':
@@ -30,14 +31,14 @@ if __name__ == '__main__':
     FEATURE_FUNCTIONS = [
         features.get_null_feature,
         features.get_binary_feature,
-        features.get_flip_binary_feature,
-        features.get_decay_feature,
-        features.get_gauss_decay_feature,
-        features.get_centered_decay_feature,
-        features.get_signed_centered_decay_feature,
+        # features.get_flip_binary_feature,
+        # features.get_decay_feature,
+        # features.get_gauss_decay_feature,
+        # features.get_centered_decay_feature,
+        # features.get_signed_centered_decay_feature,
         # features.get_coulomb_feature,
         # features.get_pca_coulomb_feature,
-        features.get_fingerprint_feature,
+        # features.get_fingerprint_feature,
     ]
 
     # Construct (name, vector) pairs to auto label features when iterating over them
@@ -74,13 +75,14 @@ if __name__ == '__main__':
     # model with the lowest cross validation error and uses it for the final testing.
     CLFS = (
         ('Mean', dummy.DummyRegressor, {}),
-        ('Linear', linear_model.LinearRegression, {}),
-        ('LinearFix', clfs.LinearRegression, {}),
-        ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
-        ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
-        ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
-        ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 5, 8, 13]}),
-        ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 5, 8, 13, 21, 34, 55, 89]}),
+        # ('Linear', linear_model.LinearRegression, {}),
+        # ('LinearFix', clfs.LinearRegression, {}),
+        # ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
+        # ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        # ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        # ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 5, 8, 13]}),
+        # ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 5, 8, 13, 21, 34, 55, 89]}),
+        ('Laplace Rbf', newclfs.SVM_Laplace_Rbf,  {'C': 1, 'lap_coef':  1, 'rbf_coef':  1, 'lamda':  1, 'sigma':  1}),
     )
 
     results = {}
@@ -92,9 +94,12 @@ if __name__ == '__main__':
             results[NAME][FEAT_NAME] = {}
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
+                # pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
+                optclf = OptimizedCLF(FEAT, PROP, CLF, KWARGS)
+                newclf = optclf.get_optimized_clf()
                 finished = time.time() - start
-                print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
-                results[NAME][FEAT_NAME][CLF_NAME] = test[0]
+                print newclf
+                # print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
+                # results[NAME][FEAT_NAME][CLF_NAME] = test[0]
             print
         print
