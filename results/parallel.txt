@@ -1,0 +1,129 @@
+===============================================================================
+2 Cores
+
+No Parallel
+Took 0.1423 secs to load 557 data points.
+Sizes of Feature Matrices
+	binary_feature (557, 72)
+	flip_binary_feature (557, 76)
+
+HOMO
+	binary_feature
+		LinearRidge: 0.1199 +/- 0.0129 eV (1.6831 secs) (1,)
+		SVM: 0.1037 +/- 0.0131 eV (36.9010 secs) (100, 0.01)
+		k-NN: 0.1112 +/- 0.0111 eV (1.4109 secs) (5,)
+		Tree: 0.1599 +/- 0.0132 eV (0.5233 secs) (5,)
+
+	flip_binary_feature
+		LinearRidge: 0.1199 +/- 0.0132 eV (1.8330 secs) (1,)
+		SVM: 0.0915 +/- 0.0092 eV (44.7150 secs) (100, 0.01)
+		k-NN: 0.0999 +/- 0.0068 eV (1.5341 secs) (3,)
+		Tree: 0.1613 +/- 0.0137 eV (0.5449 secs) (5,)
+
+
+
+Parallel at test kfolds level
+Took 0.1428 secs to load 557 data points.
+Sizes of Feature Matrices
+	binary_feature (557, 72)
+	flip_binary_feature (557, 76)
+
+HOMO
+	binary_feature
+		LinearRidge: 0.1199 +/- 0.0129 eV (4.3295 secs) (1,)
+		SVM: 0.1037 +/- 0.0131 eV (33.7754 secs) (100, 0.01)
+		k-NN: 0.1112 +/- 0.0111 eV (2.5859 secs) (5,)
+		Tree: 0.1625 +/- 0.0158 eV (2.3810 secs) (5,)
+
+	flip_binary_feature
+		LinearRidge: 0.1199 +/- 0.0132 eV (4.3274 secs) (1,)
+		SVM: 0.0915 +/- 0.0092 eV (40.1837 secs) (100, 0.01)
+		k-NN: 0.0999 +/- 0.0068 eV (2.6117 secs) (3,)
+		Tree: 0.1638 +/- 0.0162 eV (2.4075 secs) (5,)
+
+
+
+Parallel at cross validation level
+Took 0.1422 secs to load 557 data points.
+Sizes of Feature Matrices
+	binary_feature (557, 72)
+	flip_binary_feature (557, 76)
+
+HOMO
+	binary_feature
+		LinearRidge: 0.1199 +/- 0.0129 eV (1.1939 secs) (1,)
+		SVM: 0.1037 +/- 0.0131 eV (20.8171 secs) (100, 0.01)
+		k-NN: 0.1112 +/- 0.0111 eV (1.0812 secs) (5,)
+		Tree: 0.1625 +/- 0.0158 eV (0.5809 secs) (5,)
+
+	flip_binary_feature
+		LinearRidge: 0.1199 +/- 0.0132 eV (1.1906 secs) (1,)
+		SVM: 0.0915 +/- 0.0092 eV (26.0296 secs) (100, 0.01)
+		k-NN: 0.0999 +/- 0.0068 eV (1.0807 secs) (3,)
+		Tree: 0.1613 +/- 0.0137 eV (0.5786 secs) (5,)
+
+===============================================================================
+
+12 Cores
+
+No Parallel
+Took 0.0990 secs to load 1671 data points.
+Sizes of Feature Matrices
+	null_feature (1671, 5)
+	binary_feature (1671, 73)
+
+HOMO
+	null_feature
+		LinearRidge: 0.8022 +/- 0.0494 eV (0.2775 secs) (10,)
+		SVM: 0.8014 +/- 0.0513 eV (56.3911 secs) (100, 0.1)
+		k-NN: 0.9160 +/- 0.1096 eV (0.7515 secs) (5,)
+		Tree: 0.8030 +/- 0.0481 eV (0.0975 secs) (2,)
+
+	binary_feature
+		LinearRidge: 0.6033 +/- 0.0150 eV (1.8947 secs) (10,)
+		SVM: 0.6010 +/- 0.0348 eV (165.9006 secs) (1, 0.01)
+		k-NN: 0.8144 +/- 0.0371 eV (3.8267 secs) (5,)
+		Tree: 0.6218 +/- 0.0171 eV (0.7304 secs) (5,)
+
+
+
+Parallel at test kfolds level
+Took 0.0889 secs to load 1671 data points.
+Sizes of Feature Matrices
+	null_feature (1671, 5)
+	binary_feature (1671, 73)
+
+HOMO
+	null_feature
+		LinearRidge: 0.8022 +/- 0.0494 eV (3.9844 secs) (10,)
+		SVM: 0.8014 +/- 0.0513 eV (28.2608 secs) (100, 0.1)
+		k-NN: 0.9160 +/- 0.1096 eV (2.3987 secs) (5,)
+		Tree: 0.8030 +/- 0.0481 eV (2.2636 secs) (2,)
+
+	binary_feature
+		LinearRidge: 0.6033 +/- 0.0150 eV (4.2471 secs) (10,)
+		SVM: 0.6010 +/- 0.0348 eV (73.6019 secs) (1, 0.01)
+		k-NN: 0.8144 +/- 0.0371 eV (3.0119 secs) (5,)
+		Tree: 0.6218 +/- 0.0171 eV (2.3631 secs) (5,)
+
+
+
+Parallel at cross validation level
+Took 0.0978 secs to load 1671 data points.
+Sizes of Feature Matrices
+	null_feature (1671, 5)
+	binary_feature (1671, 73)
+
+HOMO
+	null_feature
+		LinearRidge: 0.8022 +/- 0.0494 eV (0.5748 secs) (10,)
+		SVM: 0.8014 +/- 0.0513 eV (8.3415 secs) (100, 0.1)
+		k-NN: 0.9160 +/- 0.1096 eV (0.5447 secs) (5,)
+		Tree: 0.8030 +/- 0.0481 eV (0.5471 secs) (2,)
+
+	binary_feature
+		LinearRidge: 0.6033 +/- 0.0150 eV (0.5992 secs) (10,)
+		SVM: 0.6010 +/- 0.0348 eV (36.0405 secs) (1, 0.01)
+		k-NN: 0.8144 +/- 0.0371 eV (1.5807 secs) (5,)
+		Tree: 0.6219 +/- 0.0171 eV (0.5764 secs) (5,)
+
