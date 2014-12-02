@@ -225,26 +225,59 @@ def plot_feature_errors(values, property_name):
 def plot_method_errors(values, property_name):
     fig, ax = plt.subplots()
 
+    method_ordering = [
+        "Mean",
+        "Linear",
+        "LinearRidge",
+        "SVM (Gaussian)",
+        "SVM (Laplacian)",
+        "k-NN",
+        "Tree",
+    ]
+
     errors = {}
     for feature, methods in values.items():
-        for method, error in methods.items():
+        for method in method_ordering:
+            error = methods[method]
             try:
                 errors[feature].append(error)
             except:
                 errors[feature] = [error]
-    methods = methods.keys()
     width = 0.9 / len(errors)
 
-    colors = ['r', 'y', 'g', 'c', 'b', 'm', 'k']
-    ind = numpy.arange(len(methods))
-    for i, (method, errors) in enumerate(errors.items()):
-        plt.bar(ind+i*width, errors, width, color=colors[i], label=method)
+    colors = [
+        "#F15854", # (red)
+        "#F17CB0", # (pink)
+        "#FAA43A", # (orange)
+        "#DECF3F", # (yellow)
+        "#60BD68", # (green)
+        "#5DA5DA", # (blue)
+        "#B276B2", # (purple)
+        "#B2912F", # (brown)
+        "#4D4D4D", # (gray)
+    ]
+    vector_ordering = [
+        "null_feature",
+        "binary_feature",
+        "flip_binary_feature",
+        "decay_feature",
+        "centered_decay_feature",
+        "signed_centered_decay_feature",
+        "gauss_decay_feature",
+        "coulomb_feature",
+        "pca_coulomb_feature",
+    ]
+    ind = numpy.arange(len(method_ordering))
+    for i, method in enumerate(vector_ordering):
+        values = errors[method]
+        means, stds = zip(*values)
+        plt.bar(ind+i*width, means, width, yerr=stds, color=colors[i], ecolor='k', label=method)
 
-    plt.title(property_name)
+    plt.title(property_name, fontsize=24)
     plt.xticks(rotation=10)
-    ax.set_xticks(ind + (len(errors)/2 * width))
-    ax.set_xticklabels(methods)
-    ax.set_ylabel("Mean Absolute Error (eV)")
+    ax.set_xticks(ind + (len(values)/2 * width))
+    ax.set_xticklabels(method_ordering, fontsize=18)
+    ax.set_ylabel("Mean Absolute Error (eV)", fontsize=18)
     plt.legend(loc="best")
 
     plt.tight_layout()
