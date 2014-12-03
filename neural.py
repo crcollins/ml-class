@@ -6,6 +6,8 @@ from itertools import product
 
 import numpy
 
+from scipy.optimize import curve_fit
+
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
@@ -15,6 +17,10 @@ from pybrain.structure import FullConnection
 
 from utils import load_data
 import features
+
+
+def power_fit(x, a, b):
+    return a * x ** b
 
 
 class NeuralNet(object):
@@ -200,5 +206,10 @@ if __name__ == '__main__':
         clf.improve(10)
         clf.test_error.append(numpy.abs(clf.predict(XTest)-yTest).mean(0))
         clf.test_error_norm.append(numpy.linalg.norm(clf.test_error[-1]))
-        print i, clf.test_error[-1], clf.test_error_norm[-1]
+        if (i % 5) == 0 and i != 0:
+            x = numpy.arange(i+2)+1
+            mm = curve_fit(power_fit, x, numpy.array(clf.test_error_norm), p0=[1, -.5])
+            print i, clf.test_error[-1], clf.test_error_norm[-1], mm[0]
+        else:
+            print i, clf.test_error[-1], clf.test_error_norm[-1]
         sys.stdout.flush()
