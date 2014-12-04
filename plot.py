@@ -290,3 +290,12 @@ def plot_surface(x, y, Z):
     X, Y = numpy.meshgrid(x, y)
     surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap=cm.coolwarm, linewidth=0)
     plt.show()
+
+
+def plot_multi_surface(xs, ys, Zs):
+    fig = plt.figure()
+    for x, y, Z in zip(xs, ys, Zs):
+        ax = fig.gca(projection='3d')
+        X, Y = numpy.meshgrid(x, y)
+        surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, alpha=0.5, cmap=cm.coolwarm, linewidth=0)
+    plt.show()
