@@ -246,15 +246,29 @@ def plot_method_errors(values, property_name):
     width = 0.9 / len(errors)
 
     colors = [
-        "#F15854", # (red)
-        "#F17CB0", # (pink)
-        "#FAA43A", # (orange)
-        "#DECF3F", # (yellow)
-        "#60BD68", # (green)
-        "#5DA5DA", # (blue)
-        "#B276B2", # (purple)
-        "#B2912F", # (brown)
-        "#4D4D4D", # (gray)
+        # "#F15854", # (red)
+        # "#F17CB0", # (pink)
+        # "#FAA43A", # (orange)
+        # "#DECF3F", # (yellow)
+        # "#60BD68", # (green)
+        # "#5DA5DA", # (blue)
+        # "#B276B2", # (purple)
+        # "#B2912F", # (brown)
+        # "#4D4D4D", # (gray)
+        "#F44336",
+        "#9C27B0",
+        "#3F51B5",
+        "#03A9F4",
+        "#4CAF50",
+        "#CDDC39",
+        "#FFC107",
+        "#E91E63",
+        "#673AB7",
+        "#2196F3",
+        "#00BCD4",
+        "#8BC34A",
+        "#FFEB3B",
+        "#FF5722",
     ]
     vector_ordering = [
         "null_feature",
