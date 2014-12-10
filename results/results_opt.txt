@@ -1,3 +1,27 @@
+Took 707.3919 secs to load 11432 data points.
+Sizes of Feature Matrices
+	pca_coulomb_feature (11432, 109)
+	flip_binary_feature (11432, 105)
+	null_feature (11432, 9)
+	signed_centered_decay_feature (11432, 55)
+	centered_decay_feature (11432, 32)
+	decay_feature (11432, 32)
+	coulomb_feature (11432, 2494)
+	gauss_decay_feature (11432, 32)
+	binary_feature (11432, 101)
+
+Took 952.5836 secs to load 11432 data points.
+Sizes of Feature Matrices
+	pca_coulomb_feature (11432, 109)
+	flip_binary_feature (11432, 105)
+	null_feature (11432, 9)
+	signed_centered_decay_feature (11432, 55)
+	centered_decay_feature (11432, 32)
+	decay_feature (11432, 32)
+	coulomb_feature (11432, 2494)
+	gauss_decay_feature (11432, 32)
+	binary_feature (11432, 101)
+
 Took 177.3730 secs to load 11432 data points.
 Sizes of Feature Matrices
 	coulomb_feature (11432, 2494)
@@ -16,6 +40,7 @@ Sizes of Feature Matrices
 	gauss_decay_feature (11432, 32)
 	binary_feature (11432, 101)
 
+
 HOMO
 	flip_binary_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0538 secs) {}
@@ -26,6 +51,8 @@ HOMO
 		SVM Laplace: 0.0894 +/- 0.0012 eV (1118.9502 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.5300 +/- 0.0033 eV (37.5638 secs) {'n_neighbors': 2}
 		Tree: 0.1113 +/- 0.0004 eV (4.8341 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.1640 +/- 0.0005 eV (513.4139 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.0942 +/- 0.0010 eV (439.0579 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	null_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0216 secs) {}
@@ -36,6 +63,8 @@ HOMO
 		SVM Laplace: 0.7624 +/- 0.0093 eV (494.4345 secs) {'C': 100, 'gamma': 0.001}
 		k-NN: 0.9540 +/- 0.0725 eV (3.1853 secs) {'n_neighbors': 3}
 		Tree: 0.7615 +/- 0.0091 eV (0.2283 secs) {'max_depth': 2}
+		AdaBoost Regressor: 0.7613 +/- 0.0097 eV (49.9747 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.7612 +/- 0.0096 eV (35.5534 secs) {'n_estimators': 100, 'learning_rate': 0.1, 'max_depth': 1}
 
 	signed_centered_decay_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0352 secs) {}
@@ -46,6 +75,8 @@ HOMO
 		SVM Laplace: 0.1179 +/- 0.0003 eV (786.4031 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2275 +/- 0.0015 eV (17.7943 secs) {'n_neighbors': 2}
 		Tree: 0.1252 +/- 0.0010 eV (2.8181 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.1887 +/- 0.0001 eV (247.8956 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1072 +/- 0.0004 eV (226.8980 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	centered_decay_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0241 secs) {}
@@ -56,6 +87,8 @@ HOMO
 		SVM Laplace: 0.1214 +/- 0.0008 eV (628.7602 secs) {'C': 1000, 'gamma': 0.0001}
 		k-NN: 0.1990 +/- 0.0014 eV (10.6913 secs) {'n_neighbors': 2}
 		Tree: 0.1231 +/- 0.0000 eV (1.7200 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.1951 +/- 0.0004 eV (123.8305 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1077 +/- 0.0001 eV (133.4566 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	decay_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0241 secs) {}
@@ -66,6 +99,8 @@ HOMO
 		SVM Laplace: 0.1114 +/- 0.0013 eV (620.1872 secs) {'C': 1000, 'gamma': 0.0001}
 		k-NN: 0.1988 +/- 0.0008 eV (10.4394 secs) {'n_neighbors': 2}
 		Tree: 0.1229 +/- 0.0001 eV (1.7193 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.1828 +/- 0.0001 eV (124.3466 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1077 +/- 0.0001 eV (132.5534 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	gauss_decay_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0241 secs) {}
@@ -76,6 +111,9 @@ HOMO
 		SVM Laplace: 0.1103 +/- 0.0019 eV (619.0122 secs) {'C': 1000, 'gamma': 0.0001}
 		k-NN: 0.2017 +/- 0.0006 eV (10.2170 secs) {'n_neighbors': 2}
 		Tree: 0.1230 +/- 0.0005 eV (1.7195 secs) {'max_depth': 89}
+		AdaBoost Regressor: 0.1784 +/- 0.0014 eV (123.8011 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1077 +/- 0.0001 eV (133.7934 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
+
 	binary_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0497 secs) {}
 		Linear: 138506671.8801 +/- 138506671.7135 eV (0.9791 secs) {}
@@ -85,6 +123,8 @@ HOMO
 		SVM Laplace: 0.1115 +/- 0.0016 eV (1095.0120 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.4414 +/- 0.0081 eV (31.9941 secs) {'n_neighbors': 2}
 		Tree: 0.1248 +/- 0.0008 eV (4.2973 secs) {'max_depth': 89}
+		AdaBoost Regressor: 0.1645 +/- 0.0002 eV (492.2658 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1060 +/- 0.0006 eV (419.0230 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	pca_coulomb_feature
 		Mean: 1.2572 +/- 0.0009 eV (0.0534 secs) {}
@@ -95,6 +135,8 @@ HOMO
 		SVM Laplace: 0.3566 +/- 0.0003 eV (1324.0151 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 1.0551 +/- 0.0017 eV (14.9989 secs) {'n_neighbors': 13}
 		Tree: 0.1615 +/- 0.0006 eV (61.8619 secs) {'max_depth': 89}
+		AdaBoost Regressor: 0.3436 +/- 0.0043 eV (491.6963 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1337 +/- 0.0019 eV (2932.6949 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 	coulomb_feature
 		Mean: 1.2572 +/- 0.0009 eV (1.5678 secs) {}
@@ -105,6 +147,8 @@ HOMO
 		SVM Laplace: 0.4465 +/- 0.0012 eV (20147.9263 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 1.0885 +/- 0.0009 eV (634.4186 secs) {'n_neighbors': 13}
 		Tree: 0.1668 +/- 0.0048 eV (700.8537 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.0889 +/- 0.0022 eV (44733.6849 secs) {'n_estimators': 100, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.0957 +/- 0.0014 eV (48995.6596 secs) {'n_estimators': 200, 'learning_rate': 0.2, 'max_depth': 3}
 
 
 LUMO
@@ -117,6 +161,8 @@ LUMO
 		SVM Laplace: 0.0905 +/- 0.0017 eV (1113.3663 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.4011 +/- 0.0021 eV (37.5870 secs) {'n_neighbors': 2}
 		Tree: 0.1335 +/- 0.0011 eV (4.9482 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.1726 +/- 0.0009 eV (379.7679 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1002 +/- 0.0005 eV (604.9503 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	null_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0211 secs) {}
@@ -127,6 +173,8 @@ LUMO
 		SVM Laplace: 0.6811 +/- 0.0064 eV (483.4238 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.8579 +/- 0.0796 eV (3.1918 secs) {'n_neighbors': 3}
 		Tree: 0.6836 +/- 0.0070 eV (0.2268 secs) {'max_depth': 5}
+		AdaBoost Regressor: 0.6828 +/- 0.0068 eV (46.3005 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.6826 +/- 0.0066 eV (43.6888 secs) {'n_estimators': 50, 'learning_rate': 0.20000000000000001, 'max_depth': 1}
 
 	signed_centered_decay_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0352 secs) {}
@@ -137,6 +185,8 @@ LUMO
 		SVM Laplace: 0.1147 +/- 0.0010 eV (782.9762 secs) {'C': 1000, 'gamma': 0.1}
 		k-NN: 0.2745 +/- 0.0009 eV (17.8183 secs) {'n_neighbors': 2}
 		Tree: 0.1298 +/- 0.0006 eV (2.8680 secs) {'max_depth': 89}
+		AdaBoost Regressor: 0.2114 +/- 0.0003 eV (190.9619 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1075 +/- 0.0013 eV (322.7265 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	centered_decay_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0242 secs) {}
@@ -147,6 +197,8 @@ LUMO
 		SVM Laplace: 0.1305 +/- 0.0017 eV (632.0365 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2296 +/- 0.0010 eV (10.6817 secs) {'n_neighbors': 2}
 		Tree: 0.1275 +/- 0.0001 eV (1.7411 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2218 +/- 0.0010 eV (102.1920 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1074 +/- 0.0004 eV (188.8268 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	decay_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0242 secs) {}
@@ -157,6 +209,8 @@ LUMO
 		SVM Laplace: 0.1134 +/- 0.0014 eV (615.5019 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2241 +/- 0.0007 eV (10.4437 secs) {'n_neighbors': 2}
 		Tree: 0.1274 +/- 0.0002 eV (1.7455 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2076 +/- 0.0006 eV (100.2674 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1074 +/- 0.0003 eV (189.2206 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	gauss_decay_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0243 secs) {}
@@ -167,6 +221,8 @@ LUMO
 		SVM Laplace: 0.1146 +/- 0.0012 eV (618.5187 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2304 +/- 0.0019 eV (10.2167 secs) {'n_neighbors': 2}
 		Tree: 0.1277 +/- 0.0005 eV (1.7432 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2047 +/- 0.0019 eV (104.0898 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1074 +/- 0.0004 eV (189.3402 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	binary_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0496 secs) {}
@@ -177,6 +233,8 @@ LUMO
 		SVM Laplace: 0.1069 +/- 0.0010 eV (1089.1083 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.3471 +/- 0.0073 eV (32.0719 secs) {'n_neighbors': 2}
 		Tree: 0.1274 +/- 0.0006 eV (4.4545 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.1728 +/- 0.0010 eV (350.3007 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1063 +/- 0.0001 eV (581.5061 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	pca_coulomb_feature
 		Mean: 0.9890 +/- 0.0035 eV (0.0452 secs) {}
@@ -187,6 +245,8 @@ LUMO
 		SVM Laplace: 0.2715 +/- 0.0005 eV (1315.1364 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.7399 +/- 0.0003 eV (12.5286 secs) {'n_neighbors': 5}
 		Tree: 0.1836 +/- 0.0028 eV (57.5225 secs) {'max_depth': 21}
+		AdaBoost Regressor: 0.2527 +/- 0.0019 eV (404.1985 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1241 +/- 0.0037 eV (2802.5943 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	coulomb_feature
 		Mean: 0.9890 +/- 0.0035 eV (1.5449 secs) {}
@@ -197,6 +257,8 @@ LUMO
 		SVM Laplace: 0.3312 +/- 0.0006 eV (17059.6443 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.7802 +/- 0.0024 eV (526.6318 secs) {'n_neighbors': 13}
 		Tree: 0.1982 +/- 0.0001 eV (524.0880 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.0970 +/- 0.0060 eV (33920.5397 secs) {'n_estimators': 100, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1074 +/- 0.0022 eV (47081.0567 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 
 GAP
@@ -209,6 +271,8 @@ GAP
 		SVM Laplace: 0.1150 +/- 0.0001 eV (1135.0769 secs) {'C': 1000, 'gamma': 0.01}
 		k-NN: 0.2019 +/- 0.0022 eV (38.2483 secs) {'n_neighbors': 3}
 		Tree: 0.1362 +/- 0.0014 eV (4.6977 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.2087 +/- 0.0017 eV (376.3314 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1324 +/- 0.0002 eV (610.7127 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	null_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0212 secs) {}
@@ -219,6 +283,8 @@ GAP
 		SVM Laplace: 0.4932 +/- 0.0014 eV (473.8593 secs) {'C': 100, 'gamma': 0.0001}
 		k-NN: 0.6293 +/- 0.0258 eV (3.1882 secs) {'n_neighbors': 3}
 		Tree: 0.4984 +/- 0.0016 eV (0.2301 secs) {'max_depth': 5}
+		AdaBoost Regressor: 0.5003 +/- 0.0014 eV (45.6578 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.4975 +/- 0.0009 eV (44.4925 secs) {'n_estimators': 200, 'learning_rate': 0.01, 'max_depth': 3}
 
 	signed_centered_decay_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0355 secs) {}
@@ -229,6 +295,8 @@ GAP
 		SVM Laplace: 0.1393 +/- 0.0007 eV (794.0401 secs) {'C': 1000, 'gamma': 0.01}
 		k-NN: 0.2471 +/- 0.0002 eV (19.0084 secs) {'n_neighbors': 8}
 		Tree: 0.1382 +/- 0.0010 eV (2.7591 secs) {'max_depth': 21}
+		AdaBoost Regressor: 0.2429 +/- 0.0010 eV (183.7077 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1427 +/- 0.0009 eV (325.2228 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	centered_decay_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0242 secs) {}
@@ -239,6 +307,8 @@ GAP
 		SVM Laplace: 0.1552 +/- 0.0007 eV (641.7881 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2226 +/- 0.0011 eV (10.6808 secs) {'n_neighbors': 2}
 		Tree: 0.1369 +/- 0.0006 eV (1.6044 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2585 +/- 0.0014 eV (103.0208 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1401 +/- 0.0029 eV (191.2945 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	decay_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0246 secs) {}
@@ -249,6 +319,8 @@ GAP
 		SVM Laplace: 0.1370 +/- 0.0007 eV (628.7056 secs) {'C': 1000, 'gamma': 0.01}
 		k-NN: 0.2181 +/- 0.0016 eV (10.4499 secs) {'n_neighbors': 2}
 		Tree: 0.1368 +/- 0.0005 eV (1.6102 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2495 +/- 0.0008 eV (103.2246 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1401 +/- 0.0029 eV (191.1943 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	gauss_decay_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0244 secs) {}
@@ -259,6 +331,8 @@ GAP
 		SVM Laplace: 0.1388 +/- 0.0002 eV (635.7699 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2271 +/- 0.0006 eV (10.2302 secs) {'n_neighbors': 2}
 		Tree: 0.1368 +/- 0.0005 eV (1.6042 secs) {'max_depth': 21}
+		AdaBoost Regressor: 0.2577 +/- 0.0011 eV (102.0505 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1401 +/- 0.0029 eV (191.1681 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	binary_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0492 secs) {}
@@ -269,6 +343,8 @@ GAP
 		SVM Laplace: 0.1333 +/- 0.0005 eV (1101.1700 secs) {'C': 1000, 'gamma': 0.01}
 		k-NN: 0.1932 +/- 0.0055 eV (32.1232 secs) {'n_neighbors': 2}
 		Tree: 0.1357 +/- 0.0005 eV (4.1875 secs) {'max_depth': 89}
+		AdaBoost Regressor: 0.2088 +/- 0.0016 eV (353.2288 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1403 +/- 0.0003 eV (586.3625 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	pca_coulomb_feature
 		Mean: 0.5591 +/- 0.0011 eV (0.0454 secs) {}
@@ -279,6 +355,8 @@ GAP
 		SVM Laplace: 0.1750 +/- 0.0004 eV (1276.2940 secs) {'C': 1000, 'gamma': 0.0001}
 		k-NN: 0.3097 +/- 0.0013 eV (12.0063 secs) {'n_neighbors': 3}
 		Tree: 0.1630 +/- 0.0003 eV (53.9056 secs) {'max_depth': 34}
+		AdaBoost Regressor: 0.2448 +/- 0.0010 eV (394.7599 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1420 +/- 0.0002 eV (2702.9483 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
 
 	coulomb_feature
 		Mean: 0.5591 +/- 0.0011 eV (1.8042 secs) {}
@@ -289,3 +367,5 @@ GAP
 		SVM Laplace: 0.2036 +/- 0.0007 eV (16907.0153 secs) {'C': 1000, 'gamma': 0.0001}
 		k-NN: 0.3279 +/- 0.0034 eV (458.4947 secs) {'n_neighbors': 5}
 		Tree: 0.1643 +/- 0.0043 eV (527.6739 secs) {'max_depth': 55}
+		AdaBoost Regressor: 0.1628 +/- 0.0018 eV (33510.0456 secs) {'n_estimators': 50, 'loss': 'exponential', 'learning_rate': 0.01, 'base_estimator': Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None, normalize=False, solver='auto', tol=0.001)}
+		Gradient Boost: 0.1216 +/- 0.0003 eV (46512.5615 secs) {'n_estimators': 200, 'learning_rate': 0.20000000000000001, 'max_depth': 3}
