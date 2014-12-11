@@ -66,7 +66,7 @@ E_{HOMO} &= \epsilon_m \\
 E_{LUMO} &= \epsilon_{m+1}
 \end{flalign*}
 
-In plain English, $E_{HOMO}$ is the energy of the electron that has the highest energy in the molecule, and $E_{LUMO}$ is the lowest "virtual" energy of the un-occupied electron orbitals. The regression label $E_{\text{Band Gap}}$ involves the many-electron Sch\"{o}dinger equation and is therefore not suitable to be described here, but a clue is that $E_{\text{Band Gap}}$ depends on all $\psi_i$'s and $\epsilon_i$'s. \\
+In plain English, $E_{HOMO}$ is the energy of the electron which has the highest energy in the molecule, and $E_{LUMO}$ is the lowest "virtual" energy of the un-occupied electron orbitals. The regression label $E_{\text{Band Gap}}$ involves many-electron Sch\"{o}dinger equation and is therefore not suitable to be described here, but a clue is that $E_{\text{Band Gap}}$ depends on all $\psi_i$'s and $\epsilon_i$'s. \\
 
 If we expand $H^{DFT}(\psi_1,\cdots,\psi_m)$ and $\psi_1,\cdots,\psi_m$ in $n$ basis functions, the problem is turned into solving a non-linear algebraic equation system, and we can write the $m$ equations compactly in matrix form as: 
 
@@ -74,37 +74,30 @@ If we expand $H^{DFT}(\psi_1,\cdots,\psi_m)$ and $\psi_1,\cdots,\psi_m$ in $n$ b
 \bold{H^{DFT}(C)C} &= \boldsymbol{\epsilon}\bold{C}
 \end{flalign*}
 
-$\bold{C}$ is a unitary matrix where each column is an eigenvector of $\bold{H^{DFT}(C)}$, and $\boldsymbol{\epsilon}$ is a diagonal matrix consisting of all the eigenvalues (energies) corresponding to the eigenvectors. The dependence of $\bold{H^{DFT}(C)}$ on $\bold{C}$ makes the problem non-linear. The matrix element $\bold{H_{pq}^{DFT}(C)}$ has the form:
+$\bold{C}$ is a unitary matrix where each column is an eigenvector of $\bold{H^{DFT}(C)}$, and $\boldsymbol{\epsilon}$ is a diagonal matrix consisting of all the eigenvalues (energies) $\epsilon_i$'s. \\
 
-\begin{flalign*}
-\bold{H_{pq}^{DFT}(C)} &= \bold{H_{pq}^{DFT, core}} + \sum_{rs}{(pq|rs)\boldsymbol{\rho_{rs}}} + \bold{H_{pq}^{DFT,xc}} \\[2ex]
-\text{where:  } &\boldsymbol{\rho_{rs}} = \sum_{i=1}^m{\bold{C_{ri}^*C_{si}}}
-\end{flalign*}
-
-$\bold{H_{pq}^{DFT, core}}$ is a constant. $\sum_{rs}{(pq|rs)\boldsymbol{\rho_{rs}}}$, where $(pq|rs)$ is a $n$ by $n$ by $n$ by $n$ 4-D tensor, accounts for the $O(n^2)$ time complexity for constructing each matrix element; there are in total $n^2$ matrix elements so the total time complexity is $O(n^4)$. $\bold{H_{pq}^{DFT,xc}}$ is another $\bold{C}$-depending non-linear term (which also requires a high time complexity to construct) that varies among different DFT theories. \\
-
-The Hamiltonian matrices of SEQC methods possess similar forms as DFT methods do. The corresponding matrix equation can be written as: 
+The Hamiltonian opeartors of SEQC methods possess similar forms as DFT Hamiltonians do. The corresponding matrix equation can be written as: 
 
 \begin{flalign*}
 \bold{H^{SEQC}(C')C'} &= \bold{E}\bold{C'}
 \end{flalign*}
 
-Where $\bold{C'}$ consists of SEQC eigenvetors, and diagonal matrix $\bold{E}$ consists of SEQC electron orbital energies. SEQC matrix elements typically requires only $O(1)$ time complexity to calculated, and since in real SEQC algorithms the diagonalization of $\bold{H^{SEQC}(C')}$ has a very low pre-factor, SEQC methods typically scale only in $\sim O(n^2)$. \\
+Where $\bold{C'}$ consists of SEQC eigenvetors, and diagonal matrix $\bold{E}$ consists of SEQC electron orbital energies $E_i$'s. \\
 
-Suppose we have solved an SEQC matrix equation; now we have known all the $\bold{E_i}$ values, and we essentially have obtained a linear transform from the original Hilbert space spanned by the $n$ basis functions from the solution space spanned by linear combinations of the $n$ basis functions, the combination coefficients being elements of $\bold{C'}$; denote these new basis functions as $\Phi_i$'s. We then try to solve $\bold{H_{pq}^{DFT}(C)}$ in the new Hilbert space. According to quantum mechanics perturbation theory, such a solution can be expanded by a Taylor series (if we adopt an order cutoff 2): 
+Suppose we have solved an SEQC matrix equation; now we have known all the $E_i$ values, and we essentially have obtained a linear transform from the original Hilbert space spanned by the $n$ basis functions to the solution space spanned by linear combinations of the $n$ basis functions, the combination coefficients being elements of $\bold{C'}$; denote these new basis functions as $\Phi_i$'s. We then try to solve DFT equations in the new Hilbert space. According to quantum mechanics perturbation theory, such a solution can be expanded by a Taylor series (if we ignore terms with order higher than 2): 
 
 \begin{flalign*}
-\boldsymbol{\epsilon_i} &= \boldsymbol{\epsilon_i^{(0)}} + \boldsymbol{\epsilon_i^{(1)}} + \boldsymbol{\epsilon_i^{(2)}} + \cdots \\
+\epsilon_i &= \epsilon_i^{(0)} + \epsilon_i^{(1)} + \epsilon_i^{(2)} + \cdots \\
 \end{flalign*}
 
 Where: 
 \begin{flalign*}
-\boldsymbol{\epsilon_i^{(0)}} &= \bold{E_i} \\
-\boldsymbol{\epsilon_i^{(1)}} &= <\Phi_i|H^{DFT} - H^{SEQC}|\Phi_i> \\
-\boldsymbol{\epsilon_i^{(2)}} &= \sum_{j\ne i}{\frac{|<\Phi_i|H^{DFT} - H^{SEQC}|\Phi_j>|^2}{\bold{E_i} - \bold{E_j}}} \\
+\epsilon_i^{(0)} &= E_i \\
+\epsilon_i^{(1)} &= <\Phi_i|H^{DFT} - H^{SEQC}|\Phi_i> \\
+\epsilon_i^{(2)} &= \sum_{j\ne i}{\frac{|<\Phi_i|H^{DFT} - H^{SEQC}|\Phi_j>|^2}{E_i - E_j}} \\
 \end{flalign*}
 
-The 0th order term tells us that $\bold{E_i}$ at least gives us a qualitative estimation of $\boldsymbol{\epsilon_i}$, so that we can directly use $\bold{E_i}$'s that come from different SEQC methods as part of our feature vector. Further, since the molecules we are using are chemically similar to each other, there is a reason to think that $\Phi_i$'s on different molecules are similar to each other, therefore $|<\Phi_i|H^{DFT} - H^{SEQC}|\Phi_j>|^2$ values on different molecules are close enough to each other as well. In that sense, the 2nd order term can be viewed as a linear combination of $\frac{1}{\bold{E_i} - \bold{E_j}}$ values. Since these values asymptotically go to 0 when $\bold{E_i} - \bold{E_j}$ becomes large, we can select an orbital cutoff as well. In this report, aside of the aforementioned Taylor expansion order cutoff 2, we also pick an occupied orbital cutoff 4, and an un-occupied orbital cutoff 3; in other words, we select $HOMO-4 \sim LUMO+3$ orbital energies calculated with different SEQC methods, and take the 2nd term $\bold{E_i} - \bold{E_j}$ values as part of our feature vector as well. \\
+The 0th order term tells us that $E_i$ gives us a qualitative estimation of $\epsilon_i$, so that we can directly use $E_i$'s that come from different SEQC methods as part of our feature vector. Further, since the molecules we are using are chemically similar to each other, there is a reason to think that $\Phi_i$'s on different molecules are similar to each other as well. We therefore assume that $|<\Phi_i|H^{DFT} - H^{SEQC}|\Phi_j>|^2$ values on different molecules are close enough to each other as well. In such a sense, the 2nd order term can be viewed as a linear combination of $\frac{1}{E_i - E_j}$ values. Since these values asymptotically go to 0 when $E_i - E_j$ becomes large, we pick up an orbital cutoff as well. Specifically, we select $E_{m-4} \sim E_{m+4}$ orbital energies calculated with different SEQC methods, and take the 2nd term $\frac{1}{E_i - E_j}$ values as part of our feature vector. \\
 
 \end{enumerate}
 
