@@ -233,6 +233,8 @@ def plot_method_errors(values, property_name):
         "SVM (Laplacian)",
         "k-NN",
         "Tree",
+        "AdaBoost",
+        "Gradient Boost",
     ]
 
     errors = {}
