@@ -3,12 +3,14 @@ import time
 from functools import partial
 
 import numpy
+import csv
 
 from sklearn import svm
 from sklearn import dummy
 from sklearn import neighbors
 from sklearn import linear_model
 from sklearn import tree
+from sklearn import ensemble
 
 from utils import load_data, test_clf_kfold, cross_clf_kfold, OptimizedCLF
 import features
@@ -18,10 +20,10 @@ import newclfs
 
 if __name__ == '__main__':
     # Change this to adjust which optimization sets to use
-    methods = ('b3lyp', )#'cam', 'm06hf')
+    methods = ('b3lyp', 'cam', 'm06hf')
 
     # Change this to adjust the data sets to use
-    base_paths = tuple(os.path.join('opt', x) for x in ('b3lyp', ))
+    base_paths = tuple(os.path.join('opt', x) for x in ('b3lyp',))
     file_paths = [x + '.txt' for x in methods]
 
     start = time.time()
@@ -29,7 +31,7 @@ if __name__ == '__main__':
 
     # Change this to modify which feature vectors will be used for the testing
     FEATURE_FUNCTIONS = [
-        features.get_null_feature,
+        # features.get_null_feature,
         features.get_binary_feature,
         # features.get_flip_binary_feature,
         # features.get_decay_feature,
@@ -78,28 +80,40 @@ if __name__ == '__main__':
         # ('Linear', linear_model.LinearRegression, {}),
         # ('LinearFix', clfs.LinearRegression, {}),
         # ('LinearRidge', linear_model.Ridge, {'alpha': [0.001, 0.01, 0.1, 1, 10, 100, 1000]}),
-        # ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
+        ('SVM', svm.SVR, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
         # ('SVM Laplace', clfs.SVMLaplace, {'C': [0.1, 1, 10, 100, 1000], 'gamma': [0.0001, 0.001, 0.01, 0.1]}),
         # ('k-NN', neighbors.KNeighborsRegressor, {'n_neighbors': [2, 3, 5, 8, 13]}),
         # ('Tree', tree.DecisionTreeRegressor, {'max_depth': [2, 3, 5, 8, 13, 21, 34, 55, 89]}),
-        ('Laplace Rbf', newclfs.SVM_Laplace_Rbf,  {'C': 1, 'lap_coef':  1, 'rbf_coef':  1, 'lamda':  1, 'sigma':  1}),
+        # ('Laplace Rbf', newclfs.SVM_Laplace_Rbf,  {'C': 1, 'lap_coef':  1, 'rbf_coef':  1, 'lamda':  1, 'sigma':  1}),
+        # ('AdaBoost Classifier', ensemble.AdaBoostClassifier,  {'learning_rate': [0.1, 0.2, 0.4,], 'n_estimators': [ 50, 100, 200 ]}),
+        # ('AdaBoost Regressor', ensemble.AdaBoostRegressor,  {'learning_rate': [ 0.01, 0.1, 0.2, ], 'n_estimators': [ 50, 100, 200 ], 'loss': [ 'exponential'], 'base_estimator': [linear_model.Ridge()],}),
+        # ('Gradient Boost', ensemble.GradientBoostingRegressor,  {'learning_rate': [0.01, 0.1, 0.2, ], 'n_estimators': [ 50, 100, 200, ],'max_depth': [1, 2, 3,]}),# 'loss': ['lad', 'huber']}),# } ),
     )
 
+    output = open('results1.csv', 'wb')
+    writer = csv.writer(output, dialect='excel')
     results = {}
     for NAME, PROP in sets:
         print NAME
+        writer.writerow([NAME])
         results[NAME] = {}
         for FEAT_NAME, FEAT in FEATURES.items():
             print "\t" + FEAT_NAME
+            writer.writerow([FEAT_NAME])
             results[NAME][FEAT_NAME] = {}
             for CLF_NAME, CLF, KWARGS in CLFS:
                 start = time.time()
-                # pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
-                optclf = OptimizedCLF(FEAT, PROP, CLF, KWARGS)
-                newclf = optclf.get_optimized_clf()
+                pair, test = cross_clf_kfold(FEAT, PROP, CLF, KWARGS, test_folds=5, cross_folds=2)
+                # optclf = OptimizedCLF(FEAT, PROP, CLF, KWARGS)
+                # newclf = optclf.get_optimized_clf()
                 finished = time.time() - start
-                print newclf
-                # print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
-                # results[NAME][FEAT_NAME][CLF_NAME] = test[0]
+                # print newclf
+                print "\t\t%s: %.4f +/- %.4f eV (%.4f secs)" % (CLF_NAME, test[0], test[1], finished), pair
+                writer.writerow([CLF_NAME, test[0], test[1]])
+                results[NAME][FEAT_NAME][CLF_NAME] = test[0]
             print
         print
+
+    output.close()
+
+    # print results
