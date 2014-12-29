@@ -26,7 +26,6 @@ def power_fit(x, a, b):
 class NeuralNet(object):
     def __init__(self, layers):
         self.layers = layers
-        # self.hidden_layers = list(hidden_layers)
         self.ds = None
         self.train_error = []
         self.test_error = []
