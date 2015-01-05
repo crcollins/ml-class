@@ -1,0 +1,288 @@
+Took 578.5580 secs to load 14667 data points.
+Sizes of Feature Matrices
+	coulomb_feature (14667, 2494)
+	pca_coulomb_feature (14667, 109)
+
+Took 3.8618 secs to load 14667 data points.
+Sizes of Feature Matrices
+	flip_binary_feature (14667, 105)
+	null_feature (14667, 9)
+	signed_centered_decay_feature (14667, 55)
+	centered_decay_feature (14667, 32)
+	decay_feature (14667, 32)
+	gauss_decay_feature (14667, 32)
+	binary_feature (14667, 101)
+
+HOMO
+	flip_binary_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0821 secs) {}
+		Linear: 0.1753 +/- 0.0004 eV (1.0364 secs) {}
+		LinearFix: 0.1747 +/- 0.0003 eV (4.8149 secs) {}
+		LinearRidge: 0.1748 +/- 0.0002 eV (21.1296 secs) {'alpha': 1}
+		SVM: 0.0796 +/- 0.0002 eV (2078.2071 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.0969 +/- 0.0002 eV (1694.2178 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.4856 +/- 0.0042 eV (51.2284 secs) {'n_neighbors': 2}
+		Tree: 0.1218 +/- 0.0011 eV (5.7188 secs) {'max_depth': 55}
+
+	null_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0258 secs) {}
+		Linear: 0.7820 +/- 0.0010 eV (0.0463 secs) {}
+		LinearFix: 0.7812 +/- 0.0005 eV (0.0553 secs) {}
+		LinearRidge: 0.7812 +/- 0.0005 eV (0.2445 secs) {'alpha': 0.001}
+		SVM: 0.7813 +/- 0.0008 eV (604.5145 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.7831 +/- 0.0007 eV (722.9877 secs) {'C': 100, 'gamma': 0.001}
+		k-NN: 1.0203 +/- 0.0762 eV (4.0097 secs) {'n_neighbors': 3}
+		Tree: 0.7814 +/- 0.0008 eV (0.2671 secs) {'max_depth': 3}
+
+	signed_centered_decay_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0457 secs) {}
+		Linear: 0.2000 +/- 0.0005 eV (0.3339 secs) {}
+		LinearFix: 0.1997 +/- 0.0006 eV (1.3770 secs) {}
+		LinearRidge: 0.1995 +/- 0.0008 eV (6.0801 secs) {'alpha': 0.1}
+		SVM: 0.1120 +/- 0.0013 eV (1992.0658 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1267 +/- 0.0003 eV (1167.3821 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.2366 +/- 0.0006 eV (24.5261 secs) {'n_neighbors': 2}
+		Tree: 0.1389 +/- 0.0002 eV (3.2796 secs) {'max_depth': 55}
+
+	centered_decay_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0299 secs) {}
+		Linear: 0.2049 +/- 0.0006 eV (0.1495 secs) {}
+		LinearFix: 0.2046 +/- 0.0010 eV (0.4582 secs) {}
+		LinearRidge: 0.2047 +/- 0.0010 eV (2.0391 secs) {'alpha': 0.1}
+		SVM: 0.1210 +/- 0.0013 eV (2200.1229 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1284 +/- 0.0011 eV (927.6233 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.2063 +/- 0.0035 eV (14.3051 secs) {'n_neighbors': 2}
+		Tree: 0.1376 +/- 0.0013 eV (2.0133 secs) {'max_depth': 89}
+
+	decay_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0301 secs) {}
+		Linear: 0.1924 +/- 0.0008 eV (0.1501 secs) {}
+		LinearFix: 0.1923 +/- 0.0011 eV (0.4583 secs) {}
+		LinearRidge: 0.1920 +/- 0.0011 eV (2.0397 secs) {'alpha': 0.1}
+		SVM: 0.1123 +/- 0.0010 eV (2052.8219 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1205 +/- 0.0006 eV (911.9626 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.2057 +/- 0.0018 eV (13.9685 secs) {'n_neighbors': 2}
+		Tree: 0.1371 +/- 0.0004 eV (2.0123 secs) {'max_depth': 34}
+
+	gauss_decay_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0302 secs) {}
+		Linear: 0.1880 +/- 0.0009 eV (0.1501 secs) {}
+		LinearFix: 0.1886 +/- 0.0001 eV (0.4587 secs) {}
+		LinearRidge: 0.1876 +/- 0.0007 eV (2.0399 secs) {'alpha': 0.1}
+		SVM: 0.1104 +/- 0.0022 eV (1760.4947 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1199 +/- 0.0013 eV (916.8964 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.2079 +/- 0.0018 eV (13.7187 secs) {'n_neighbors': 2}
+		Tree: 0.1378 +/- 0.0014 eV (2.0318 secs) {'max_depth': 34}
+
+	binary_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0665 secs) {}
+		Linear: 0.1758 +/- 0.0003 eV (0.9624 secs) {}
+		LinearFix: 0.1754 +/- 0.0003 eV (4.4617 secs) {}
+		LinearRidge: 0.1754 +/- 0.0003 eV (19.5699 secs) {'alpha': 1}
+		SVM: 0.1078 +/- 0.0016 eV (1903.5884 secs) {'C': 100, 'gamma': 0.01}
+		SVM Laplace: 0.1203 +/- 0.0005 eV (1664.3510 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.3985 +/- 0.0013 eV (43.5623 secs) {'n_neighbors': 2}
+		Tree: 0.1374 +/- 0.0006 eV (5.0709 secs) {'max_depth': 55}
+
+	coulomb_feature
+		Mean: 1.2644 +/- 0.0022 eV (1.8020 secs) {}
+		Linear: 2.1206 +/- 1.3455 eV (1664.0493 secs) {}
+		LinearFix: 0.1531 +/- 0.0001 eV (14888.4172 secs) {}
+		LinearRidge: 0.0994 +/- 0.0013 eV (61412.7955 secs) {'alpha': 1}
+		SVM: 0.3145 +/- 0.0019 eV (26461.7008 secs) {'C': 1000, 'gamma': 0.001}
+		SVM Laplace: 0.3865 +/- 0.0001 eV (27009.0028 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 1.0883 +/- 0.0018 eV (712.1056 secs) {'n_neighbors': 13}
+		Tree: 0.1568 +/- 0.0022 eV (752.2473 secs) {'max_depth': 89}
+
+	pca_coulomb_feature
+		Mean: 1.2644 +/- 0.0022 eV (0.0712 secs) {}
+		Linear: 0.3558 +/- 0.0018 eV (1.0890 secs) {}
+		LinearFix: 0.3558 +/- 0.0018 eV (4.8656 secs) {}
+		LinearRidge: 0.3558 +/- 0.0019 eV (21.2048 secs) {'alpha': 10}
+		SVM: 0.2121 +/- 0.0056 eV (2687.6790 secs) {'C': 1000, 'gamma': 0.001}
+		SVM Laplace: 0.3087 +/- 0.0010 eV (1885.8233 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 1.0361 +/- 0.0039 eV (13.4740 secs) {'n_neighbors': 8}
+		Tree: 0.1482 +/- 0.0011 eV (61.3788 secs) {'max_depth': 89}
+
+
+LUMO
+	flip_binary_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0718 secs) {}
+		Linear: 0.1856 +/- 0.0005 eV (1.0310 secs) {}
+		LinearFix: 0.1849 +/- 0.0010 eV (4.7901 secs) {}
+		LinearRidge: 0.1849 +/- 0.0010 eV (21.0908 secs) {'alpha': 0.1}
+		SVM: 0.0794 +/- 0.0017 eV (1940.0206 secs) {'C': 100, 'gamma': 0.01}
+		SVM Laplace: 0.0934 +/- 0.0009 eV (1670.5255 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.3717 +/- 0.0030 eV (51.1915 secs) {'n_neighbors': 2}
+		Tree: 0.1378 +/- 0.0022 eV (5.6821 secs) {'max_depth': 55}
+
+	null_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0253 secs) {}
+		Linear: 0.7291 +/- 0.0024 eV (0.0457 secs) {}
+		LinearFix: 0.7279 +/- 0.0018 eV (0.0539 secs) {}
+		LinearRidge: 0.7279 +/- 0.0019 eV (0.2410 secs) {'alpha': 10}
+		SVM: 0.7244 +/- 0.0009 eV (576.3715 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.7255 +/- 0.0010 eV (712.9549 secs) {'C': 1, 'gamma': 0.1}
+		k-NN: 0.9094 +/- 0.0422 eV (4.0301 secs) {'n_neighbors': 2}
+		Tree: 0.7289 +/- 0.0018 eV (0.2691 secs) {'max_depth': 21}
+
+	signed_centered_decay_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0461 secs) {}
+		Linear: 0.2242 +/- 0.0012 eV (0.3345 secs) {}
+		LinearFix: 0.2233 +/- 0.0008 eV (1.3812 secs) {}
+		LinearRidge: 0.2229 +/- 0.0005 eV (6.0874 secs) {'alpha': 10}
+		SVM: 0.1011 +/- 0.0006 eV (2096.5483 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1194 +/- 0.0003 eV (1168.0473 secs) {'C': 10, 'gamma': 0.1}
+		k-NN: 0.2768 +/- 0.0007 eV (24.5546 secs) {'n_neighbors': 2}
+		Tree: 0.1346 +/- 0.0000 eV (3.3195 secs) {'max_depth': 34}
+
+	centered_decay_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0302 secs) {}
+		Linear: 0.2339 +/- 0.0007 eV (0.1497 secs) {}
+		LinearFix: 0.2331 +/- 0.0002 eV (0.4590 secs) {}
+		LinearRidge: 0.2331 +/- 0.0002 eV (2.0423 secs) {'alpha': 0.1}
+		SVM: 0.1281 +/- 0.0012 eV (2322.6824 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1352 +/- 0.0008 eV (937.3948 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.2328 +/- 0.0035 eV (14.3213 secs) {'n_neighbors': 2}
+		Tree: 0.1351 +/- 0.0014 eV (2.0010 secs) {'max_depth': 34}
+
+	decay_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0302 secs) {}
+		Linear: 0.2187 +/- 0.0011 eV (0.1503 secs) {}
+		LinearFix: 0.2185 +/- 0.0009 eV (0.4591 secs) {}
+		LinearRidge: 0.2184 +/- 0.0010 eV (2.0430 secs) {'alpha': 0.1}
+		SVM: 0.1074 +/- 0.0011 eV (2045.7675 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1188 +/- 0.0013 eV (909.6968 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2278 +/- 0.0024 eV (13.9564 secs) {'n_neighbors': 2}
+		Tree: 0.1352 +/- 0.0005 eV (2.0017 secs) {'max_depth': 34}
+
+	gauss_decay_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0303 secs) {}
+		Linear: 0.2156 +/- 0.0005 eV (0.1503 secs) {}
+		LinearFix: 0.2153 +/- 0.0004 eV (0.4591 secs) {}
+		LinearRidge: 0.2152 +/- 0.0003 eV (2.0431 secs) {'alpha': 0.1}
+		SVM: 0.1076 +/- 0.0015 eV (1842.2467 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1201 +/- 0.0018 eV (916.6331 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2329 +/- 0.0025 eV (13.6801 secs) {'n_neighbors': 2}
+		Tree: 0.1355 +/- 0.0012 eV (2.0046 secs) {'max_depth': 89}
+
+	binary_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0617 secs) {}
+		Linear: 0.1852 +/- 0.0010 eV (0.9611 secs) {}
+		LinearFix: 0.1850 +/- 0.0010 eV (4.4380 secs) {}
+		LinearRidge: 0.1850 +/- 0.0010 eV (19.6039 secs) {'alpha': 0.1}
+		SVM: 0.0989 +/- 0.0012 eV (1911.3906 secs) {'C': 100, 'gamma': 0.01}
+		SVM Laplace: 0.1122 +/- 0.0005 eV (1633.5584 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.3180 +/- 0.0011 eV (43.5676 secs) {'n_neighbors': 2}
+		Tree: 0.1343 +/- 0.0014 eV (5.0951 secs) {'max_depth': 55}
+
+	coulomb_feature
+		Mean: 1.0111 +/- 0.0007 eV (1.8210 secs) {}
+		Linear: 1.2886 +/- 0.3291 eV (1523.2448 secs) {}
+		LinearFix: 0.1421 +/- 0.0066 eV (13572.9878 secs) {}
+		LinearRidge: 0.1002 +/- 0.0008 eV (61435.4078 secs) {'alpha': 1}
+		SVM: 0.2118 +/- 0.0028 eV (25979.8487 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.2884 +/- 0.0024 eV (28256.4005 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.7735 +/- 0.0026 eV (647.9108 secs) {'n_neighbors': 8}
+		Tree: 0.1900 +/- 0.0039 eV (673.4758 secs) {'max_depth': 89}
+
+	pca_coulomb_feature
+		Mean: 1.0111 +/- 0.0007 eV (0.0710 secs) {}
+		Linear: 0.2625 +/- 0.0017 eV (1.0873 secs) {}
+		LinearFix: 0.2625 +/- 0.0017 eV (4.8064 secs) {}
+		LinearRidge: 0.2625 +/- 0.0016 eV (21.0151 secs) {'alpha': 10}
+		SVM: 0.1764 +/- 0.0031 eV (2349.4236 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.2367 +/- 0.0005 eV (1868.5865 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.7376 +/- 0.0052 eV (12.1189 secs) {'n_neighbors': 5}
+		Tree: 0.1731 +/- 0.0024 eV (58.1023 secs) {'max_depth': 34}
+
+GAP
+	flip_binary_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0711 secs) {}
+		Linear: 0.2179 +/- 0.0009 eV (1.0269 secs) {}
+		LinearFix: 0.2174 +/- 0.0001 eV (4.7767 secs) {}
+		LinearRidge: 0.2174 +/- 0.0001 eV (21.0868 secs) {'alpha': 0.01}
+		SVM: 0.0924 +/- 0.0004 eV (2661.2948 secs) {'C': 10, 'gamma': 0.1}
+		SVM Laplace: 0.1133 +/- 0.0006 eV (1699.7694 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.1971 +/- 0.0020 eV (52.0578 secs) {'n_neighbors': 3}
+		Tree: 0.1384 +/- 0.0026 eV (5.8355 secs) {'max_depth': 55}
+
+	null_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0253 secs) {}
+		Linear: 0.4723 +/- 0.0035 eV (0.0457 secs) {}
+		LinearFix: 0.4727 +/- 0.0025 eV (0.0544 secs) {}
+		LinearRidge: 0.4724 +/- 0.0028 eV (0.2425 secs) {'alpha': 100}
+		SVM: 0.4674 +/- 0.0041 eV (559.6700 secs) {'C': 0.1, 'gamma': 0.1}
+		SVM Laplace: 0.4681 +/- 0.0044 eV (694.7592 secs) {'C': 10, 'gamma': 0.001}
+		k-NN: 0.5595 +/- 0.0268 eV (4.0136 secs) {'n_neighbors': 3}
+		Tree: 0.4718 +/- 0.0022 eV (0.2693 secs) {'max_depth': 5}
+
+	signed_centered_decay_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0465 secs) {}
+		Linear: 0.2472 +/- 0.0010 eV (0.3349 secs) {}
+		LinearFix: 0.2480 +/- 0.0007 eV (1.3772 secs) {}
+		LinearRidge: 0.2472 +/- 0.0004 eV (6.0713 secs) {'alpha': 10}
+		SVM: 0.1290 +/- 0.0017 eV (2448.2780 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1437 +/- 0.0003 eV (1178.3787 secs) {'C': 1000, 'gamma': 0.01}
+		k-NN: 0.2402 +/- 0.0005 eV (26.2669 secs) {'n_neighbors': 8}
+		Tree: 0.1460 +/- 0.0035 eV (3.3684 secs) {'max_depth': 55}
+
+	centered_decay_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0303 secs) {}
+		Linear: 0.2612 +/- 0.0007 eV (0.1496 secs) {}
+		LinearFix: 0.2611 +/- 0.0003 eV (0.4591 secs) {}
+		LinearRidge: 0.2607 +/- 0.0005 eV (2.0431 secs) {'alpha': 10}
+		SVM: 0.1482 +/- 0.0009 eV (2664.6134 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1579 +/- 0.0003 eV (943.4146 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2253 +/- 0.0009 eV (14.4463 secs) {'n_neighbors': 3}
+		Tree: 0.1449 +/- 0.0018 eV (1.9631 secs) {'max_depth': 21}
+
+	decay_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0303 secs) {}
+		Linear: 0.2543 +/- 0.0009 eV (0.1498 secs) {}
+		LinearFix: 0.2539 +/- 0.0003 eV (0.4591 secs) {}
+		LinearRidge: 0.2536 +/- 0.0010 eV (2.0435 secs) {'alpha': 10}
+		SVM: 0.1280 +/- 0.0010 eV (2249.3432 secs) {'C': 10, 'gamma': 0.1}
+		SVM Laplace: 0.1419 +/- 0.0000 eV (935.8900 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2221 +/- 0.0002 eV (13.9522 secs) {'n_neighbors': 2}
+		Tree: 0.1450 +/- 0.0013 eV (1.9627 secs) {'max_depth': 89}
+
+	gauss_decay_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0304 secs) {}
+		Linear: 0.2600 +/- 0.0005 eV (0.1504 secs) {}
+		LinearFix: 0.2613 +/- 0.0005 eV (0.4591 secs) {}
+		LinearRidge: 0.2604 +/- 0.0004 eV (2.0431 secs) {'alpha': 0.001}
+		SVM: 0.1285 +/- 0.0023 eV (2071.6588 secs) {'C': 1000, 'gamma': 0.01}
+		SVM Laplace: 0.1440 +/- 0.0003 eV (940.5890 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2296 +/- 0.0001 eV (13.6877 secs) {'n_neighbors': 2}
+		Tree: 0.1441 +/- 0.0020 eV (1.9643 secs) {'max_depth': 34}
+
+	binary_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0663 secs) {}
+		Linear: 0.2184 +/- 0.0009 eV (0.9614 secs) {}
+		LinearFix: 0.2178 +/- 0.0000 eV (4.4389 secs) {}
+		LinearRidge: 0.2178 +/- 0.0000 eV (19.5965 secs) {'alpha': 0.001}
+		SVM: 0.1246 +/- 0.0010 eV (2230.0634 secs) {'C': 100, 'gamma': 0.01}
+		SVM Laplace: 0.1381 +/- 0.0010 eV (1615.3085 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.1907 +/- 0.0003 eV (40.6977 secs) {'n_neighbors': 2}
+		Tree: 0.1445 +/- 0.0027 eV (4.8825 secs) {'max_depth': 55}
+
+	coulomb_feature
+		Mean: 0.5391 +/- 0.0068 eV (1.8700 secs) {}
+		Linear: 1.5211 +/- 0.7974 eV (1510.6657 secs) {}
+		LinearFix: 0.2313 +/- 0.0393 eV (13657.0015 secs) {}
+		LinearRidge: 0.1550 +/- 0.0008 eV (60970.5313 secs) {'alpha': 10}
+		SVM: 0.1287 +/- 0.0014 eV (22602.2847 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.1854 +/- 0.0007 eV (26871.9359 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.3371 +/- 0.0030 eV (601.9309 secs) {'n_neighbors': 5}
+		Tree: 0.1628 +/- 0.0001 eV (679.8162 secs) {'max_depth': 55}
+
+	pca_coulomb_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.0703 secs) {}
+		Linear: 0.2544 +/- 0.0000 eV (1.0685 secs) {}
+		LinearFix: 0.2544 +/- 0.0000 eV (4.7329 secs) {}
+		LinearRidge: 0.2544 +/- 0.0000 eV (20.7930 secs) {'alpha': 0.001}
+		SVM: 0.1193 +/- 0.0018 eV (1884.1023 secs) {'C': 1000, 'gamma': 0.0001}
+		SVM Laplace: 0.1607 +/- 0.0010 eV (1810.6431 secs) {'C': 1000, 'gamma': 0.0001}
+		k-NN: 0.3051 +/- 0.0007 eV (11.6012 secs) {'n_neighbors': 3}
+		Tree: 0.1676 +/- 0.0019 eV (56.5876 secs) {'max_depth': 55}
