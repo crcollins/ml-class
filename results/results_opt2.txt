@@ -156,7 +156,10 @@ HOMO
 		Linear: 146415849.2962 +/- 146415849.1691 eV (910.7755 secs) {}
 		LinearFix: 0.1274 +/- 0.0005 eV (8704.2925 secs) {}
 		LinearRidge: 0.1271 +/- 0.0004 eV (41018.7115 secs) {'alpha': 1}
-
+		SVM: 0.1113 +/- 0.0019 eV (16437.0969 secs) {'C': 100, 'gamma': 0.001}
+		SVM Laplace: 0.1341 +/- 0.0001 eV (24274.1885 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.3057 +/- 0.0111 eV (815.0521 secs) {'n_neighbors': 2}
+		Tree: 0.1312 +/- 0.0007 eV (172.8183 secs) {'max_depth': 34}
 
 
 LUMO
@@ -266,9 +269,9 @@ LUMO
 		LinearFix: 0.1699 +/- 0.0026 eV (276.0851 secs) {}
 		LinearRidge: 0.1700 +/- 0.0025 eV (1393.6892 secs) {'alpha': 0.01}
 		SVM: 0.1370 +/- 0.0009 eV (5149.9731 secs) {'C': 100, 'gamma': 0.01}
-
-
-
+		SVM Laplace: 0.1536 +/- 0.0003 eV (6539.1605 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2660 +/- 0.0039 eV (317.5181 secs) {'n_neighbors': 2}
+		Tree: 0.1623 +/- 0.0001 eV (28.0445 secs) {'max_depth': 34}
 
 	fingerprint_1024_feature
 		Mean: 1.0111 +/- 0.0007 eV (0.7060 secs) {}
@@ -279,6 +282,12 @@ LUMO
 		SVM Laplace: 0.1302 +/- 0.0001 eV (12502.6220 secs) {'C': 1000, 'gamma': 0.001}
 		k-NN: 0.2626 +/- 0.0061 eV (569.2783 secs) {'n_neighbors': 2}
 		Tree: 0.1456 +/- 0.0020 eV (72.3788 secs) {'max_depth': 89}
+
+	fingerprint_2048_feature
+		Mean: 1.0111 +/- 0.0007 eV (1.5504 secs) {}
+		Linear: 132352912.7567 +/- 132352912.6304 eV (956.0353 secs) {}
+		LinearFix: 0.1267 +/- 0.0005 eV (9022.2893 secs) {}
+		LinearRidge: 0.1266 +/- 0.0007 eV (42324.0636 secs) {'alpha': 1}
 
 
 GAP
@@ -382,8 +391,25 @@ GAP
 		k-NN: 0.4015 +/- 0.0409 eV (150.6882 secs) {'n_neighbors': 2}
 		Tree: 0.2868 +/- 0.0005 eV (7.8460 secs) {'max_depth': 21}
 
+	fingerprint_512_feature
+		Mean: 0.5391 +/- 0.0068 eV (0.2977 secs) {}
+		Linear: 202063871.4268 +/- 202063871.2289 eV (17.9238 secs) {}
+		LinearFix: 0.1982 +/- 0.0008 eV (275.1839 secs) {}
+		LinearRidge: 0.1985 +/- 0.0007 eV (1394.5840 secs) {'alpha': 0.1}
+		SVM: 0.1474 +/- 0.0005 eV (5180.5557 secs) {'C': 100, 'gamma': 0.01}
+		SVM Laplace: 0.1609 +/- 0.0010 eV (6994.7798 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.1912 +/- 0.0023 eV (319.7837 secs) {'n_neighbors': 3}
+		Tree: 0.1664 +/- 0.0023 eV (28.9622 secs) {'max_depth': 89}
+
 	fingerprint_1024_feature
 		Mean: 0.5391 +/- 0.0068 eV (0.7784 secs) {}
 		Linear: 0.1878 +/- 0.0001 eV (137.2131 secs) {}
+		LinearFix: 0.1877 +/- 0.0002 eV (1710.8776 secs) {}
+		LinearRidge: 0.1877 +/- 0.0004 eV (8410.4630 secs) {'alpha': 1}
+		SVM: 0.1340 +/- 0.0004 eV (8393.0187 secs) {'C': 1000, 'gamma': 0.001}
+		SVM Laplace: 0.1501 +/- 0.0010 eV (12572.4542 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.1849 +/- 0.0009 eV (562.7404 secs) {'n_neighbors': 3}
+		Tree: 0.1533 +/- 0.0000 eV (76.7852 secs) {'max_depth': 55}
 
+	fingerprint_2048_feature
 
