@@ -288,6 +288,10 @@ LUMO
 		Linear: 132352912.7567 +/- 132352912.6304 eV (956.0353 secs) {}
 		LinearFix: 0.1267 +/- 0.0005 eV (9022.2893 secs) {}
 		LinearRidge: 0.1266 +/- 0.0007 eV (42324.0636 secs) {'alpha': 1}
+		SVM: 0.1078 +/- 0.0020 eV (15684.4290 secs) {'C': 100, 'gamma': 0.001}
+		SVM Laplace: 0.1244 +/- 0.0001 eV (22896.0538 secs) {'C': 1000, 'gamma': 0.001}
+		k-NN: 0.2489 +/- 0.0078 eV (776.9616 secs) {'n_neighbors': 2}
+		Tree: 0.1381 +/- 0.0004 eV (167.4793 secs) {'max_depth': 34}
 
 
 GAP
@@ -412,4 +416,6 @@ GAP
 		Tree: 0.1533 +/- 0.0000 eV (76.7852 secs) {'max_depth': 55}
 
 	fingerprint_2048_feature
-
+		Mean: 0.5391 +/- 0.0068 eV (1.4846 secs) {}
+		Linear: 199405992.7916 +/- 199405992.6102 eV (899.2355 secs) {}
+		LinearFix: 0.1814 +/- 0.0006 eV (8880.5336 secs) {}
