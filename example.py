@@ -1,7 +1,6 @@
 import os
 import time
 import sys
-from functools import partial
 
 import numpy
 
@@ -11,7 +10,7 @@ from sklearn import neighbors
 from sklearn import linear_model
 from sklearn import tree
 
-from utils import load_data, test_clf_kfold, cross_clf_kfold
+from utils import load_data, cross_clf_kfold
 import features
 import clfs
 
