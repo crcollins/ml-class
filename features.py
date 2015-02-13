@@ -344,7 +344,7 @@ def get_pca_coulomb_feature(names, paths, dimensions=100, **kwargs):
     return numpy.matrix(pca.transform(feat))
 
 
-def get_fingerprint_feature(names, paths, size=256, **kwargs):
+def get_fingerprint_feature(names, paths, size=2048, **kwargs):
     '''
     This feature vector is constructed from a chemical fingerprint algorithm.
     Basically, this ends up being a boolean vector of whether or not different
