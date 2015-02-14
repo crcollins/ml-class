@@ -7,6 +7,7 @@ import numpy
 
 from sklearn import cross_validation
 from sklearn.metrics import mean_absolute_error
+from sklearn import preprocessing
 
 
 class CLF(object):
@@ -190,7 +191,6 @@ def cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, 
     return params, test_clf_kfold(X, y, clf, folds=cross_folds)
 
 
-
 def test_clf_kfold(X, y, clf, folds=10):
     results = numpy.zeros(folds)
     for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
@@ -204,3 +204,121 @@ def test_clf_kfold(X, y, clf, folds=10):
         clf.fit(X_train, y_train)
         results[i] = mean_absolute_error(clf.predict(X_test), y_test)
     return results.mean(), results.std()
+
+
+def _multi_parallel_params(params):
+    param_names, group, clf_base, X_train, y_train, test_folds = params
+    params = dict(zip(param_names, group))
+    clf = clf_base(**params)
+
+    X_use = numpy.matrix(X_train)
+    y_use = numpy.matrix(y_train).T
+    test_mean, test_std = multi_test_clf_kfold(X_use, y_use, clf, folds=test_folds)
+    return test_mean
+
+
+def multi_cross_clf_kfold(X, y, clf_base, params_sets, cross_folds=10, test_folds=10, parallel=False):
+    groups = {}
+    param_names = params_sets.keys()
+
+    n_sets = len(list(product(*params_sets.values())))
+    cross = numpy.zeros((cross_folds, n_sets))
+
+    # Calculate the cross validation errors for all of the parameter sets.
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[0],
+                                                                    n_folds=cross_folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
+
+        X_train = X[train_idx]
+        X_test = X[test_idx]
+        y_train = y[train_idx,:]
+        y_test = y[test_idx,:]
+
+        data = []
+        # This parallelization could probably be more efficient with an
+        # iterator
+        for group in product(*params_sets.values()):
+            data.append((param_names, group, clf_base, X_train, y_train, test_folds))
+
+        if parallel:
+            pool = Pool(processes=min(cpu_count(), len(data)))
+            results = pool.map(_multi_parallel_params, data)
+
+            pool.close()
+            pool.terminate()
+            pool.join()
+        else:
+            results = map(_multi_parallel_params, data)
+
+        cross[i,:] = results
+
+    # Get the set of parameters with the lowest cross validation error
+    idx = numpy.argmin(cross.mean(0))
+    for j, group in enumerate(product(*params_sets.values())):
+        if j == idx:
+            params = dict(zip(param_names, group))
+            break
+
+    # Get test error for set of params with lowest cross val error
+    # The random_state used for the kfolds must be the same as the one used
+    # before
+    clf = clf_base(**params)
+    return params, multi_test_clf_kfold(X, y, clf, folds=cross_folds)
+
+
+def multi_test_clf_kfold(X, y, clf, folds=10):
+    results = numpy.zeros((folds, y.shape[0]))
+
+    ns = X.shape[0]
+    ends = numpy.zeros((ns*y.shape[0], y.shape[0]))
+    for i in xrange(y.shape[0]):
+        ends[ns*i:ns*(i+1),i] = 1
+
+    for i, (train_idx, test_idx) in enumerate(cross_validation.KFold(y.shape[1],
+                                                                    n_folds=folds,
+                                                                    shuffle=True,
+                                                                    random_state=1)):
+        numpy.set_printoptions(suppress=True)
+        numpy.set_printoptions(precision=3)
+
+        X_train = X[train_idx]
+        X_test = X[test_idx]
+        y_train = y[:,train_idx].T
+        y_test = y[:,test_idx].T
+
+        end_parts_train = []
+        end_parts_test = []
+        for j in xrange(y.shape[0]):
+            base = (test_idx.shape[0] / y.shape[0]) * j
+            end_parts_train.append(ends[train_idx+base,:])
+            end_parts_test.append(ends[test_idx+base,:])
+        end_train = numpy.concatenate(end_parts_train, 0)
+        end_test = numpy.concatenate(end_parts_test, 0)
+        scaler_y = preprocessing.StandardScaler().fit(y_train)
+
+
+        # EEEEWWWWWWWWWW!!!!
+        # transform modifies the original array
+        y_trans_train = scaler_y.transform(y_train.copy())
+        y_trans_test = scaler_y.transform(y_test.copy())
+
+        X_block_train, y_block_train = block_it(X_train, y_trans_train, y.shape[0], end_train)
+        X_block_test, y_block_test = block_it(X_test, y_trans_test, y.shape[0], end_test)
+
+        clf.fit(X_block_train, y_block_train)
+        pre = clf.predict(X_block_test)
+
+        # import pdb; pdb.set_trace()
+        pre2 = pre.reshape(*y_test.shape)
+
+        results[i, :] = numpy.abs(scaler_y.inverse_transform(pre2) - y_test).mean(0)
+    return results.mean(), results.std()
+
+
+def block_it(X, y, y_size, ends):
+    X_block = numpy.tile(X, (y_size, 1))
+    ns = X_block.shape[0]
+    X_block = numpy.concatenate((X_block, ends), 1)
+    y_block = numpy.concatenate(y[:,None], 1).flatten()
+    return X_block, y_block
