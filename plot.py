@@ -8,6 +8,7 @@ from scipy import tanh
 import scipy.spatial as spatial
 
 from sklearn import decomposition
+from sklearn.manifold import TSNE
 
 from pybrain.tools.functions import sigmoid
 
@@ -306,3 +307,29 @@ def plot_multi_surface(xs, ys, Zs):
         X, Y = numpy.meshgrid(x, y)
         surf = ax.plot_surface(X, Y, Z, rstride=1, cstride=1, alpha=0.5, cmap=cm.coolwarm, linewidth=0)
     plt.show()
+
+
+def plot_TSNE(X, y, names=None):
+    model = TSNE(n_components=2, random_state=0)
+    start = time.time()
+
+    a = numpy.arange(X.shape[0])
+    rand = numpy.random.choice(a, 3200)
+
+    res = model.fit_transform(X[rand,:])
+
+    bla = []
+    for prop in (y, y, y):
+        y = prop[rand]
+        colors = (y - y.min()) / (y.max() - y.min())
+        bla.append(colors.T.tolist()[0])
+
+    temp = numpy.array(bla)
+    plt.scatter(res[:,0], res[:,1], color=temp.T)
+    print time.time() - start
+
+    ax = plt.gca()
+    cursor = FollowDotCursor(ax, res[:,0], res[:,1], names)
+    # plt.show()
+
+
