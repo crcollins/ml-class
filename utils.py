@@ -130,6 +130,63 @@ def load_data(base_paths, file_paths, atom_sets):
     return names, geom_paths, zip(*properties), ends
 
 
+def load_data_length(base_paths, file_paths, atom_sets, max_length=2):
+    '''
+    Load data from data sets and return lists of structure names, full paths
+    to the geometry data, the properties, and the meta data.
+    '''
+    short_names = {}
+    names = []
+    name_map = []
+    geom_paths = []
+    properties = []
+    ends = []
+
+    for j, base_path in enumerate(base_paths):
+        for i, file_path in enumerate(file_paths):
+            for m, atom_set in enumerate(atom_sets):
+                path = os.path.join('mol_data', base_path, atom_set, file_path)
+                with open(path, 'r') as f:
+                    for line in f:
+                        temp = line.split()
+                        name, props = temp[0], temp[1:]
+
+                        tokens = tokenize(name, explicit_flips=True)
+
+                        aryl_count = sum([1 for x in tokens if x in ARYL])
+                        is_long = aryl_count > max_length
+
+                        for num in xrange(1, max_length+1):
+                            short_name = ''.join(tokens[:num*4])
+                            if short_name not in short_names:
+                                if not is_long:
+                                    short_names[short_name] = [[len(names)], []]
+                                else:
+                                    short_names[short_name] = [None, []]
+                            if is_long:
+                                short_names[short_name][1].append(len(names))
+                            elif short_names[short_name][0] is None:
+                                short_names[short_name][0] = [len(names)]
+                        names.append(name)
+
+                        geom_path = os.path.join('mol_data', base_path, 'geoms', 'out', name + '.out')
+                        geom_paths.append(geom_path)
+
+                        properties.append([float(x) for x in props])
+
+                        # Add part to feature vector to account for the 4 different data sets.
+                        base_part = [i == k for k, x in enumerate(base_paths)]
+                        # Add part to feature vector to account for the 3 different methods.
+                        method_part = [j == k for k, x in enumerate(file_paths)]
+                        # Add part to feature vector to account for the addition of N.
+                        atom_part = [m == k for k, x in enumerate(atom_sets)]
+                        # Add bias feature
+                        bias = [1]
+                        ends.append(base_part + method_part + atom_part + bias)
+
+    return names, geom_paths, zip(*properties), ends, short_names
+
+
 def _parallel_params(params):
     '''
     This is a helper function to run the parallel code. It contains the same
