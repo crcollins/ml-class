@@ -42,7 +42,7 @@ ARYL0 = ['2', '3', '11']
 RGROUPS = ['a', 'd', 'e', 'f', 'h', 'i', 'l']
 
 
-def tokenize(string):
+def tokenize(string, explicit_flips=False):
     '''
     Tokenizes a given string into the proper name segments. This includes the
     addition of '*' tokens for aryl groups that do not support r groups.
@@ -67,10 +67,20 @@ def tokenize(string):
         raise ValueError("Bad Substituent Name(s): %s" % str(list(invalid_tokens)))
 
     new_tokens = []
-    for token in tokens:
-        new_tokens.append(token)
+    flipped = False
+    for i, token in enumerate(tokens):
+        if explicit_flips and i and token in ARYL:
+            new_tokens.append(flipped*"-")
+            flipped = False
+        elif token == "-":
+            flipped = True
+
+        if not explicit_flips or token != "-":
+            new_tokens.append(token)
         if token in ARYL0:
             new_tokens.extend(['*', '*'])
+    if explicit_flips:
+        new_tokens.append(flipped*"-")
     return new_tokens
 
 
