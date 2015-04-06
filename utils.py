@@ -57,7 +57,7 @@ def tokenize(string, explicit_flips=False):
     ValueError: Bad Substituent Name(s): ['BAD']
     '''
 
-    match = '(1?\d|-|[%s])' % ''.join(RGROUPS)
+    match = '(\(\d+\)|1?\d|-|[%s])' % ''.join(RGROUPS)
     tokens = [x for x in re.split(match, string) if x]
 
     valid_tokens = set(ARYL + RGROUPS + ['-'])
