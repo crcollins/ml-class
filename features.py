@@ -13,15 +13,11 @@ def get_null_feature(names, paths, **kwargs):
     names is a list of strings with the name of the structure (['4aa'])
     paths is a list of locations of the geometry files for that structures
         (['data/noopt/geoms/4aa'])
-    This function returns a single vector (1, N_features) in the form of a list
+    This function returns a matrix of feature vectors (N_names, N_features).
 
     There is no need to add a bias term or try to split the structures based on
     which data set they came from, both of these will be handled as the data is
     loaded.
-
-    NOTE: The '@FeatureFunction' at the start of this function is required.
-    It is used to collect all the feature vectors together to reduce
-    duplication.
     '''
     return numpy.matrix(numpy.zeros((len(names), 0)))
 
